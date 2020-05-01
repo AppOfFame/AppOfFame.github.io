@@ -1,0 +1,97 @@
+Category,Ads_or_not,Count
+Art & Design,Ads,439
+Art & Design,No_Ads,49
+Auto & Vehicles,Ads,346
+Auto & Vehicles,No_Ads,151
+Beauty,Ads,393
+Beauty,No_Ads,86
+Books & Reference,Ads,348
+Books & Reference,No_Ads,145
+Business,Ads,143
+Business,No_Ads,353
+Comics,Ads,414
+Comics,No_Ads,69
+Communication,Ads,262
+Communication,No_Ads,228
+Dating,Ads,274
+Dating,No_Ads,206
+Education,Ads,281
+Education,No_Ads,218
+Entertainment,Ads,385
+Entertainment,No_Ads,106
+Events,Ads,97
+Events,No_Ads,190
+Finance,Ads,68
+Finance,No_Ads,428
+Food & Drink,Ads,154
+Food & Drink,No_Ads,343
+Health & Fitness,Ads,330
+Health & Fitness,No_Ads,166
+House & Home,Ads,228
+House & Home,No_Ads,269
+Libraries & Demo,Ads,207
+Libraries & Demo,No_Ads,279
+Lifestyle,Ads,303
+Lifestyle,No_Ads,189
+Maps & Navigation,Ads,230
+Maps & Navigation,No_Ads,269
+Medical,Ads,189
+Medical,No_Ads,304
+Music & Audio,Ads,410
+Music & Audio,No_Ads,76
+News & Magazines,Ads,420
+News & Magazines,No_Ads,76
+Parenting,Ads,309
+Parenting,No_Ads,183
+Personalization,Ads,390
+Personalization,No_Ads,100
+Photography,Ads,407
+Photography,No_Ads,84
+Productivity,Ads,255
+Productivity,No_Ads,237
+Shopping,Ads,155
+Shopping,No_Ads,344
+Social,Ads,314
+Social,No_Ads,170
+Sports,Ads,418
+Sports,No_Ads,75
+Tools,Ads,335
+Tools,No_Ads,153
+Travel & Local,Ads,190
+Travel & Local,No_Ads,303
+Video Players,Ads,401
+Video Players,No_Ads,87
+Weather,Ads,364
+Weather,No_Ads,116
+Game Action,Ads,432
+Game Action,No_Ads,61
+Game Adventure,Ads,395
+Game Adventure,No_Ads,98
+Game Arcade,Ads,474
+Game Arcade,No_Ads,20
+Game Board,Ads,59
+Game Board,No_Ads,9
+Game Casino,Ads,221
+Game Casino,No_Ads,50
+Game Casual,Ads,458
+Game Casual,No_Ads,38
+Game Educational,Ads,427
+Game Educational,No_Ads,71
+Game Music,Ads,386
+Game Music,No_Ads,91
+Game Puzzle,Ads,470
+Game Puzzle,No_Ads,26
+Game Racing,Ads,469
+Game Racing,No_Ads,24
+Game Role Playing,Ads,289
+Game Role Playing,No_Ads,206
+Game Simulation,Ads,478
+Game Simulation,No_Ads,22
+Game Sports,Ads,470
+Game Sports,No_Ads,25
+Game Strategy,Ads,303
+Game Strategy,No_Ads,192
+Game Trivia,Ads,447
+Game Trivia,No_Ads,34
+Game Word,Ads,479
+Game Word,No_Ads,11
