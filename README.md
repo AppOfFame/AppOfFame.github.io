@@ -1,3 +1,3 @@
 # Repository for the AppOfFame website
  
-Link for the website: https://appoffame.github.io/
+Link to the website: https://appoffame.github.io/
