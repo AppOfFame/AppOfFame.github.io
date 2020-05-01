@@ -1,1 +1,1 @@
-# AppOfFame.github.io
+# Repository for the AppOfFame website
