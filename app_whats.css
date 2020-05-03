@@ -1,116 +1,105 @@
-/********** GRAPHS **********/
-svg {
-	margin: 1rem;
-}
-
-/********** WHATSAPP **********/
+//********** WHATSAPP **********/
 .wrapper{
-width: 760px;
-height:200px;
-margin-left:auto;
-margin-right:auto;
-padding-top:20px;
+  width: 760px;
+  height:200px;
+  margin-left:auto;
+  margin-right:auto;
+  padding-top:20px;
 }
 
 .right{
-float:right;
+  float:right;
 }
 .left{
-float:left;
+  float:left;
 }
-
 
 a{
-cursor: pointer;
-color: #3B5998;
-text-decoration: none;
+  cursor: pointer;
+  color: #3B5998;
+  text-decoration: none;
 }
 a:hover{
-text-decoration: underline;
+  text-decoration: underline;
 }
 strong{
-font-weight:bold;
+  font-weight:bold;
 }
 em{
-font-style:italic;
+  font-style:italic;
 }
 
 h1{
-font-weight:bold;
-line-height: 1.1em;
-margin-bottom:5px;
-color: white;
+  font-weight:bold;
+  line-height: 1.1em;
+  margin-bottom:5px;
+  color: white;
 }
 
 h3{
-font-weight:bold;
-line-height: 1.1em;
-margin-bottom:5px;
+  font-weight:bold;
+  line-height: 1.1em;
+  margin-bottom:5px;
 }
 
 ul.tabs {
-    margin: 0;
-    padding: 0px;
-    float: left;
-    list-style: none;
-    height: 1px; /*--Set height of tabs--*/
-    width: 100%;
-    margin-bottom:12px;
-		margin-top:7px;
+  margin: 0;
+  padding: 0px;
+  float: left;
+  list-style: none;
+  height: 1px;
+  width: 100%;
+  margin-bottom:12px;
+	margin-top:7px;
 }
 ul.tabs li {
-    float: left;
-    margin: 0;
-    padding: 0;
-    height: 19px; /*--Minus 1px from the height of  ul--*/
-    line-height: 18px; /*--aligns text within the tab--*/
-    margin-bottom: -1px; /*--Pull the list item down 1px--*/
-    overflow: hidden;
-    position: relative;
-		background: #128C7E;
-    margin-right:10px;
-    min-width:73px;
-    text-align:center;
-
+  float: left;
+  margin: 0;
+  padding: 0;
+  height: 19px;
+  line-height: 18px;
+  margin-bottom: -1px;
+  overflow: hidden;
+  position: relative;
+	background: #128C7E;
+  margin-right:10px;
+  min-width:73px;
+  text-align:center;
 }
-ul.tabs li:first-child{ /*--Removes the left border from the first child of the list--*/
-border-left:none;
-
+ul.tabs li:first-child{
+  border-left:none;
 }
 ul.tabs li a {
-    text-decoration: none;
-    color: white;
-    display: block;
-    font-size: 20px;
-
-    padding-right:10px;
-    padding-left:10px;
-
-    outline: none;
+  text-decoration: none;
+  color: white;
+  display: block;
+  font-size: 20px;
+  padding-right:10px;
+  padding-left:10px;
+  outline: none;
 }
 ul.tabs li a:hover {
-    background: #075E54;
-		height: 20px;
+  background: #075E54;
+	height: 20px;
 }
 
-
 .top_bar{
-display: table;
-margin: 0px auto 0px auto; /* keep the table centered */
-padding:10px;
-font-size:20px;
-background-color:#128C7E;
-color:white;
+  display: table;
+  margin: 0px auto 0px auto;
+  padding:10px;
+  font-size:20px;
+  background-color:#128C7E;
+  color:white;
 
-width: 760px;
-height:50px;
-margin-left:auto;
-margin-right:auto;
-margin-bottom:0px;
-position: relative;
--moz-box-shadow: 0 14px 10px -12px rgba(0,0,0,0.7);
--webkit-box-shadow: 0 14px 10px -12px rgba(0,0,0,0.7);
-box-shadow: 0 14px 10px -12px rgba(0,0,0,0.7);
+  width: 760px;
+  height:50px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom:0px;
+  position: relative;
+  -moz-box-shadow: 0 14px 10px -12px rgba(0,0,0,0.7);
+  -webkit-box-shadow: 0 14px 10px -12px rgba(0,0,0,0.7);
+  box-shadow: 0 14px 10px -12px rgba(0,0,0,0.7);
 }
 
 .circ_im{
