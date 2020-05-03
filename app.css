@@ -82,4 +82,5 @@ li a {
 	-webkit-box-shadow: 0 14px 10px -12px rgba(0,0,0,0.7);
 	box-shadow: 0 14px 10px -12px rgba(0,0,0,0.7);
 	margin-bottom: 12px;
+	width: 100%;
 }
