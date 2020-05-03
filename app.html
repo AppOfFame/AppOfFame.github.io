@@ -10,6 +10,8 @@
 		<meta name="description" content="Welcome to Data Visualization">
 		<meta name="author" content="K Lis">
 
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
 		<link rel="stylesheet" href="phone.css">
 		<link rel="stylesheet" href="app.css">
 		<link rel="shortcut icon" href="#" />
@@ -28,46 +30,62 @@
 	<body>
 
 		<div class="wrapper">
-			<div class="logo"><img src="https://upload.wikimedia.org/wikipedia/commons/0/07/Facebook_logo.png" width="60" height="60"></img></div>
+			<div class="row logo">
+				<div class="col-1">
+					<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Facebook_logo_36x36.svg/1200px-Facebook_logo_36x36.svg.png" width="60" height="60" style="margin-left: -15px"></img>
+				</div>
+				<div class="col-11">
+					<ul class="tabs">
+		        <li><a id="tab3" onclick="showTab3()">And another</a></li>
+		        <li><a id="tab2" onclick="showTab2()">Other section</a></li>
+		        <li><a id="tab1" onclick="showTab1()" style="font-style: italic">Intro</a></li>
+			    </ul>
+				</div>
+			</div>
 
-	    <ul class="tabs">
-	        <li><a style="background:#BCD2E8" id="tab1" onclick="showTab1()">Intro</a></li>
-	        <li><a id="tab2" onclick="showTab2()">Other section</a></li>
-	        <li><a id="tab3" onclick="showTab3()">And another</a></li>
-	    </ul>
-
-	    <div class="tab_container">
-	      <div id="tabdisp1">
-	        <div class="post">
+	    <div id="tabdisp1" class="row" style="display: block">
+        <div class="row">
 					<h3><a href="#">Title for the results</a></h3>
+				</div>
+				<div class="row">
 					<span class="postInfo">by <a href="#">Javastreet</a> on April 15th 2020</span>
+				</div>
+				<div class="row">
 					<p>Explaining the results. You can go back to the home screen by clicking
 					on the middle button (circle)</p>
+				</div>
+				<div class="row">
 					<a class="more" href="#">Read More</a>
 					<span class="line"></span>
 					<a href="#">26 Likes 42 Comments 69 Shares</a>
 					<span class="line"></span>
-					</div>
+				</div>
 
+				<div class="row">
 	        <!-- Initialize a select button -->
 	        <select id="selectButton"></select>
 	        <div id="my_dataviz"></div>
 	        <script src="piechart.js"></script>
-	      </div><!--End Tab1	 -->
+				</div>
+      </div><!--End Tab1	 -->
 
-				<div id="tabdisp2" style="display: none">
+				<div id="tabdisp2" class="row" style="display: none">
 						<h3>About</h3> <span>You can go back to the main tab of the app by clicking
 						on the left button (triangle).</span>
 						<p><strong>Dataviz</strong></p>
 				</div><!--End Tab2 -->
 
-				<div id="tabdisp3" style="display: none">
+				<div id="tabdisp3" class="row" style="display: none">
 						<h3>And</h3> <span>Voilà.</span>
 				</div><!--End Tab3 -->
 
 	    </div><!--End Tab Container -->
 
 	  </div><!--End Wrapper -->
+
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 	</body>
 
@@ -79,9 +97,9 @@
 			document.getElementById("tabdisp3").style.display = "none"
 
 			// Change tab colors when selected
-			document.getElementById("tab1").style.background = "#BCD2E8";
-			document.getElementById("tab2").style.background = "#f2f2f2";
-			document.getElementById("tab3").style.background = "#f2f2f2";
+			document.getElementById("tab1").style.fontStyle = "italic";
+			document.getElementById("tab2").style.fontStyle = "normal";
+			document.getElementById("tab3").style.fontStyle = "normal";
 	  }
 	</script>
 
@@ -93,9 +111,9 @@
 			document.getElementById("tabdisp3").style.display = "none"
 
 			// Change tab colors when selected
-			document.getElementById("tab2").style.background = "#BCD2E8";
-			document.getElementById("tab1").style.background = "#f2f2f2";
-			document.getElementById("tab3").style.background = "#f2f2f2";
+			document.getElementById("tab2").style.fontStyle = "italic";
+			document.getElementById("tab1").style.fontStyle = "normal";
+			document.getElementById("tab3").style.fontStyle = "normal";
 	  }
 	</script>
 
@@ -107,9 +125,9 @@
 			document.getElementById("tabdisp3").style.display = "block"
 
 			// Change tab colors when selected
-			document.getElementById("tab3").style.background = "#BCD2E8";
-			document.getElementById("tab2").style.background = "#f2f2f2";
-			document.getElementById("tab1").style.background = "#f2f2f2";
+			document.getElementById("tab3").style.fontStyle = "italic";
+			document.getElementById("tab1").style.fontStyle = "normal";
+			document.getElementById("tab2").style.fontStyle = "normal";
 	  }
 	</script>
 
