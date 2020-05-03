@@ -23,14 +23,9 @@
 	<body>
 
 		<div class="wrapper">
-			<div class="logo">
-				<div class="row">
-	        <div class="col-4" >
-	          <span>EPFL Campus</span>
-	        </div>
-	        <div class="col-8">
-	          <span>Some text..</span>
-	        </div>
+			<div class="row">
+				<div class="logo">
+	        <span>Javastreet Campus</span>
 	      </div>
 			</div>
 
@@ -40,7 +35,7 @@
 
       <div class="row">
         <div class="col-3">
-					<div class="row tab" onclick="showTab1()">
+					<div class="row tab" onclick="showTab1()" style="border-bottom: 1px solid #ccc;">
 						<div class="col-3">
 							<svg version="1.0" width="76.8000000pt" height="43.2000000pt" viewBox="0 0 768.000000 432.000000"
 							preserveAspectRatio="xMidYMid meet">
@@ -69,10 +64,12 @@
 								</g>
 							</svg>
 						</div>
-						<div class="col-9 symbtext">Moodle</div>
+						<div class="col-9 symbtext">
+							<span id="tab1" style="border-bottom: 1.5px solid red;">Moodle</span>
+						</div>
 					</div>
 
-					<div class="row tab" onclick="showTab2()">
+					<div class="row tab" onclick="showTab2()" style="border-bottom: 1px solid #ccc;">
 						<div class="col-3">
 							<svg version="1.0" width="76.8000000pt" height="43.2000000pt" viewBox="0 0 768.000000 432.000000"
 							preserveAspectRatio="xMidYMid meet">
@@ -99,10 +96,12 @@
 								</g>
 							</svg>
 						</div>
-						<div class="col-9 symbtext">Alumni</div>
+						<div class="col-9 symbtext">
+							<span id="tab2">Alumni</span>
+						</div>
 					</div>
 
-					<div class="row tab" onclick="showTab3()">
+					<div class="row tab" onclick="showTab3()" style="border-bottom: 1px solid #ccc;">
 						<div class="col-3">
 							<svg version="1.0" width="76.8000000pt" height="43.2000000pt" viewBox="0 0 768.000000 432.000000"
 							preserveAspectRatio="xMidYMid meet">
@@ -131,7 +130,9 @@
 								</g>
 							</svg>
 						</div>
-						<div class="col-9 symbtext">Directory</div>
+						<div class="col-9 symbtext">
+							<span id="tab3">Directory</span>
+						</div>
 					</div>
 				</div>
 
@@ -169,9 +170,9 @@
 			document.getElementById("tabdisp3").style.display = "none"
 
 			// Change tab colors when selected
-			document.getElementById("tab1").style.background = "#BCD2E8";
-			document.getElementById("tab2").style.background = "#f2f2f2";
-			document.getElementById("tab3").style.background = "#f2f2f2";
+			document.getElementById("tab1").style.borderBottom = "1.5px solid red";
+			document.getElementById("tab2").style.borderBottom = "none";
+			document.getElementById("tab3").style.borderBottom = "none";
 	  }
 	</script>
 
@@ -183,9 +184,9 @@
 			document.getElementById("tabdisp3").style.display = "none"
 
 			// Change tab colors when selected
-			document.getElementById("tab2").style.background = "#BCD2E8";
-			document.getElementById("tab1").style.background = "#f2f2f2";
-			document.getElementById("tab3").style.background = "#f2f2f2";
+			document.getElementById("tab2").style.borderBottom = "1.5px solid red";
+			document.getElementById("tab1").style.borderBottom = "none";
+			document.getElementById("tab3").style.borderBottom = "none";
 	  }
 	</script>
 
@@ -197,9 +198,9 @@
 			document.getElementById("tabdisp3").style.display = "block"
 
 			// Change tab colors when selected
-			document.getElementById("tab3").style.background = "#BCD2E8";
-			document.getElementById("tab2").style.background = "#f2f2f2";
-			document.getElementById("tab1").style.background = "#f2f2f2";
+			document.getElementById("tab3").style.borderBottom = "1.5px solid red";
+			document.getElementById("tab1").style.borderBottom = "none";
+			document.getElementById("tab2").style.borderBottom = "none";
 	  }
 	</script>
 
