@@ -152,8 +152,8 @@ update(phone)
 	.append('rect')
 	.attr('x', (d,i) => this.offsetX + this.margin + (i%this.nbCol)*(this.size+this.margin))
 	.attr('y', (d,i) => this.offsetY + this.margin/2 + Math.floor(i/this.nbCol)*(this.size+this.margin))
-	.attr('rx', 15)
-	.attr('ry', 15)
+	.attr('rx', '2em')
+	.attr('ry', '2em')
 	.attr('width', this.size)
 	.attr('height', this.size)
 	.attr("fill", (d) => appendIcon(phone, d.icon))
@@ -204,11 +204,19 @@ svg.selectAll('text')
 .data(this.data)
 .enter()
 .append('text')
-.attr('x', (d,i) => this.offsetX + this.margin + (i%this.nbCol)*(this.size+this.margin)
-+ this.size/5)
+.attr('class', 'appText')
+.attr('x', (d,i) => this.offsetX + this.margin + (i%this.nbCol)*(this.size+this.margin))
 .attr('y', (d,i) => this.offsetY + this.margin/2 + Math.floor(i/this.nbCol)*(this.size+this.margin) +
 this.size + this.margin/3)
 .text((d,i) => d.name)
+
+//Center the texts
+d3.selectAll(".appText").each(function(d,i) {
+	d3.select(this)
+	  .attr("x", 	+d3.select(this).attr('x') + (phone.size-this.getComputedTextLength())/2);
+});
+
+
 
 
 
