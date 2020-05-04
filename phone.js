@@ -12,7 +12,7 @@ whenDocumentLoaded(() => {
 	//Each element will correspond to an app cell in the phone
 	data = [ {name:'Rankings', icon:'facebook.png', file:'app'},
 	{name:'Repartition', icon:'whatsapp.png', file:'app_whats'},
-	{name:'Developers', icon:'epfl.png', file:'app_epfl'},
+	{name:'Developers', icon:'EPFL.png', file:'app_epfl'},
 	{}, {}, {} ];
 
 	iphone = new Phone('monTel', data, [14,9]);
