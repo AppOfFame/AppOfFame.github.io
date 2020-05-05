@@ -190,11 +190,20 @@ this.active = false;
 	this.active = active;*/
 	if(d.file){
 		phone.flipToTablet();
-		phone.page = d.file;
-		let contentDiv = document.getElementById("content");
-		contentDiv.style.display = "inline-block";
+		phone.page = d.file
+
+		// J'AI REMPLACE LES 3 LIGNES SUIVANTES
+		//let contentDiv = document.getElementById("content");
+		//contentDiv.style.display = "inline-block";
+		//contentDiv.innerHTML='<iframe class="frame" src="'+phone.page+'.html"></iframe>'
+
 		//contentDiv.innerHTML='<object type="text/html" data="app.html"></object>'
-		contentDiv.innerHTML='<iframe class="frame" src="'+phone.page+'.html"></iframe>'
+		jQuery(function($) {
+			// ANIMER ICI
+      $("#content").css({"display":"inline-block"});
+			$("#content").html('<iframe class="frame" src="'+phone.page+'.html"></iframe>');
+  	});
+
 		phone.rescaleContent();
 	}
 });
