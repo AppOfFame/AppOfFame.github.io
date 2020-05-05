@@ -1,0 +1,93 @@
+/********** EPFL CAMPUS **********/
+.wrapper{
+	/*width: 760px;
+	height:200px;
+	margin-left:auto;
+	margin-right:auto;
+	padding-top:20px;*/
+	margin: 5vh auto;
+  height:90vh;
+  width: 90vw;
+}
+
+h3{
+  line-height: 1.1em;
+  margin-bottom:8px;
+  color: black;
+}
+
+.logo{
+  padding: 40px 0;
+  text-align: center;
+  width: 100%;
+  background-color: #E20D22;
+  color: white;
+  font-size: 40px;
+  -moz-box-shadow: 0 14px 10px -12px rgba(0,0,0,0.7);
+	-webkit-box-shadow: 0 14px 10px -12px rgba(0,0,0,0.7);
+	box-shadow: 0 14px 10px -12px rgba(0,0,0,0.7);
+  margin-bottom: 12px;
+}
+
+.symbtext{
+  margin-top: 18px;
+	margin-left: -500px;
+	transition: 0.8s;
+}
+
+.symbol{
+	margin-left: -200px;
+  transition: 0.8s;
+}
+
+.tab {
+  color: #000;
+  text-decoration: none;
+}
+
+.tabname:after {
+  display:block;
+  content: '';
+  border-bottom: solid 1.5px red;
+	margin-top: -3px;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+.tab:hover .tabname:after {
+	transform: scaleX(0.8);
+	transform-origin:  0% 50%;
+}
+
+/*.tabname::before, .tabname::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 1.5px;
+  top: 45%;
+  margin-top: 15px;
+  background: red;
+}
+
+.tab:hover .tabname {
+    transition: 0s;
+}
+.tabname::before {
+  left: 10px;
+}
+.tabname::after {
+  right: 0px;
+  background: red;
+  transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.tab:hover .tabname::before {
+  background: red;
+  width: 50%;
+  transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.tab:hover .tabname::after {
+  background: transparent;
+  width: 50%;
+  transition: 0s;
+}

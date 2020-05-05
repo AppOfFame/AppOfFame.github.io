@@ -1,17 +1,50 @@
 //********** WHATSAPP **********/
 .wrapper{
-  width: 760px;
-  height:200px;
-  margin-left:auto;
-  margin-right:auto;
-  padding-top:20px;
+	/*width: 760px;
+	height:200px;
+	margin-left:auto;
+	margin-right:auto;
+	padding-top:20px;*/
+	margin: 5vh auto;
+  height:90vh;
+  width: 90vw;
 }
 
-.right{
-  float:right;
+.top_bar{
+  display: table;
+  margin: 0px auto 0px auto;
+  padding:10px;
+  font-size:20px;
+  background-color:#128C7E;
+  color:white;
+
+  width: 760px;
+  height:50px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom:0px;
+  position: relative;
+  -moz-box-shadow: 0 14px 10px -12px rgba(0,0,0,0.7);
+  -webkit-box-shadow: 0 14px 10px -12px rgba(0,0,0,0.7);
+  box-shadow: 0 14px 10px -12px rgba(0,0,0,0.7);
 }
-.left{
-  float:left;
+
+.logo{
+  padding: 40px 0;
+  text-align: center;
+  width: 100%;
+  background-color: #128C7E;
+  color: white;
+  font-size: 40px;
+  -moz-box-shadow: 0 14px 10px -12px rgba(0,0,0,0.7);
+	-webkit-box-shadow: 0 14px 10px -12px rgba(0,0,0,0.7);
+	box-shadow: 0 14px 10px -12px rgba(0,0,0,0.7);
+  margin-bottom: 12px;
+}
+
+.circ_im{
+	width: 50%;
+	border-radius: 50%;
 }
 
 a{
@@ -81,33 +114,6 @@ ul.tabs li a {
 ul.tabs li a:hover {
   background: #075E54;
 	height: 20px;
-}
-
-.top_bar{
-  display: table;
-  margin: 0px auto 0px auto;
-  padding:10px;
-  font-size:20px;
-  background-color:#128C7E;
-  color:white;
-
-  width: 760px;
-  height:50px;
-  margin-left:auto;
-  margin-right:auto;
-  margin-bottom:0px;
-  position: relative;
-  -moz-box-shadow: 0 14px 10px -12px rgba(0,0,0,0.7);
-  -webkit-box-shadow: 0 14px 10px -12px rgba(0,0,0,0.7);
-  box-shadow: 0 14px 10px -12px rgba(0,0,0,0.7);
-}
-
-.circ_im{
-	width: 100px;
-  height: auto;
-	border-radius: 50%;
-	margin-left: 15px;
-	margin-top: 5px;
 }
 
 .conversation {
