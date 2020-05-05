@@ -21,39 +21,9 @@ window.onload = function() {
 };
 
 
-// Change tab content
-function showTab1() {
-  document.getElementById("tabdisp1").style.display = "block"
-  document.getElementById("tabdisp2").style.display = "none"
-  document.getElementById("tabdisp3").style.display = "none"
-
-  document.getElementById("tab1name").style.borderBottom = "1.5px solid red";
-  document.getElementById("tab2name").style.borderBottom = "none";
-  document.getElementById("tab3name").style.borderBottom = "none";
-}
-
-function showTab2() {
-  document.getElementById("tabdisp1").style.display = "none"
-  document.getElementById("tabdisp2").style.display = "block"
-  document.getElementById("tabdisp3").style.display = "none"
-
-  document.getElementById("tab2name").style.borderBottom = "1.5px solid red";
-  document.getElementById("tab1name").style.borderBottom = "none";
-  document.getElementById("tab3name").style.borderBottom = "none";
-}
-
-function showTab3() {
-  document.getElementById("tabdisp1").style.display = "none"
-  document.getElementById("tabdisp2").style.display = "none"
-  //document.getElementById("tabdisp3").style.display = "block"
-
-  //document.getElementById("tab3name").style.borderBottom = ;
-  document.getElementById("tab1name").style.borderBottom = "none";
-  document.getElementById("tab2name").style.borderBottom = "none";
-}
-
 $(document).ready(function() {
 
+  $("#tabdisp1").toggle("fast")
   $("#tabclick1").css("pointer-events", "none");
 
   $("#tabclick1").click(function() {
