@@ -45,9 +45,56 @@ function showTab2() {
 function showTab3() {
   document.getElementById("tabdisp1").style.display = "none"
   document.getElementById("tabdisp2").style.display = "none"
-  document.getElementById("tabdisp3").style.display = "block"
+  //document.getElementById("tabdisp3").style.display = "block"
 
-  document.getElementById("tab3name").style.borderBottom = "1.5px solid red";
+  //document.getElementById("tab3name").style.borderBottom = ;
   document.getElementById("tab1name").style.borderBottom = "none";
   document.getElementById("tab2name").style.borderBottom = "none";
 }
+
+$(document).ready(function() {
+
+  $("#tabclick1").css("pointer-events", "none");
+
+  $("#tabclick1").click(function() {
+    $("#tabdisp1").toggle("fast")
+    $("#tabclick1").css("pointer-events", "none");
+    $("#tabclick2").css("pointer-events", "auto");
+    $("#tabclick3").css("pointer-events", "auto");
+
+    $("#tabdisp2").css({"display":"none"});
+    $("#tabdisp3").css({"display":"none"});
+
+    $("#tab1name").css({"borderBottom":"1.5px solid red"});
+    $("#tab2name").css({"borderBottom":"none"});
+    $("#tab3name").css({"borderBottom":"none"});
+  });
+
+  $("#tabclick2").click(function() {
+    $("#tabdisp2").toggle("fast")
+    $("#tabclick1").css("pointer-events", "auto");
+    $("#tabclick2").css("pointer-events", "none");
+    $("#tabclick3").css("pointer-events", "auto");
+
+    $("#tabdisp1").css({"display":"none"});
+    $("#tabdisp3").css({"display":"none"});
+
+    $("#tab1name").css({"borderBottom":"none"});
+    $("#tab2name").css({"borderBottom":"1.5px solid red"});
+    $("#tab3name").css({"borderBottom":"none"});
+  });
+
+  $("#tabclick3").click(function() {
+    $("#tabdisp3").toggle("fast")
+    $("#tabclick1").css("pointer-events", "auto");
+    $("#tabclick2").css("pointer-events", "auto");
+    $("#tabclick3").css("pointer-events", "none");
+
+    $("#tabdisp1").css({"display":"none"});
+    $("#tabdisp2").css({"display":"none"});
+
+    $("#tab1name").css({"borderBottom":"none"});
+    $("#tab2name").css({"borderBottom":"none"});
+    $("#tab3name").css({"borderBottom":"1.5px solid red"});
+  });
+});

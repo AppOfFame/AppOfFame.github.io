@@ -10,10 +10,10 @@ function whenDocumentLoaded(action) {
 let iphone;
 whenDocumentLoaded(() => {
 	//Each element will correspond to an app cell in the phone
-	data = [ {name:'Rankings', icon:'facebook.png', file:'app'},
-	{name:'Repartition', icon:'whatsapp.png', file:'app_whats'},
-	{name:'Developers', icon:'EPFL.png', file:'app_epfl'},
-	{}, {}, {} ];
+	data = [ {name:'Rankings', icon:'facebook.png', file:'../html/app'},
+	{name:'Repartition', icon:'whatsapp.png', file:'../html/app_whats'},
+	{name:'Developers', icon:'EPFL.png', file:'../html/app_epfl'},
+	{}, {}, {}];
 
 	iphone = new Phone('monTel', data, [14,9]);
 	window.addEventListener("resize", windowUpdate);
@@ -152,8 +152,8 @@ update(phone)
 	.append('rect')
 	.attr('x', (d,i) => this.offsetX + this.margin + (i%this.nbCol)*(this.size+this.margin))
 	.attr('y', (d,i) => this.offsetY + this.margin/2 + Math.floor(i/this.nbCol)*(this.size+this.margin))
-	.attr('rx', '2em')
-	.attr('ry', '2em')
+	.attr('rx', 15)
+	.attr('ry', 15)
 	.attr('width', this.size)
 	.attr('height', this.size)
 	.attr("fill", (d) => appendIcon(phone, d.icon))
@@ -204,19 +204,11 @@ svg.selectAll('text')
 .data(this.data)
 .enter()
 .append('text')
-.attr('class', 'appText')
-.attr('x', (d,i) => this.offsetX + this.margin + (i%this.nbCol)*(this.size+this.margin))
+.attr('x', (d,i) => this.offsetX + this.margin + (i%this.nbCol)*(this.size+this.margin)
++ this.size/5)
 .attr('y', (d,i) => this.offsetY + this.margin/2 + Math.floor(i/this.nbCol)*(this.size+this.margin) +
 this.size + this.margin/3)
 .text((d,i) => d.name)
-
-//Center the texts
-d3.selectAll(".appText").each(function(d,i) {
-	d3.select(this)
-	  .attr("x", 	+d3.select(this).attr('x') + (phone.size-this.getComputedTextLength())/2);
-});
-
-
 
 
 
