@@ -138,7 +138,7 @@ update(phone)
 			.append("image")
 			.attr("width", phone.size)
 			.attr("height", phone.size)
-			.attr("xlink:href", '../img/'+icon);
+			.attr("xlink:href", 'img/'+icon);
 			return 'url(#icon_'+icon+')';
 		}
 		//If no icon file given, we fill in grey
@@ -192,17 +192,18 @@ this.active = false;
 		phone.flipToTablet();
 		phone.page = d.file
 
-		// J'AI REMPLACE LES 3 LIGNES SUIVANTES
-		//let contentDiv = document.getElementById("content");
-		//contentDiv.style.display = "inline-block";
-		//contentDiv.innerHTML='<iframe class="frame" src="'+phone.page+'.html"></iframe>'
+		// REMPLACER LES 3 LIGNES SUIVANTES
+		let contentDiv = document.getElementById("content");
+		contentDiv.style.display = "inline-block";
+		contentDiv.innerHTML='<iframe class="frame" src="html/'+phone.page+'.html"></iframe>'
 
 		//contentDiv.innerHTML='<object type="text/html" data="app.html"></object>'
-		jQuery(function($) {
-			// ANIMER ICI
-      $("#content").css({"display":"inline-block"});
-			$("#content").html('<iframe class="frame" src="'+phone.page+'.html"></iframe>');
-  	});
+
+		// ANIMER ICI
+		//jQuery(function($) {
+    //  $("#content").css({"display":"inline-block"});
+		//	$("#content").html('<iframe class="frame" src="'+phone.page+'.html"></iframe>');
+  	//});
 
 		phone.rescaleContent();
 	}
@@ -224,9 +225,6 @@ d3.selectAll(".appText").each(function(d,i) {
 	d3.select(this)
 	  .attr("x", 	+d3.select(this).attr('x') + (phone.size-this.getComputedTextLength())/2);
 });
-
-
-
 
 
 //Border of phone
@@ -291,7 +289,7 @@ const triStart = [this.offsetX + this.width/2 - spaceBtwButtons + triWidth/2,
 	.attr('class','highlight')
 	.on('click', function (){
 		let contentDiv = document.getElementById("content");
-		contentDiv.innerHTML='<iframe class="frame" src="'+phone.page+'.html"></iframe>'
+		contentDiv.innerHTML='<iframe class="frame" src="html/'+phone.page+'.html"></iframe>'
 		phone.rescaleContent();
 	});
 
