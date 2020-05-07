@@ -2,6 +2,7 @@
 body{
   font-family: "Roboto", sans-serif;
   line-height: 30px;
+  animation: zoomInUp .4s
 }
 
 .wrapper{
@@ -17,6 +18,13 @@ h3{
   line-height: 1.1em;
   margin-bottom:8px;
   color: black;
+}
+
+.topinfo{
+  padding: 5px;
+  background-color: #a30000;
+  color: white;
+  font-size: 40px;
 }
 
 .logo{
@@ -53,6 +61,8 @@ h3{
   width: 80px;
   height: 80px;
   margin-bottom: 15px;
+
+  animation: rubberBand .8s
 }
 
 .avatar img {
@@ -99,6 +109,10 @@ h3{
 .announcement-votes .votes {
   margin-left: 20px;
   margin-bottom: 18px;
+}
+
+.up, .down {
+  animation-duration: 0.7s;
 }
 
 .video {

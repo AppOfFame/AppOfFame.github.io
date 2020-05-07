@@ -1,7 +1,3 @@
-function animate() {
-
-}
-
 // Animations on page load
 window.onload = function() {
   // Tabs

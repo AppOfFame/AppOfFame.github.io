@@ -11,7 +11,7 @@ let iphone;
 whenDocumentLoaded(() => {
 	//Each element will correspond to an app cell in the phone
 	data = [ {name:'Rankings', icon:'facebook.png', file:'app'},
-	{name:'Repartition', icon:'whatsapp.png', file:'app_whats'},
+	{name:'Distributions', icon:'whatsapp.png', file:'app_whats'},
 	{name:'Developers', icon:'EPFL.png', file:'app_epfl'},
 	{name:'Downloads', icon:'youtube.png', file:'app_ytb'},
 	{}, {} ];
