@@ -13,7 +13,8 @@ whenDocumentLoaded(() => {
 	data = [ {name:'Rankings', icon:'facebook.png', file:'app'},
 	{name:'Repartition', icon:'whatsapp.png', file:'app_whats'},
 	{name:'Developers', icon:'EPFL.png', file:'app_epfl'},
-	{}, {}, {} ];
+	{name:'Downloads', icon:'youtube.png', file:'app_ytb'},
+	{}, {} ];
 
 	iphone = new Phone('monTel', data, [14,9]);
 	window.addEventListener("resize", windowUpdate);

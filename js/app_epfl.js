@@ -12,9 +12,9 @@ window.onload = function() {
   var t2 = document.getElementById("tab2")
   var t3 = document.getElementById("tab3")
 
-  s1.style.marginLeft = "0px";
-  s2.style.marginLeft = "0px";
-  s3.style.marginLeft = "0px";
+  s1.style.marginLeft = "5px";
+  s2.style.marginLeft = "5px";
+  s3.style.marginLeft = "5px";
   t1.style.marginLeft = "0px";
   t2.style.marginLeft = "0px";
   t3.style.marginLeft = "0px";
