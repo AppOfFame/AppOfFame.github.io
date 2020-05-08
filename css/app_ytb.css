@@ -8,6 +8,7 @@ body{
 .wrapper{
 	height: inherit;
 	width: inherit;
+  background-color: white;
 }
 
 .strong {
@@ -21,10 +22,25 @@ h3{
 }
 
 .topinfo{
-  padding: 5px;
+  margin-left: auto;
+  width: 100%;
+  height: 30px;
+  padding: 0 5px;
   background-color: #a30000;
+  color: #fff;
+  font-size: 20px;
   color: white;
-  font-size: 40px;
+  z-index: 10;
+  position: fixed;
+}
+
+.topinfo div {
+  float: right;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 0 0 8px;
+  font-weight: 600;
 }
 
 .logo{
@@ -33,6 +49,7 @@ h3{
   background-color: #FF0000;
   color: white;
   font-size: 40px;
+  margin-top: 30px;
 }
 
 .logo-tabs{
@@ -61,8 +78,10 @@ h3{
   width: 80px;
   height: 80px;
   margin-bottom: 15px;
+}
 
-  animation: rubberBand .8s
+.avatar:hover{
+  animation: pulse .8s
 }
 
 .avatar img {
@@ -109,6 +128,7 @@ h3{
 .announcement-votes .votes {
   margin-left: 20px;
   margin-bottom: 18px;
+  cursor: pointer;
 }
 
 .up, .down {
@@ -119,8 +139,9 @@ h3{
 }
 
 .video .thumbnail img{
-  width: 45%;
-  height: 45%;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
 }
 
 .video .avatar{

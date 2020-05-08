@@ -1,5 +1,10 @@
 $(document).ready(function() {
 
+	// Avatars
+	$(".avatar").addClass('animated rubberBand').one('animationend', function(){
+		$(this).removeClass('animated rubberBand');
+	})
+
   // Upvote
   $('body').on('click','.up',function(){
     $(".up").css({"color":"blue"})
