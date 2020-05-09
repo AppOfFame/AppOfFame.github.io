@@ -138,7 +138,7 @@ h3{
 .video {
 }
 
-.video .thumbnail img{
+.video .thumbnail iframe{
   width: 100%;
   height: 100%;
   cursor: pointer;
