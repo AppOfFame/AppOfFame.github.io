@@ -15,9 +15,12 @@
 
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
+		<link href="https://fonts.googleapis.com/css?family=Muli:200,300,400,600,700,800,900" rel="stylesheet">
+
+
 		<link rel="stylesheet" href="../css/phone.css">
 		<link rel="stylesheet" href="../css/app_twitter.css">
-
+<link href="../assets/css/all.css" rel="stylesheet">
 	</head>
 	<body>
 
@@ -41,15 +44,68 @@
       </div>
 
 			<div class="row logo">
-        <div class="tab-name">
-	        <span>Twitter</span>
+        <div class="logo-name">
+	        <img src="../img/twitter.png"></img>
         </div>
 			</div>
-      <div class="row logo-tabs">
-          <div class="col">Column1</div>
-          <div class="col">Column2</div>
-          <div class="col">Column3</div>
+
+      <div class="row tabs">
+        <div class="col tab-home">
+					<i class="fas fa-house-user"></i>
+					<div class="tabs-name" id="home">Feed</div>
+				</div>
+				<div class="col tab-search">
+					<i class="fas fa-search"></i>
+					<div class="tabs-name" id="search">Search</div>
+				</div>
+				<div class="col tab-bell">
+					<i class="fas fa-bell"></i>
+					<div class="tabs-name" id="bell">Notifications</div>
+				</div>
+				<div class="col tab-msg">
+					<i class="fas fa-envelope"></i>
+					<div class="tabs-name" id="msg">Messages</div>
+				</div>
       </div>
+
+			<div class="row tweet">
+				<div class="col-2">
+					<div class="avatar">
+						<img src="https://is2-ssl.mzstatic.com/image/thumb/Purple114/v4/97/cf/e2/97cfe22b-2b6e-00b0-7056-cdb697a3cb05/source/256x256bb.jpg" alt="Avatar">
+					</div>
+				</div>
+
+				<div class="col-7 tweet-info">
+					<div class="row">
+						<div class="name">
+							<strong>Javastreet</strong>
+							<i class="fas fa-check-circle"></i>
+							<span class="username">@javastreet
+								<span class="dot">•</span>
+								<span>5h</span>
+							</span>
+						</div>
+					</div>
+					<div class="row content">Check this out !!!! Best twitter ever mon gars Check this out !!!!
+						 Best twitter ever mon gars Check this out !!!! Best twitter ever mon gars Check this out !!!!
+						  Best twitter ever mon gars Check this out !!!! Best twitter ever mon gars Check this out !!!!
+							Best twitter ever mon gars </div>
+					<div class="row reacts">
+						<div class="col-2 react-com" id="com1">
+							<i class="far fa-comment" id="rcom1"></i>
+							<span id="ncom1"> 714</span>
+						</div>
+						<div class="col-2 react-ret" id="ret1">
+							<i class="fas fa-retweet" id="rret1"></i>
+							<span id="nret1"> 1071</span>
+						</div>
+						<div class="col-2 react-like" id="like1">
+							<i class="far fa-heart" id="rlike1"></i>
+							<span id="nlike1"> 5236</span>
+						</div>
+					</div>
+				</div>
+			</div><!--End Tweet -->
 
 	  </div><!--End Container -->
 

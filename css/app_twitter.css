@@ -1,8 +1,29 @@
 /********** YOUTUBE **********/
-body{
-  font-family: "Roboto", sans-serif;
-  line-height: 30px;
+body {
+  font-family: 'Muli', sans-serif;
+  /*line-height: 35px;*/
   animation: zoomInUp .4s
+}
+.thin {
+  font-weight: 200;
+}
+.light {
+  font-weight: 300;
+}
+.regular {
+  font-weight: 400;
+}
+.bold {
+  font-weight: 600;
+}
+.extraBold {
+  font-weight: 700;
+}
+.black {
+  font-weight: 800;
+}
+.extraBlack {
+  font-weight: 900;
 }
 
 .wrapper{
@@ -11,29 +32,18 @@ body{
   background-color: white;
 }
 
-.strong {
-  font-weight: bold;
-}
-
-h3{
-  line-height: 1.1em;
-  margin-bottom:8px;
-  color: black;
-}
-
 .topinfo{
   margin-left: auto;
   width: 100%;
   height: 30px;
   padding: 0 5px;
-  background-color: #AAB8C2;
-  color: #fff;
+  background-color: #E1E8ED;
   font-size: 20px;
-  color: white;
+  color: #657786;
   z-index: 10;
   position: fixed;
+  border-bottom: 1px solid  #657786;
 }
-
 .topinfo div {
   float: right;
   position: relative;
@@ -44,26 +54,95 @@ h3{
 }
 
 .logo{
-  padding: 30px 0;
+  padding: 0 0;
   text-align: left;
   background-color: #1DA1F2;
   color: white;
   font-size: 40px;
   margin-top: 30px;
-}
-
-.logo-tabs{
-  padding: 0px 20px 10px;
-  text-align: center;
-  background-color: #1DA1F2;
-  color: white;
-  font-size: 20px;
+  margin-bottom: 20px;
+  /*
   -moz-box-shadow: 0 14px 10px -12px rgba(0,0,0,0.7);
 	-webkit-box-shadow: 0 14px 10px -12px rgba(0,0,0,0.7);
 	box-shadow: 0 14px 10px -12px rgba(0,0,0,0.7);
-  margin-bottom: 12px;
+  */
+}
+.logo-name{
+  margin-left: 20px;
+}
+.logo-name img{
+  width: 80px;
+  height: 80px;
 }
 
-.tab-name{
-  margin-left: 60px;
+.tabs{
+  text-align: center;
+  background-color: #F5F8FA;
+  color: #657786;
+  font-size: 18px;
+  position: fixed; bottom: 0; width: 100%; margin: 0; padding: 5px 0;
+  margin-left: -15px;
+  border-top: 1px solid #AAB8C2;
+  cursor: pointer;
+}
+.tabs-name{
+  color: #657786;
+  font-size: 13px;
+  margin-top: -3px;
+  margin-bottom: -3px;
+}
+
+.avatar {
+  margin: 0 0 0 5px;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 15px;
+}
+.avatar img {
+  border-radius: 50%;
+  display: block;
+  width: 100%;
+}
+
+.tweet-info {
+  margin-left: -20px;
+  color: #14171A;
+  font-size: 18px;
+}
+.tweet {
+  border-bottom: 1px solid #E1E8ED;
+}
+.tweet .name{
+}
+.tweet .username{
+  color: #657786;
+}
+.fa-check-circle {
+  color: #1DA1F2;
+}
+.tweet .username .dot{
+  display: inline-block;
+  font-size: 5px;
+  font-weight: 100;
+  position: relative;
+  top: -3px;
+}
+.tweet .content {
+}
+.tweet .reacts{
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 10px;
+  margin-left: -30px;
+  margin-bottom: 8px;
+  color: #657786;
+}
+.react-com:hover{
+  cursor: pointer;
+}
+.react-ret:hover{
+  cursor: pointer;
+}
+.react-like:hover{
+  cursor: pointer;
 }
