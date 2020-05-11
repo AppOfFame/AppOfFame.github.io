@@ -2,6 +2,7 @@
 body {
   font-family: 'Muli', sans-serif;
   /*line-height: 35px;*/
+  color: #14171A;
   animation: zoomInUp .4s
 }
 .thin {
@@ -81,6 +82,7 @@ body {
   color: #657786;
   font-size: 18px;
   position: fixed; bottom: 0; width: 100%; margin: 0; padding: 5px 0;
+  z-index: 10;
   margin-left: -15px;
   border-top: 1px solid #AAB8C2;
   cursor: pointer;
@@ -106,7 +108,6 @@ body {
 
 .tweet-info {
   margin-left: -20px;
-  color: #14171A;
   font-size: 18px;
 }
 .tweet {
@@ -145,4 +146,39 @@ body {
 }
 .react-like:hover{
   cursor: pointer;
+}
+
+.trend{
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+.hashtag{
+  /*margin-top: 15px;
+  margin-bottom: 15px;*/
+  border-top: 1px solid #E1E8ED;
+  cursor: pointer;
+}
+.hashtag:last-child{
+  border-bottom: 1px solid #E1E8ED;
+}
+.hashtag:hover{
+  background-color: #F5F8FA;
+}
+.hashtag-name{
+  margin-top: 12px;
+}
+.hashtag-tweets{
+  color: #657786;
+  margin-top: 0px;
+  margin-bottom: 8px;
+}
+
+.row .hashtag:after {
+  position: absolute;
+  content: '';
+  border-bottom: 1px solid red;
+  width: 70%;
+  transform: translateX(-50%);
+  bottom: -15px;
+  left: 50%;
 }

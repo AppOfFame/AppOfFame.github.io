@@ -89,17 +89,11 @@ $(document).ready(function() {
     $("#search").css({"color":"#657786"});
     $(".tab-msg").css({"color":"#657786"});
     $("#search").css({"color":"#657786"});
-  });
-  // Bell click
-  $('body').on('click','.tab-bell',function(){
-    $(".tab-home").css({"color":"#657786"});
-    $("#home").css({"color":"#657786"});
-    $(".tab-bell").css({"color":"#1DA1F2"});
-    $("#bell").css({"color":"#1DA1F2"});
-    $(".tab-search").css({"color":"#657786"});
-    $("#search").css({"color":"#657786"});
-    $(".tab-msg").css({"color":"#657786"});
-    $("#msg").css({"color":"#657786"});
+
+    $("#tabdisp1").css({"display":"block"});
+    $("#tabdisp2").css({"display":"none"});
+    $("#tabdisp3").css({"display":"none"});
+    $("#tabdisp4").css({"display":"none"});
   });
   // Search click
   $('body').on('click','.tab-search',function(){
@@ -111,6 +105,27 @@ $(document).ready(function() {
     $("#search").css({"color":"#1DA1F2"});
     $(".tab-msg").css({"color":"#657786"});
     $("#msg").css({"color":"#657786"});
+
+    $("#tabdisp1").css({"display":"none"});
+    $("#tabdisp2").css({"display":"block"});
+    $("#tabdisp3").css({"display":"none"});
+    $("#tabdisp4").css({"display":"none"});
+  });
+  // Bell click
+  $('body').on('click','.tab-bell',function(){
+    $(".tab-home").css({"color":"#657786"});
+    $("#home").css({"color":"#657786"});
+    $(".tab-bell").css({"color":"#1DA1F2"});
+    $("#bell").css({"color":"#1DA1F2"});
+    $(".tab-search").css({"color":"#657786"});
+    $("#search").css({"color":"#657786"});
+    $(".tab-msg").css({"color":"#657786"});
+    $("#msg").css({"color":"#657786"});
+
+    $("#tabdisp1").css({"display":"none"});
+    $("#tabdisp2").css({"display":"none"});
+    $("#tabdisp3").css({"display":"block"});
+    $("#tabdisp4").css({"display":"none"});
   });
   // Message click
   $('body').on('click','.tab-msg',function(){
@@ -122,5 +137,10 @@ $(document).ready(function() {
     $("#search").css({"color":"#657786"});
     $(".tab-msg").css({"color":"#1DA1F2"});
     $("#msg").css({"color":"#1DA1F2"});
+
+    $("#tabdisp1").css({"display":"none"});
+    $("#tabdisp2").css({"display":"none"});
+    $("#tabdisp3").css({"display":"none"});
+    $("#tabdisp4").css({"display":"block"});
   });
 });
