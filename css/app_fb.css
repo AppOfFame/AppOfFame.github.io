@@ -135,11 +135,8 @@ body {
   font-weight: 500;
   margin-top: 10px;
   margin-left: -10px;
-  margin-bottom: 8px;
+  margin-bottom: 20px;
   color: #657786;
-}
-.fa-thumbs-up {
-  color: #4267B2;
 }
 .fa-surprise, .fa-laugh-squint, .fa-flushed{
   color: #ffcc33;
@@ -158,4 +155,13 @@ body {
   text-align: center;
   font-size: 15px;
   float: right;
+}
+
+.reacts-action{
+  font-size: 15px;
+  color: #657786;
+  margin-bottom: 15px;
+}
+.action-like, .action-comment{
+  cursor: pointer;
 }
