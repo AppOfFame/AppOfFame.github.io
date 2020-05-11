@@ -129,6 +129,7 @@ body {
 }
 .post .content {
   margin-left: 5px;
+  font-size: 18px;
 }
 .post .reacts{
   font-size: 15px;
@@ -164,4 +165,10 @@ body {
 }
 .action-like, .action-comment{
   cursor: pointer;
+}
+
+.interpost{
+  background-color: #E1E8ED;
+  height: 10px;
+  width: inherit;
 }

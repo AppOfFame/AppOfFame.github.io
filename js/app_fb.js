@@ -43,7 +43,7 @@ $(document).ready(function() {
       $("#rlike1").addClass('animated heartBeat').one('animationend', function(){
         $(this).removeClass('animated heartBeat');
       });
-      $("#nlike1").text("853");
+      $("#nlike1").text("You and 852 others");
     }
   });
 });
