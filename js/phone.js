@@ -75,7 +75,8 @@ class Phone {
 		let padding = 3;
 		let contentDiv = document.getElementById("content");
 		contentDiv.style.width = this.width-2*padding+"px";
-		contentDiv.style.height = this.height-this.margin-padding+"px";
+		//contentDiv.style.height = this.height-this.margin-padding+"px";
+		contentDiv.style.height = this.height-2*padding+"px";
 		contentDiv.style.marginLeft = this.offsetX+padding+"px";
 		contentDiv.style.marginTop = this.offsetY+padding+"px";
 	}
@@ -124,8 +125,10 @@ class Phone {
 update(phone)
 {
 
-	//App icons
+
 	let svg = d3.select('#'+this.container);
+	let borderPad=2.5;
+  const rectSize = 0.04*this.height;
 
 	//Appends app icon when new app enters
 	function appendIcon(phone, icon)
@@ -147,6 +150,7 @@ update(phone)
 		return 'grey';
 	}
 
+
 	//App rectangle
 	svg.selectAll('rect')
 	.data(this.data)
@@ -159,7 +163,7 @@ update(phone)
 	.attr('width', this.size)
 	.attr('height', this.size)
 	.attr("fill", (d) => appendIcon(phone, d.icon))
-	.attr('class','borderHighlight')
+	.attr('class','borderHighlight temporary')
 
 
 
@@ -196,8 +200,11 @@ this.active = false;
 
 		// REMPLACER LES 3 LIGNES SUIVANTES
 		let contentDiv = document.getElementById("content");
-		contentDiv.style.display = "inline-block";
+		contentDiv.classList.remove("offStage");
+		contentDiv.classList.add("onStage");
 		contentDiv.innerHTML='<iframe class="frame" src="html/'+phone.page+'.html"></iframe>'
+		let frame = d3.selectAll(".frame").attr("height", phone.height-2*rectSize-2*bPadding);
+
 
 		//contentDiv.innerHTML='<object type="text/html" data="app.html"></object>'
 
@@ -208,6 +215,7 @@ this.active = false;
   	//});
 
 		phone.rescaleContent();
+		let appAndText = d3.selectAll(".temporary").attr("style", "visibility:hidden;");
 	}
 });
 
@@ -216,7 +224,7 @@ svg.selectAll('text')
 .data(this.data)
 .enter()
 .append('text')
-.attr('class', 'appText')
+.attr('class', 'appText temporary')
 .attr('x', (d,i) => this.offsetX + this.margin + (i%this.nbCol)*(this.size+this.margin))
 .attr('y', (d,i) => this.offsetY + this.margin/2 + Math.floor(i/this.nbCol)*(this.size+this.margin) +
 this.size + this.margin/3)
@@ -230,44 +238,59 @@ d3.selectAll(".appText").each(function(d,i) {
 
 
 //Border of phone
+
 svg.append('rect')
-.attr('x', this.offsetX)
-.attr('y', this.offsetY)
+.attr('x', this.offsetX+borderPad)
+.attr('y', this.offsetY+borderPad)
 .attr('rx', 15)
 .attr('ry', 15)
-.attr('width', this.width)
-.attr('height', this.height)
-.style('stroke', 'grey')
+.attr('width', this.width-2*borderPad)
+.attr('height', this.height-2*borderPad)
+.style('stroke', 'black')
 .style('stroke-width', 5)
 .style('fill','none');
 
+
+
+
 //Buttons
+
+const bPadding = 0.01*this.height;
+let buttons = d3.select('#buttons')
+	.attr('transform', 'translate('+this.offsetX+','+(this.offsetY+ this.height - 2*rectSize - bPadding)+')')
+	//.attr('transform', 'translate(400,100)')
+	.attr('width', this.width)
+	.attr('height', rectSize+2*bPadding);
+
 
 //Circle button
 const spaceBtwButtons = 3/2*this.margin;
-svg.append('circle')
-.attr('cx', this.offsetX + this.width/2)
-.attr('cy', this.offsetY + this.height-this.margin/2)
-.attr('r', this.size/8)
-.style('stroke', 'grey')
+buttons.append('circle')
+.attr('cx',  this.width/2)
+.attr('cy', bPadding+rectSize/2)
+.attr('r', 5*rectSize/8)
+.style('stroke', 'LightGray')
 .style('stroke-width', 2)
 .attr('class','highlight')
 .on('click', function(){ let contentDiv = document.getElementById("content");
 //Empty webpage div display
 contentDiv.innerHTML = '';
 //Make it invisible so that the emptied div does not block click
-contentDiv.style.display = "none";
+contentDiv.classList.remove("onStage");
+contentDiv.classList.add("offStage");
+
 phone.flipToPhone();
 });
 
 //Rectangle button
-const rectSize = 3*this.size/16;
-svg.append('rect')
-.attr('x', this.offsetX + this.width/2 + spaceBtwButtons - rectSize/2)
-.attr('y', this.offsetY + this.height - this.margin/2 - rectSize/2)
+
+buttons.append('rect')
+.attr('x',  this.width/2 + spaceBtwButtons - rectSize/2)
+//.attr('y', this.height - this.margin/2 - rectSize/2)
+.attr('y', bPadding)
 .attr('width', rectSize)
 .attr('height', rectSize)
-.style('stroke', 'grey')
+.style('stroke', 'LightGray')
 .style('stroke-width', 2)
 .attr('class','highlight');
 
@@ -276,17 +299,19 @@ const lineGenerator = d3.line()
 .x(d => d.x)
 .y(d => d.y);
 
-const triWidth =  3*this.size/16;
-const triHeight = this.size/4;
-const triStart = [this.offsetX + this.width/2 - spaceBtwButtons + triWidth/2,
-	this.offsetY + this.height - this.margin/2 - triHeight/2];
+//const triWidth =  3*this.size/16;
+//const triHeight = this.size/4;
+const triWidth =  rectSize;
+const triHeight = 4*rectSize/3;
+const triStart = [ this.width/2 - spaceBtwButtons + triWidth/2,
+	(rectSize-triHeight)/2+bPadding];
 	const triData = [ {"x": triStart[0], "y": triStart[1]},
 	{"x": triStart[0], "y": triStart[1]+triHeight},
 	{"x": triStart[0]-triWidth, "y": triStart[1]+triHeight/2},
 	{"x": triStart[0], "y": triStart[1]}];
-	svg.append("path")
+	buttons.append("path")
 	.attr("d", lineGenerator(triData))
-	.style('stroke', 'grey')
+	.style('stroke', 'LightGray')
 	.attr("stroke-width", 2)
 	.attr('class','highlight')
 	.on('click', function (){
@@ -321,5 +346,7 @@ empty()
 {
 	let svg = d3.select('#'+this.container);
 	svg.selectAll("*").remove();
+	let buttons = d3.select('#buttons');
+	buttons.selectAll("*").remove();
 }
 }

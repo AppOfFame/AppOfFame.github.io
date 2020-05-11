@@ -29,11 +29,21 @@ text{
 }
 
 
-#monTel {
+#monTel{
   /*background-color: yellow;*/
   width:100%;
   height: 100%;
+  z-index:2;
 }
+
+#buttons {
+  /*Always on top*/
+  z-index:4;
+  /*border: 3px solid red;*/
+  position:absolute;
+}
+
+
 
 
 .highlight:hover{
@@ -45,7 +55,7 @@ text{
 }
 
 .borderHighlight{
-  stroke:grey;
+  stroke:dar;
   stroke-width: 3px;
   color:grey;
 }
@@ -60,8 +70,18 @@ text{
 #content {
   position: absolute;
   border-radius: 15px;
-  margin:30px;
+}
+
+.offStage{
+  pointer-events: none;
+  background-image: url('../img/wallpaper.jpg');
+  z-index:1;
+
+}
+.onStage{
   background-color: white;
+  display:inline-block;
+  z-index: 3;
 }
 
 
@@ -70,9 +90,12 @@ text{
 }
 
 .frame{
-  width:95%;
-  height:95%;
-  margin-top: 10px;
+  width:100%;
+  margin-top: 2.5;
+  margin-left: 2.5;
+  border-radius: 15px;
+  border:none;
+  /*border: 2px solid green;*/
 }
 
 
@@ -147,6 +170,28 @@ nav li {
   font-size: 2.5rem;
   color: white;
   font-variant: small-caps;
+}
+
+
+.topinfo{
+  margin-left: auto;
+  width: 100%;
+  height: 30px;
+  padding: 0 5px;
+  background-color: #E1E8ED;
+  font-size: 20px;
+  color: #657786;
+  z-index: 10;
+  position: fixed;
+  border-bottom: 1px solid  #657786;
+}
+.topinfo div {
+  float: right;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 0 0 8px;
+  font-weight: 600;
 }
 
 
