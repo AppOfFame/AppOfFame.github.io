@@ -1,0 +1,149 @@
+/********** TWITTER **********/
+body {
+  font-family: 'Muli', sans-serif;
+  /*line-height: 35px;*/
+  color: black;
+  animation: zoomInUp .4s
+}
+.thin {
+  font-weight: 200;
+}
+.light {
+  font-weight: 300;
+}
+.regular {
+  font-weight: 400;
+}
+.bold {
+  font-weight: 600;
+}
+.extraBold {
+  font-weight: 700;
+}
+.black {
+  font-weight: 800;
+}
+.extraBlack {
+  font-weight: 900;
+}
+
+.wrapper{
+	height: inherit;
+	width: inherit;
+  background-color: white;
+}
+
+.topinfo{
+  margin-left: auto;
+  width: 100%;
+  height: 30px;
+  padding: 0 5px;
+  background-color: #2e487c;
+  font-size: 20px;
+  color: white;
+  z-index: 10;
+  position: fixed;
+  border-bottom: none;
+}
+.topinfo div {
+  float: right;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 0 0 8px;
+  font-weight: 600;
+}
+
+.logo{
+  padding: 0 0;
+  text-align: left;
+  background-color: #4267B2;
+  color: white;
+  font-size: 40px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  /*
+  -moz-box-shadow: 0 14px 10px -12px rgba(0,0,0,0.7);
+	-webkit-box-shadow: 0 14px 10px -12px rgba(0,0,0,0.7);
+	box-shadow: 0 14px 10px -12px rgba(0,0,0,0.7);
+  */
+}
+.logo-name{
+  margin-left: 20px;
+}
+.logo-name img{
+  width: 80px;
+  height: 80px;
+}
+
+.tabs{
+  text-align: center;
+  background-color: #F5F8FA;
+  color: #657786;
+  font-size: 18px;
+  position: fixed; bottom: 0; width: 100%; margin: 0; padding: 5px 0;
+  z-index: 10;
+  margin-left: -15px;
+  border-top: 1px solid #AAB8C2;
+  cursor: pointer;
+}
+.tabs-name{
+  color: #657786;
+  font-size: 13px;
+  margin-top: -3px;
+  margin-bottom: -3px;
+}
+
+.avatar {
+  margin: 0 0 0 5px;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 15px;
+}
+.avatar img {
+  border-radius: 50%;
+  display: block;
+  width: 100%;
+}
+
+
+.post-info {
+  margin-left: -20px;
+  font-size: 18px;
+}
+.post {
+  border-bottom: 1px solid #E1E8ED;
+}
+.post .name{
+}
+.post .hour{
+  font-size: 14px;
+  color: #898F9C;
+}
+.post .username .dot{
+  display: inline-block;
+  font-size: 5px;
+  font-weight: 100;
+  position: relative;
+  top: -3px;
+}
+.post .content {
+  margin-left: 5px;
+}
+.post .reacts{
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 10px;
+  margin-left: -30px;
+  margin-bottom: 8px;
+  color: #657786;
+}
+.react-com:hover{
+  cursor: pointer;
+}
+.react-ret:hover{
+  cursor: pointer;
+}
+.react-like:hover{
+  cursor: pointer;
+}
