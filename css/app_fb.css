@@ -96,8 +96,8 @@ body {
 
 .avatar {
   margin: 0 0 0 5px;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   margin-bottom: 15px;
 }
 .avatar img {
@@ -106,9 +106,9 @@ body {
   width: 100%;
 }
 
-
 .post-info {
-  margin-left: -20px;
+  margin-top: 8px;
+  margin-left: -50px;
   font-size: 18px;
 }
 .post {
@@ -118,9 +118,9 @@ body {
 }
 .post .hour{
   font-size: 14px;
-  color: #898F9C;
+  color: #657786;
 }
-.post .username .dot{
+.post .hour .dot{
   display: inline-block;
   font-size: 5px;
   font-weight: 100;
@@ -134,16 +134,28 @@ body {
   font-size: 15px;
   font-weight: 500;
   margin-top: 10px;
-  margin-left: -30px;
+  margin-left: -10px;
   margin-bottom: 8px;
   color: #657786;
 }
-.react-com:hover{
-  cursor: pointer;
+.fa-thumbs-up {
+  color: #4267B2;
 }
-.react-ret:hover{
-  cursor: pointer;
+.fa-surprise, .fa-laugh-squint, .fa-flushed{
+  color: #ffcc33;
+  background-color: black;
+  border-radius: 50%;
 }
-.react-like:hover{
-  cursor: pointer;
+.fa-surprise{
+  position: relative;
+  left: -5px;
+}
+.fa-flushed{
+  position: relative;
+  left: -10px;
+}
+.post .comments{
+  text-align: center;
+  font-size: 15px;
+  float: right;
 }
