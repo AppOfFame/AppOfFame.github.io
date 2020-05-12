@@ -32,7 +32,12 @@ body {
 	width: inherit;
   background-color: white;
 }
-
+.fixed{
+}
+.scrolled{
+  position: relative;
+  margin-top: 150px;
+}
 .topinfo{
   margin-left: auto;
   width: 100%;
@@ -41,9 +46,9 @@ body {
   background-color: #2e487c;
   font-size: 20px;
   color: white;
+  border-bottom: none;
   z-index: 10;
   position: fixed;
-  border-bottom: none;
 }
 .topinfo div {
   float: right;
@@ -67,6 +72,9 @@ body {
 	-webkit-box-shadow: 0 14px 10px -12px rgba(0,0,0,0.7);
 	box-shadow: 0 14px 10px -12px rgba(0,0,0,0.7);
   */
+  z-index: 10;
+  position: fixed;
+  width: 100%;
 }
 .logo-name{
   margin-left: 20px;
