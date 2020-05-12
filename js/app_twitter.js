@@ -76,6 +76,7 @@ $(document).ready(function() {
     }
   });
 
+
   // Tabs
   $(".tab-home").css({"color":"#1DA1F2"});
   $("#home").css({"color":"#1DA1F2"});

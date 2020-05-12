@@ -115,7 +115,7 @@ body {
 }
 
 .post-info {
-  margin-top: 8px;
+  margin-top: -15px;
   margin-left: -50px;
   font-size: 18px;
 }
@@ -166,4 +166,37 @@ body {
   height:500px;*/
   width:75%;
   cursor: pointer;
+  border-bottom: 1px solid #E1E8ED;
+  border-left: 1px solid #E1E8ED;
+  border-right: 1px solid #E1E8ED;
+  border-top: 1px solid #E1E8ED;
+  margin-bottom: 20px;
+}
+#tabdisp2-2 {
+  animation-duration: 0.4s;
+}
+.reacts-video{
+  text-align: center;
+  color: #657786;
+  font-size: 18px;
+  width: 50%;
+  padding: 5px 0;
+  margin-left: -15px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+.react-name{
+  color: #657786;
+  font-size: 13px;
+  margin-top: -3px;
+  margin-bottom: -3px;
+}
+
+.user{
+  margin-top: 20px;
+}
+.sub{
+   color: #db0000;
+   cursor: pointer;
+   animation-duration: 0.8s;
 }

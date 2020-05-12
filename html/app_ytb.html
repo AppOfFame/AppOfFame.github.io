@@ -51,25 +51,25 @@
 				</div>
 
 				<div class="row tabs">
-					<div class="col tab-search">
+					<div class="col tab-trend">
 						<i class="fas fa-fire"></i>
-						<div class="tabs-name" id="search">Trending</div>
+						<div class="tabs-name" id="trend">Trending</div>
 					</div>
-					<div class="col tab-bell">
+					<div class="col tab-subs">
 						<i class="fab fa-youtube"></i>
-						<div class="tabs-name" id="bell">Subscriptions</div>
+						<div class="tabs-name" id="subs">Subscriptions</div>
 					</div>
-					<div class="col tab-msg">
+					<div class="col tab-lib">
 						<i class="fas fa-folder"></i>
-						<div class="tabs-name" id="msg">Library</div>
+						<div class="tabs-name" id="lib">Library</div>
 					</div>
 				</div>
       </div><!--End Fixed -->
 
 
 			<div class="scrolled">
-				<div id="tabdisp1" style="display: none;">
-					<div class="row post">
+				<div id="tabdisp1" style="display: block;">
+					<div class="row align-items-center post">
 						<div class="col-2">
 							<div class="avatar">
 								<img src="https://is2-ssl.mzstatic.com/image/thumb/Purple114/v4/97/cf/e2/97cfe22b-2b6e-00b0-7056-cdb697a3cb05/source/256x256bb.jpg" alt="Avatar">
@@ -104,19 +104,19 @@
 					</div><!--End Post -->
 				</div><!--End Tab1 -->
 
-				<div id="tabdisp2" style="display: block;">
+				<div id="tabdisp2" style="display: none;">
 					<div id="tabdisp2-1">
 						<div class="row col-12 thumbnail">
 							<img src="../img/avatars/clickbait.png">
 						</div>
-						<div class="row post">
+						<div class="row align-items-center post">
 							<div class="col-2">
 								<div class="avatar">
 									<img src="https://is2-ssl.mzstatic.com/image/thumb/Purple114/v4/97/cf/e2/97cfe22b-2b6e-00b0-7056-cdb697a3cb05/source/256x256bb.jpg" alt="Avatar">
 								</div>
 							</div>
 
-							<div class="col-7 post-info">
+							<div class="col-10 post-info">
 								<div class="row title">
 									<span>The BEST data viz video EVER (you'll never believe number 1!!)</span>
 		            </div>
@@ -133,9 +133,59 @@
 					</div>
 
 					<div id="tabdisp2-2" style="display: none;">
-						<div class="video">
-							YEEEEEEEEEEEEE
+						<div id="appendvideo">
 						</div>
+
+						<div class="row post">
+							<div class="col-11 post-info" style="margin-left: 15px;">
+								<div class="row title">
+									<span>The BEST data viz video EVER (you'll never believe number 1!!)</span>
+		            </div>
+		            <div class="row hour light">
+									<span>
+										2.4M views
+										<span class="dot"> • </span>
+										10 hours ago
+									</span>
+								</div>
+							</div>
+
+							<div class="row reacts-video">
+								<div class="col tab-like">
+									<i class="fas fa-thumbs-up up"></i>
+									<div class="react-name" id="likevid">324K</div>
+								</div>
+								<div class="col tab-dislike">
+									<i class="fas fa-thumbs-down down"></i>
+									<div class="react-name" id="dislikevid">1K</div>
+								</div>
+								<div class="col tab-share">
+									<i class="fas fa-share"></i>
+									<div class="react-name" id="sharevid">Share</div>
+								</div>
+							</div>
+						</div><!--End Post -->
+
+						<div class="row align-items-center post user">
+							<div class="col-2">
+								<div class="avatar">
+									<img src="https://is2-ssl.mzstatic.com/image/thumb/Purple114/v4/97/cf/e2/97cfe22b-2b6e-00b0-7056-cdb697a3cb05/source/256x256bb.jpg" alt="Avatar">
+								</div>
+							</div>
+
+							<div class="col-8 post-info">
+								<div class="row title">
+									<span>Javastreet</span>
+		            </div>
+		            <div class="row hour light">
+									<span>3.46M subscribers</span>
+								</div>
+							</div>
+
+							<div class="col-2 sub">
+								<span class="extraBold">SUBSCRIBE</span>
+							</div>
+						</div><!--End Post -->
 					</div>
 				</div><!--End Tab2 -->
 

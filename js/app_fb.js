@@ -25,19 +25,6 @@ $(document).ready(function() {
   });
 
 
-
-  // Hover comment
-  $(".action-comment")
-  .mouseover(function() {
-    $(this).css({"color":"#4267B2"});
-  })
-  .mouseout(function() {
-    $(this).css({"color":"#657786"});
-    if ($('#com1').hasClass('clicked')) {
-      $(this).css({"color":"#4267B2"});
-    }
-  });
-
   // Reacts click
   // Click like 1
   $('body').on('click','#like1',function(){
@@ -80,6 +67,7 @@ $(document).ready(function() {
       $("#nlike2").text("You and 323 others");
     }
   });
+
 
   // Tabs
   $(".tab-home").css({"color":"#4267B2"});
