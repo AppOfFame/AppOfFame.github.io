@@ -88,7 +88,7 @@ $(document).ready(function() {
     $(".tab-search").css({"color":"#657786"});
     $("#search").css({"color":"#657786"});
     $(".tab-msg").css({"color":"#657786"});
-    $("#search").css({"color":"#657786"});
+    $("#msg").css({"color":"#657786"});
 
     $("#tabdisp1").css({"display":"block"});
     $("#tabdisp2").css({"display":"none"});
