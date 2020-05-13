@@ -1,6 +1,7 @@
 $(document).ready(function() {
   // Click video
   $('body').on('click','.thumbnail',function(){
+    $(window).scrollTop(0);
     $("#tabdisp2-1").css({"display":"none"});
     $("#tabdisp2-2").css({"display":"block"});
     $("#appendvideo").append('<iframe id="videoplayed" src="../html/raceChart.html" style="border:none; width:850px; height:500px"></iframe>');
@@ -26,12 +27,62 @@ $(document).ready(function() {
     }
   });
 
+  // Click video like
+  $('body').on('click','#likevid',function(){
+    if(!$(this).hasClass('clicked')){
+      $(this).css({"color":"blue"});
+      $(this).find("i").addClass('animated rubberBand').one('animationend', function(){
+        $(this).removeClass('animated rubberBand');
+      });
+      $(this).addClass('clicked');
+      if($("#dislikevid").hasClass('clicked')){
+        $("#dislikevid").css({"color":"#657786"});
+        $("#dislikevid").removeClass('clicked');
+      }
+    }
+    else{
+      $(this).css({"color":"#657786"});
+      $(this).removeClass('clicked');
+    }
+  });
+
+  // Click video dislike
+  $('body').on('click','#dislikevid',function(){
+    if(!$(this).hasClass('clicked')){
+      $(this).css({"color":"red"});
+      $(this).find("i").addClass('animated rubberBand').one('animationend', function(){
+        $(this).removeClass('animated rubberBand');
+      });
+      $(this).addClass('clicked');
+      if($("#likevid").hasClass('clicked')){
+        $("#likevid").css({"color":"#657786"});
+        $("#likevid").removeClass('clicked');
+      }
+    }
+    else{
+      $(this).css({"color":"#657786"});
+      $(this).removeClass('clicked');
+    }
+  });
+
+  // Click video dislike
+  $('body').on('click','#replayvid',function(){
+    $(this).find("i").addClass('animated swing').one('animationend', function(){
+      $(this).removeClass('animated swing');
+    });
+    $(window).scrollTop(70);
+    $("#videoplayed").remove();
+    $("#appendvideo").append('<iframe id="videoplayed" src="../html/raceChart.html" style="border:none; width:850px; height:500px"></iframe>');
+  });
+
 
   // Tabs
   $(".tab-trend").css({"color":"red"});
   $("#trend").css({"color":"red"});
   // Home click
   $('body').on('click','.tab-trend',function(){
+    $(window).scrollTop(0);
+
     $(".tab-trend").css({"color":"red"});
     $("#trend").css({"color":"red"});
     $(".tab-subs").css({"color":"#657786"});
@@ -45,6 +96,8 @@ $(document).ready(function() {
   });
   // Search click
   $('body').on('click','.tab-subs',function(){
+    $(window).scrollTop(0);
+
     $(".tab-trend").css({"color":"#657786"});
     $("#trend").css({"color":"#657786"});
     $(".tab-subs").css({"color":"red"});
@@ -58,9 +111,15 @@ $(document).ready(function() {
     $("#tabdisp2-2").css({"display":"none"});
     $("#videoplayed").remove();
     $("#tabdisp3").css({"display":"none"});
+
+    $(".subscriptions .avatar").addClass('animated rubberBand').one('animationend', function(){
+      $(this).removeClass('animated rubberBand');
+    });
   });
   // Bell click
   $('body').on('click','.tab-lib',function(){
+    $(window).scrollTop(0);
+
     $(".tab-trend").css({"color":"#657786"});
     $("#trend").css({"color":"#657786"});
     $(".tab-subs").css({"color":"#657786"});

@@ -74,6 +74,8 @@ $(document).ready(function() {
   $("#home").css({"color":"#4267B2"});
   // Home click
   $('body').on('click','.tab-home',function(){
+    $(window).scrollTop(0);
+
     $(".tab-home").css({"color":"#4267B2"});
     $("#home").css({"color":"#4267B2"});
     $(".tab-bell").css({"color":"#657786"});
@@ -87,6 +89,8 @@ $(document).ready(function() {
   });
   // Search click
   $('body').on('click','.tab-groups',function(){
+    $(window).scrollTop(0);
+
     $(".tab-home").css({"color":"#657786"});
     $("#home").css({"color":"#657786"});
     $(".tab-bell").css({"color":"#657786"});
@@ -100,6 +104,8 @@ $(document).ready(function() {
   });
   // Bell click
   $('body').on('click','.tab-bell',function(){
+    $(window).scrollTop(0);
+    
     $(".tab-home").css({"color":"#657786"});
     $("#home").css({"color":"#657786"});
     $(".tab-bell").css({"color":"#4267B2"});

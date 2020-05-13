@@ -185,13 +185,35 @@ body {
   margin-top: 10px;
   margin-bottom: 15px;
 }
+.fa-thumbs-up, .fa-thumbs-down, .fa-undo, .fa-share{
+  cursor: pointer;
+  animation-duration: 0.8s;
+}
 .react-name{
   color: #657786;
   font-size: 13px;
   margin-top: -3px;
   margin-bottom: -3px;
+  cursor: pointer;
 }
 
+.subscriptions{
+  margin-bottom: 25px;
+  border-bottom: 1px solid #E1E8ED;
+  text-align: center;
+  color: #657786;
+  font-size: 12px;
+}
+.subscriptions .avatar{
+  width: 80px;
+  height: 80px;
+  margin-bottom: 40px;
+  margin-left: 20px;
+  animation-duration: 0.7s;
+}
+.subs-av{
+  margin-bottom: 10px;
+}
 .user{
   margin-top: 20px;
 }
