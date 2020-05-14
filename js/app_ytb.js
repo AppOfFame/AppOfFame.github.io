@@ -1,4 +1,44 @@
 $(document).ready(function() {
+  // Click post like
+  $('body').on('click','#rlike1',function(){
+    if(!$(this).hasClass('clicked')){
+      $(this).css({"color":"blue"});
+      $("#nlike1").css({"color":"blue"});
+      $(this).addClass('animated rubberBand').one('animationend', function(){
+        $(this).removeClass('animated rubberBand');
+      });
+      $(this).addClass('clicked');
+      if($("#rdislike1").hasClass('clicked')){
+        $("#rdislike1").css({"color":"#657786"});
+        $("#rdislike1").removeClass('clicked');
+      }
+    }
+    else{
+      $(this).css({"color":"#657786"});
+      $(this).removeClass('clicked');
+    }
+  });
+
+  // Click post dislike
+  $('body').on('click','#rdislike1',function(){
+    if(!$(this).hasClass('clicked')){
+      $(this).css({"color":"red"});
+      $("#nlike1").css({"color":"#657786"});
+      $(this).addClass('animated rubberBand').one('animationend', function(){
+        $(this).removeClass('animated rubberBand');
+      });
+      $(this).addClass('clicked');
+      if($("#rlike1").hasClass('clicked')){
+        $("#rlike1").css({"color":"#657786"});
+        $("#rlike1").removeClass('clicked');
+      }
+    }
+    else{
+      $(this).css({"color":"#657786"});
+      $(this).removeClass('clicked');
+    }
+  });
+
   // Click video
   $('body').on('click','.thumbnail',function(){
     $(window).scrollTop(0);
@@ -65,7 +105,7 @@ $(document).ready(function() {
     }
   });
 
-  // Click video dislike
+  // Click video replay
   $('body').on('click','#replayvid',function(){
     $(this).find("i").addClass('animated swing').one('animationend', function(){
       $(this).removeClass('animated swing');
@@ -75,6 +115,19 @@ $(document).ready(function() {
     $("#appendvideo").append('<iframe id="videoplayed" src="../html/raceChart.html" style="border:none; width:850px; height:500px"></iframe>');
   });
 
+  // Click video share
+  $('body').on('click','#sharevid',function(){
+    if(!$(this).hasClass('clicked')){
+      $(this).find("i").addClass('animated tada').one('animationend', function(){
+        $(this).removeClass('animated tada');
+        $(this).removeClass('fa-share').addClass('fa-check');
+        $(this).css({"color":"green"});
+        $(this).next("div").text("Shared");
+        $(this).next("div").css({"cursor":"default"});
+      });
+    }
+    $(this).addClass('clicked');
+  });
 
   // Tabs
   $(".tab-trend").css({"color":"red"});

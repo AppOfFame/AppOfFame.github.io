@@ -1,8 +1,30 @@
-/********** EPFL CAMPUS **********/
-body{
-  font-family: "Roboto", sans-serif;
-  line-height: 30px;
-  animation: zoomInUp .4s
+/********** EPFL Campus **********/
+body {
+  font-family: 'Muli', sans-serif;
+  /*line-height: 35px;*/
+  color: black;
+  animation: zoomInUp .4s;
+}
+.thin {
+  font-weight: 200;
+}
+.light {
+  font-weight: 300;
+}
+.regular {
+  font-weight: 400;
+}
+.bold {
+  font-weight: 600;
+}
+.extraBold {
+  font-weight: 700;
+}
+.black {
+  font-weight: 800;
+}
+.extraBlack {
+  font-weight: 900;
 }
 
 .wrapper{
@@ -10,24 +32,25 @@ body{
 	width: inherit;
   background-color: white;
 }
-
-h3{
-  line-height: 1.1em;
-  margin-bottom:8px;
-  color: black;
+.fixed{
 }
-
+.scrolled{
+  position: relative;
+  margin-top: 148px;
+  margin-left: 250px;
+}
 .topinfo{
   margin-left: auto;
   width: 100%;
   height: 30px;
   padding: 0 5px;
-  background-color: #870815;
-  color: #fff;
+  background-color: #bd0000;
   font-size: 20px;
   color: white;
+  border-bottom: none;
+  z-index: 10;
+  position: fixed;
 }
-
 .topinfo div {
   float: right;
   position: relative;
@@ -38,77 +61,87 @@ h3{
 }
 
 .logo{
-  padding: 40px 0;
+  padding: 0 0;
   text-align: center;
-  width: 100%;
-  background-color: #E20D22;
+  background-color: red;
   color: white;
   font-size: 40px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  /*
   -moz-box-shadow: 0 14px 10px -12px rgba(0,0,0,0.7);
 	-webkit-box-shadow: 0 14px 10px -12px rgba(0,0,0,0.7);
 	box-shadow: 0 14px 10px -12px rgba(0,0,0,0.7);
-  margin-bottom: 12px;
+  */
+  z-index: 10;
+  position: fixed;
+  width: 100%;
+}
+.logo-name{
+  margin-left: 50px;
+}
+.logo-name img{
+  width: 114px;
+  height: 80px;
 }
 
-.symbtext{
-  margin-top: 18px;
-	margin-left: -500px;
-	transition: 0.8s;
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1;
+  top: 100px;
+  left: 0px;
+  background-color: #F5F8FA;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+  border-right: 1px solid #AAB8C2;
 }
 
-.symbol{
-	margin-left: -200px;
-  transition: 0.8s;
+.sidenav .symbol{
+  margin-top: 30px;
 }
-
-.tab {
-  color: #000;
-  text-decoration: none;
-}
-
-.tabname:after {
-  display:block;
-  content: '';
-  border-bottom: solid 1.5px red;
-	margin-top: -3px;
-  transform: scaleX(0);
-  transition: transform 250ms ease-in-out;
-}
-.tab:hover .tabname:after {
-	transform: scaleX(0.8);
-	transform-origin:  0% 50%;
-}
-
-/*.tabname::before, .tabname::after {
-  content: '';
-  position: absolute;
-  width: 0%;
-  height: 1.5px;
-  top: 45%;
+.sidenav .symbol ~ .symbol{
   margin-top: 15px;
-  background: red;
 }
-
-.tab:hover .tabname {
-    transition: 0s;
+.sidenav .symbol svg{
+  margin-left: 25px;
 }
-.tabname::before {
-  left: 10px;
+.sidenav .symbname{
+  margin-top: 48px;
 }
-.tabname::after {
-  right: 0px;
-  background: red;
-  transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+.sidenav .symbname ~ .symbname{
+  margin-top: 33px;
 }
-
-.tab:hover .tabname::before {
-  background: red;
-  width: 50%;
-  transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+.sidenav .symbname span{
+  margin-left: 30px;
+  font-size: 18px;
 }
-
-.tab:hover .tabname::after {
-  background: transparent;
-  width: 50%;
-  transition: 0s;
+.sidenav .symbname span:hover {
+  color: red;
+  cursor: pointer;
+}
+.sec-title{
+  font-size: 35px;
+  margin-bottom: 40px;
+}
+.semester{
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.semester ~ .semester{
+  margin-top: 30px;
+}
+.divided {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+.divider {
+  flex-grow: 1;
+  border-bottom: 1px solid #AAB8C2;
+  margin: 5px
+}
+.grade {
+  color: blue;
 }
