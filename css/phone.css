@@ -203,6 +203,12 @@ nav li {
   font-weight: 5;
 }
 
+.unavailable
+{
+  cursor: auto;
+  fill-opacity: 0.8;
+}
+
 
 
 /*Scrollbar (https://css-tricks.com/the-current-state-of-styling-scrollbars)*/

@@ -22,30 +22,34 @@
 
 
 <div id="phone" class="phoneFormat">
-		<div class="topinfo" id="topBar">
-			<div class="time"></div>
-			<div class="battery">
-				<i class="zmdi zmdi-battery"></i>
-			</div>
-			<div class="network">
-				<i class="zmdi zmdi-network"></i>
-			</div>
-			<div class="wifi">
-				<i class="zmdi zmdi-wifi-alt-2"></i>
-			</div>
-			<div class="star">
-				<i class="zmdi zmdi-star"></i>
-			</div>
+	<div class="topinfo" id="topBar">
+		<div class="time"></div>
+		<div class="battery">
+			<i class="zmdi zmdi-battery"></i>
 		</div>
-		<svg id="monTel"></svg>
-		<svg id="buttons"></svg>
-		<div id="content" class="offStage"></div>
+		<div class="network">
+			<i class="zmdi zmdi-network"></i>
+		</div>
+		<div class="wifi">
+			<i class="zmdi zmdi-wifi-alt-2"></i>
+		</div>
+		<div class="star">
+			<i class="zmdi zmdi-star"></i>
+		</div>
 	</div>
+	<svg id="monTel">
+		<filter id="grayscale">
+			<feColorMatrix type="saturate" values="0"/>
+		</filter>
+	</svg>
+	<svg id="buttons"></svg>
+	<div id="content" class="offStage"></div>
+</div>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-	<script src="js/phone.js"></script>
-	<script src="js/d3.min.js"></script>
-	<script src="js/time.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+<script src="js/phone.js"></script>
+<script src="js/d3.min.js"></script>
+<script src="js/time.js"></script>
 </body>
 </html>

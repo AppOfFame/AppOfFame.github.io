@@ -36,6 +36,9 @@ class Phone {
 		this.container=container;
 		this.data=data;
 		this.ratio = ratio;
+		this.padding = 3;
+		this.idDiscover = 9;
+		this.topBarHeight=30;
 		this.rescale();
 	}
 
@@ -61,14 +64,11 @@ class Phone {
 			this.height = this.contHeight;
 			this.width = this.margin + this.nbCol*(this.size+this.margin);
 		}
-		this.topBarHeight=30;
+
 		this.offsetX = (this.contWidth-this.width)/2 ;
 		this.offsetY = (this.contHeight-this.height)/2;
-		this.webpage='';
 		this.bSize = 0.04*this.height;
 		this.bPadding = 0.01*this.height;
-		this.padding = 3;
-
 
 		let topBar = document.getElementById("topBar");
 		topBar.style.width = this.width-29+"px";
@@ -103,6 +103,7 @@ class Phone {
 			//We flip the ratio of the phone as well
 			this.ratio.reverse();
 			this.rescale();
+
 		}
 	}
 
@@ -153,7 +154,7 @@ update(phone)
 			.append("image")
 			.attr("width", phone.size)
 			.attr("height", phone.size)
-			.attr("xlink:href", 'img/'+icon);
+			.attr("xlink:href", 'img/'+icon)
 			return 'url(#icon_'+icon+')';
 		}
 		//If no icon file given, we fill in grey
@@ -173,7 +174,9 @@ update(phone)
 	.attr('width', this.size)
 	.attr('height', this.size)
 	.attr("fill", (d) => appendIcon(phone, d.icon))
-	.attr('class','borderHighlight temporary')
+	.attr('filter', (d,i)=> i>this.idDiscover ? 'url(#grayscale)' :'')
+	.attr('class', (d,i)=> i>this.idDiscover ?
+				'temporary unavailable' : 'borderHighlight temporary')
 	.style('visibility', (d) => d.icon? "visible" : "hidden")
 
 
@@ -198,16 +201,20 @@ d3.select(this).transition()
 this.active = false;
 })*/
 
-.on('click', function (d){
+.on('click', function (d,i){
 	/*var active   = this.active ? false : true;
 	var newColor = active ? "red" : "orange";
 	// Hide or show the elements
 	d3.select(this).style("fill", newColor);
 	// Update whether or not the elements are active
 	this.active = active;*/
-	if(d.file){
+	if(d.file && i<=phone.idDiscover){
 		phone.flipToTablet();
 		phone.page = d.file
+		if(phone.idDiscover<i+1)
+		{
+			phone.idDiscover =i+1;
+		}
 
 		// REMPLACER LES 3 LIGNES SUIVANTES
 		let contentDiv = document.getElementById("content");
@@ -227,7 +234,7 @@ this.active = false;
 		//});
 
 		phone.rescaleContent();
-		let appAndText = d3.selectAll(".temporary").attr("style", "visibility:hidden;");
+		//let appAndText = d3.selectAll(".temporary").attr("style", "visibility:hidden;");
 	}
 });
 
@@ -252,6 +259,7 @@ d3.selectAll(".appText").each(function(d,i) {
 //Border of phone
 
 svg.append('rect')
+.attr('id', 'border')
 .attr('x', this.offsetX+borderPad)
 .attr('y', this.offsetY+borderPad)
 .attr('rx', 15)
@@ -268,6 +276,7 @@ svg.append('rect')
 //Buttons
 
 let buttons = d3.select('#buttons')
+.style('-webkit-transform', 'translate('+this.offsetX+','+(this.offsetY+ this.height - 2*this.bSize - this.bPadding/3)+')')
 .attr('transform', 'translate('+this.offsetX+','+(this.offsetY+ this.height - 2*this.bSize - this.bPadding/3)+')')
 //.attr('transform', 'translate(400,100)')
 .attr('width', this.width)
@@ -356,9 +365,12 @@ d3.select(this).style("fill", "gray");
 }
 empty()
 {
-	let svg = d3.select('#'+this.container);
-	svg.selectAll("*").remove();
 	let buttons = d3.select('#buttons');
 	buttons.selectAll("*").remove();
+	let appAndText = d3.selectAll('.temporary');
+	appAndText.remove();
+	let border = document.getElementById("border");
+	border.remove();
 }
+
 }
