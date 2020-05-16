@@ -16,7 +16,7 @@ whenDocumentLoaded(() => {
 	{name:'Developers', icon:'EPFL.png', file:'app_epfl'},
 	{name:'Downloads', icon:'youtube.png', file:'app_ytb'},
 	{name:'Comments', icon:'twitter.png', file:'app_twitter'},
-	{name:'Conclusion', icon:'wikipedia.png', file:''}];
+	{name:'Conclusion', icon:'wikipedia.png', file:'app_wiki'}];
 
 	iphone = new Phone('monTel', data, [14,9]);
 	window.addEventListener("resize", windowUpdate);

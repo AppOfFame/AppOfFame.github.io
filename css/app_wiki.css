@@ -1,0 +1,105 @@
+/********** WIKIPEDIA **********/
+body {
+  font-family: 'Muli', sans-serif;
+  /*line-height: 35px;*/
+  color: black;
+  animation: zoomInUp .4s;
+}
+.thin {
+  font-weight: 200;
+}
+.light {
+  font-weight: 300;
+}
+.regular {
+  font-weight: 400;
+}
+.bold {
+  font-weight: 600;
+}
+.extraBold {
+  font-weight: 700;
+}
+.black {
+  font-weight: 800;
+}
+.extraBlack {
+  font-weight: 900;
+}
+
+.wrapper{
+	height: inherit;
+	width: inherit;
+  background-color: white;
+}
+.fixed{
+}
+.scrolled{
+  position: relative;
+  margin-top: 150px;
+  margin-left: 50px;
+}
+.topinfo{
+  margin-left: auto;
+  width: 100%;
+  height: 30px;
+  padding: 0 5px;
+  background-color: #C8C8C8;
+  font-size: 20px;
+  color: #606060;
+  border-bottom: none;
+  z-index: 10;
+  position: fixed;
+}
+.topinfo div {
+  float: right;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 0 0 8px;
+  font-weight: 600;
+}
+
+.logo{
+  font-family: "Noto Serif", serif;
+  padding: 0 0;
+  text-align: left;
+  background-color: #E8E8E8;
+  color: #686868;
+  font-size: 40px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  /*
+  -moz-box-shadow: 0 14px 10px -12px rgba(0,0,0,0.7);
+	-webkit-box-shadow: 0 14px 10px -12px rgba(0,0,0,0.7);
+	box-shadow: 0 14px 10px -12px rgba(0,0,0,0.7);
+  */
+  z-index: 10;
+  position: fixed;
+  width: 100%;
+  height: 80px;
+}
+.logo-name{
+  margin-left: 50px;
+  margin-top: 10px;
+}
+
+.title {
+  font-size: 35px;
+  font-family: "Noto Serif", serif;
+  margin-bottom: 18px;
+}
+.description{
+  font-size: 13px;
+  color: #A9A9A9;
+}
+.line{
+  margin-top: -30px;
+  width: 80px;
+  height: 47px;
+  border-bottom: 1px solid #D3D3D3;
+  position: absolute;
+}
+.content{
+  margin-top: 50px;
+}
