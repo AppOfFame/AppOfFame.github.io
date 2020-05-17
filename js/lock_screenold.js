@@ -1,59 +1,3 @@
-$(document).ready(function() {
-  // Click notification
-  $('body').on('click','.alert',function(){
-
-    $('.patt-circ:nth-child(1),.patt-circ:nth-child(2),.patt-circ:nth-child(3)').css({
-    	'animation' : 'fadeOutDown .8s'
-    });
-
-    $('.patt-circ:nth-child(4),.patt-circ:nth-child(5),.patt-circ:nth-child(6)').css({
-    	'animation' : 'fadeOutDown .6s'
-    });
-
-    $('.patt-circ:nth-child(7),.patt-circ:nth-child(8),.patt-circ:nth-child(9)').css({
-    	'animation' : 'fadeOutDown .4s'
-    });
-    
-
-    $(this).addClass('animated slideOutLeft').one('animationend', function(){
-      $(this).removeClass('animated slideOutLeft');
-
-      $("#datum").addClass('animated fadeOut').one('animationend', function(){
-        $(this).removeClass('animated fadeOut');
-        $(this).css({'display': 'none'});
-
-        $("#intro").css({'display': 'block'});
-        $("#intro").addClass('animated bounceInRight').one('animationend', function(){
-          $(this).removeClass('animated bounceInRight');
-        });
-      });
-      $(this).css({'display': 'none'});
-    });
-  });
-
-  $('body').on('click','#intro',function(){
-    $(this).addClass('animated bounceOutRight').one('animationend', function(){
-      $(this).removeClass('animated bounceOutRight');
-
-      $("#datum").css({'display': 'block'});
-      $("#datum").addClass('animated fadeIn').one('animationend', function(){
-        $(this).removeClass('animated fadeIn');
-
-        $(".alert").find(".notification").text("View the notification again.");
-        $(".alert").css({'display': 'block'});
-        $(".alert").addClass('animated slideInLeft').one('animationend', function(){
-          $(this).removeClass('animated slideInLeft');
-        });
-      });
-      $(this).css({'display': 'none'});
-    });
-  });
-});
-
-
-/*
-    Credits: Mohan Khadka
-*/
 $(function(){
     mhnUI.setup();
 });
@@ -91,7 +35,6 @@ mhnUI = {
 
 
 };
-
 
 /*
     patternLock.js v 0.5.0

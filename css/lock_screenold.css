@@ -1,4 +1,3 @@
-/********** LOCK SCREEN **********/
 /*
     patternLock.js v 0.5.0
     Author: Sudhanshu Yadav
@@ -8,125 +7,26 @@
 .patt-holder{background:#3382c0;-ms-touch-action:none}.patt-wrap{position:relative;cursor:pointer}.patt-wrap li,.patt-wrap ul{list-style:none;margin:0;padding:0}.patt-circ{position:relative;float:left;box-sizing:border-box;-moz-box-sizing:border-box}.patt-circ.hovered{border:3px solid #090}.patt-error .patt-circ.hovered{border:3px solid #BA1B26}.patt-hidden .patt-circ.hovered{border:0}.patt-dots,.patt-lines{border-radius:5px;height:10px;position:absolute}.patt-dots{background:#FFF;width:10px;top:50%;left:50%;margin-top:-5px;margin-left:-5px}.patt-lines{background:rgba(255,255,255,.7);transform-origin:5px 5px;-ms-transform-origin:5px 5px;-webkit-transform-origin:5px 5px}.patt-hidden .patt-lines{display:none}
 
 body {
-  font-family: 'Muli', sans-serif;
-  /*line-height: 35px;*/
-  color: black;
-  background: url(https://wallpapercave.com/wp/wp4611162.jpg); /*center no-repeat;*/
-  background-size: cover;
-}
-.thin {
-  font-weight: 200;
-}
-.light {
-  font-weight: 300;
-}
-.regular {
-  font-weight: 400;
-}
-.bold {
-  font-weight: 600;
-}
-.extraBold {
-  font-weight: 700;
-}
-.black {
-  font-weight: 800;
-}
-.extraBlack {
-  font-weight: 900;
+    margin: 0;
+    color: #fff;
+    font: 300 14px/18px Roboto, sans-serif
 }
 
-.wrapper{
-	height: inherit;
-	width: inherit;
+.screen {
+    /*background: url(https://raw.githubusercontent.com/khadkamhn/lock-screen/master/img/mhn-ui-bg.jpg) center no-repeat #2c3e50;*/
+    background-color: #DAAD86;
+    box-shadow: 0 17px 50px 0 rgba(0, 0, 0, .19), 0 12px 15px 0 rgba(0, 0, 0, .24);
 }
-.fixed{
-}
-.scrolled{
-  position: relative;
-  margin-top: 90px;
-}
-.topinfo{
-  margin-left: auto;
-  width: 100%;
-  height: 30px;
-  padding: 0 5px;
-  font-size: 20px;
-  color: #D3D3D3;
-  border-bottom: none;
-  z-index: 10;
-  position: fixed;
-}
-.topinfo div {
-  float: right;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  margin: 0 0 0 8px;
-  font-weight: 600;
-}
-
-.datum{
-  color: #E8E8E8;
-  margin: auto;
-}
-.datum .time{
-  font-size: 50px;
-}
-.datum .date{
-  font-size: 15px;
-}
-
-.alert{
-  margin-top: 50px;
-  height: 100%;
-  width: 100%;
-  background-color: rgb(208,208,208,0.8);
-  cursor: pointer;
-  animation-duration: 0.4s;
-}
-.alert p{
-  font-size: 15px;
-  margin-left: 20px;
-  margin-top: -15px;
-  color: #484848;
-}
-.alert .notification{
-  margin-top: 15px;
-  font-size: 22px;
-  color: black;
-}
-.introduction{
-  margin-top: 10px;
-  height: 100%;
-  width: 100%;
-  background-color: rgb(208,208,208,0.8);
-  cursor: pointer;
-  animation-duration: 0.4s;
-}
-.introduction p{
-  margin-left: 20px;
-  margin-top: 15px;
-}
-.introduction p:first-of-type{
-  padding-top: 30px;
-}
-.introduction p:last-of-type{
-  font-size: 15px;
-  color: #484848;
-  padding-bottom: 30px;
-}
-#intro{
-  animation-delay: 0s;
-  animation-duration: 0.8s;
-}
-#datum{
-  animation-duration: 0.3s;
-}
-
 /*
-    Credits: Mohan Khadka
-*/
+.screen:before {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    position: absolute;
+    background: rgba(0, 0, 0, .2)
+}
 .mhn-lock-wrap {
     left: 0;
     right: 0;

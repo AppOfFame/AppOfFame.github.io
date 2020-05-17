@@ -1,4 +1,4 @@
-// Time
+// Time apps
 var deviceTime = document.querySelector('.topinfo .time');
 
 deviceTime.innerHTML = moment().format('h:mm');
