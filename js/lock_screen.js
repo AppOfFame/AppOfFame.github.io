@@ -1,22 +1,17 @@
 $(document).ready(function() {
+
   // Click notification
   $('body').on('click','.alert',function(){
-
-    $('.patt-circ:nth-child(1),.patt-circ:nth-child(2),.patt-circ:nth-child(3)').css({
-    	'animation' : 'fadeOutDown .8s'
+    $("#lockcode").addClass('animated fadeOutDownBig').one('animationend', function(){
+      $(this).removeClass('animated fadeOutDownBig');
+      $(this).css({'display': 'none'});
     });
-
-    $('.patt-circ:nth-child(4),.patt-circ:nth-child(5),.patt-circ:nth-child(6)').css({
-    	'animation' : 'fadeOutDown .6s'
-    });
-
-    $('.patt-circ:nth-child(7),.patt-circ:nth-child(8),.patt-circ:nth-child(9)').css({
-    	'animation' : 'fadeOutDown .4s'
-    });
-    
 
     $(this).addClass('animated slideOutLeft').one('animationend', function(){
       $(this).removeClass('animated slideOutLeft');
+
+
+
 
       $("#datum").addClass('animated fadeOut').one('animationend', function(){
         $(this).removeClass('animated fadeOut');
