@@ -40,8 +40,6 @@ body {
   margin-left: 250px;
 }
 .topinfo{
-
-  -webkit-transform: translateZ(0);
   margin-left: auto;
   width: 100%;
   height: 30px;

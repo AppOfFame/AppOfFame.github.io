@@ -1,17 +1,33 @@
 $(document).ready(function() {
+  var notif = 0;
+
+  // Pattern lock
+  var lock = new PatternLock(".patternlock");
+  lock.checkForPattern('12369',function(){
+    $(".lock-message").text("Welcome to Apps of Fame!").css({"color":"#93bf95"});
+    $(".patt-holder").addClass("patt-success");
+
+    /***** CHARGER PAGE ICI *****/
+
+  },function(){
+    $(".lock-message").text("Pattern is not correct, try again.").css({"color":"#f78d85"});
+    $("#message").addClass('animated headShake').one('animationend', function(){
+      $(this).removeClass('animated headShake');
+      $(".lock-message").text("Draw a pattern to unlock.").css({"color":"#E8E8E8"});
+    });
+  });
 
   // Click notification
   $('body').on('click','.alert',function(){
     $("#lockcode").addClass('animated fadeOutDownBig').one('animationend', function(){
       $(this).removeClass('animated fadeOutDownBig');
       $(this).css({'display': 'none'});
+      $(".lock-message").text("Draw a pattern to unlock.").css({"color":"#E8E8E8"});
+      lock.reset();
     });
 
     $(this).addClass('animated slideOutLeft').one('animationend', function(){
       $(this).removeClass('animated slideOutLeft');
-
-
-
 
       $("#datum").addClass('animated fadeOut').one('animationend', function(){
         $(this).removeClass('animated fadeOut');
@@ -39,53 +55,13 @@ $(document).ready(function() {
         $(".alert").addClass('animated slideInLeft').one('animationend', function(){
           $(this).removeClass('animated slideInLeft');
         });
+
+        $("#lockcode").css({'display': 'block'});
       });
       $(this).css({'display': 'none'});
     });
   });
 });
-
-
-/*
-    Credits: Mohan Khadka
-*/
-$(function(){
-    mhnUI.setup();
-});
-mhnUI = {
-    pattern: "",
-    setup: function() {
-        this.lock(), this.filter(), this.colors(), this.links.setup(), this.dialog.setup(), setInterval("mhnUI.datetime()", 1e3)
-    },
-    lock: function() {
-        mhnUI.page.hide(), pattern = new PatternLock(".mhn-lock", {
-            margin: 15
-        }), $(".mhn-lock-title").html($(".mhn-lock-title").data("title")), pattern.checkForPattern("7415369", function() {
-            $(".mhn-lock-title").html('<span class="mhn-lock-success">Yes! you unlocked pattern</span>'), $(".patt-holder").addClass("patt-success"), setTimeout(function() {
-                pattern.reset(), mhnUI.message()
-            }, 1e3), mhnUI.page.show()
-        }, function() {
-            $(".mhn-lock-title").html('<span class="mhn-lock-failure">Opps! pattern is not correct</span>'), $(".patt-holder").removeClass("patt-success"), setTimeout(function() {
-                pattern.reset(), mhnUI.message()
-            }, 2e3)
-        })
-    },
-    message: function() {
-        $(".mhn-lock-title span").fadeOut(), setTimeout(function() {
-            $(".mhn-lock-title").html($(".mhn-lock-title").data("title")), $(".mhn-lock-title span").fadeIn()
-        }, 500)
-    },
-    page: {
-        show: function(t) {
-            t = t ? t : "page-home", $(".mhn-ui-page").hide(), $(".mhn-ui-page." + t).show()
-        },
-        hide: function(t) {
-            t = t ? t : "page-lock", $(".mhn-ui-page").hide(), $(".mhn-ui-page." + t).show()
-        }
-    },
-
-
-};
 
 
 /*

@@ -4,7 +4,7 @@ $(function(){
 mhnUI = {
     pattern: "",
     setup: function() {
-        this.lock(), this.filter(), this.colors(), this.links.setup(), this.dialog.setup(), setInterval("mhnUI.datetime()", 1e3)
+        this.lock()
     },
     lock: function() {
         mhnUI.page.hide(), pattern = new PatternLock(".mhn-lock", {

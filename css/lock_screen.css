@@ -10,7 +10,7 @@
 body {
   font-family: 'Muli', sans-serif;
   /*line-height: 35px;*/
-  color: black;
+  color: #E8E8E8;
   background: url(https://wallpapercave.com/wp/wp4611162.jpg); /*center no-repeat;*/
   background-size: cover;
 }
@@ -67,7 +67,6 @@ body {
 }
 
 .datum{
-  color: #E8E8E8;
   margin: auto;
 }
 .datum .time{
@@ -84,6 +83,7 @@ body {
   background-color: rgb(208,208,208,0.8);
   cursor: pointer;
   animation-duration: 0.4s;
+  margin-bottom: 40px;
 }
 .alert p{
   font-size: 15px;
@@ -101,6 +101,7 @@ body {
   height: 100%;
   width: 100%;
   background-color: rgb(208,208,208,0.8);
+  color: black;
   cursor: pointer;
   animation-duration: 0.4s;
 }
@@ -123,29 +124,13 @@ body {
 #datum{
   animation-duration: 0.3s;
 }
+.lock-message{
+  font-size: 20px;
+  color: #E8E8E8;
+  animation: fadeInUp .8s;
+}
 
-/*
-    Credits: Mohan Khadka
-*/
-.mhn-lock-wrap {
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 100;
-    position: absolute
-}
-.mhn-lock-wrap .mhn-lock-title {
-    text-align: center;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, .5)
-}
-.mhn-lock-wrap .mhn-lock-success {
-    color: transparent;
-    text-shadow: none
-}
-.mhn-lock-wrap .mhn-lock-failure {
-    color: #f34235
-}
-.mhn-lock {
+.patternlock {
     margin: auto;
     background: 0 0
 }
@@ -187,11 +172,6 @@ body {
 .patt-success .patt-lines {
     background: rgba(75, 174, 79, .5)
 }
-
-.mhn-lock-failure {
-    animation: zoomIn .4s
-}
-
 .patt-circ:nth-child(1),
 .patt-circ:nth-child(2),
 .patt-circ:nth-child(3) {
