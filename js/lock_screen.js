@@ -6,6 +6,7 @@ $(document).ready(function() {
   lock.checkForPattern('12369',function(){
     $(".lock-message").text("Welcome to Apps of Fame!").css({"color":"#93bf95"});
     $(".patt-holder").addClass("patt-success");
+    setTimeout(() => {  window.location.href = 'viz.html'; }, 500);
 
     /***** CHARGER PAGE ICI *****/
 

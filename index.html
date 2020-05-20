@@ -1,55 +1,97 @@
 <!doctype html>
 <html lang="en">
 
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="content-type" content="text/html; charset=utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title>Javastreet</title>
-	<meta name="description" content="Welcome to Data Visualization">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-	<link rel="stylesheet" href="css/phone.css">
-</head>
-<body>
-	<!--
-	<header class="title-row">
-	<h1>Javastreet </h1>
-</header>
--->
+		<title>Javastreet</title>
+		<meta name="description" content="Welcome to Data Visualization">
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+		<link href="https://fonts.googleapis.com/css?family=Muli:200,300,400,600,700,800,900" rel="stylesheet">
 
 
+		<link rel="stylesheet" href="css/phone.css">
+		<link rel="stylesheet" href="css/lock_screen.css">
+		<link href="assets/css/all.css" rel="stylesheet">
+	</head>
+	<body>
+		<div id="load">
+			<div class="container-fluid wrapper">
+	      <div class="fixed">
+					<div class="row">
+						<div class="topinfo">
+			        <div class="battery">
+			          <i class="zmdi zmdi-battery"></i>
+			        </div>
+			        <div class="network">
+			          <i class="zmdi zmdi-network"></i>
+			        </div>
+			        <div class="wifi">
+			          <i class="zmdi zmdi-wifi-alt-2"></i>
+			        </div>
+			        <div class="star">
+			          <i class="zmdi zmdi-star"></i>
+			        </div>
+						</div>
+					</div>
 
-<div id="phone" class="phoneFormat">
-	<div class="topinfo" id="topBar">
-		<div class="time"></div>
-		<div class="battery">
-			<i class="zmdi zmdi-battery"></i>
+	      </div><!--End Fixed -->
+
+
+				<div class="scrolled">
+	        <div class="row" id="datum">
+	          <div class="col-11 text-center datum">
+							<div class="time regular"></div>
+							<div class="date bold"></div>
+	          </div>
+					</div>
+
+					<div class="row">
+						<div class="col-12 alert">
+							<p class="notification">You have 1 new notification.</p>
+							<p class="bold">Tap here to view it.</p>
+	          </div>
+					</div>
+
+					<div class="row" style="display: none;" id="intro">
+						<div class="col-12 introduction">
+							<p>Bienvenue salope LE MDP CEST L'ANGLE DROIT EN HAUT A DROITE (on peut le changer) Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							<p class="bold">Tap again to hide.</p>
+						</div>
+					</div>
+
+					<div class="row" id="lockcode">
+						<div class="col-12 text-center">
+							<div id="message">
+								<span class="lock-message">Draw a pattern to unlock.</span>
+							</div>
+							<div class="patternlock"></div>
+						</div>
+					</div>
+
+				</div><!--End Scrolled -->
+		  </div><!--End Container -->
+
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+			<script src="js/phone.js"></script>
+			<script src="js/lock_screen.js"></script>
+			<script src="js/time_lock.js"></script>
+
 		</div>
-		<div class="network">
-			<i class="zmdi zmdi-network"></i>
-		</div>
-		<div class="wifi">
-			<i class="zmdi zmdi-wifi-alt-2"></i>
-		</div>
-		<div class="star">
-			<i class="zmdi zmdi-star"></i>
-		</div>
-	</div>
-	<svg id="monTel">
-		<filter id="grayscale">
-			<feColorMatrix type="saturate" values="0"/>
-		</filter>
-	</svg>
-	<svg id="buttons"></svg>
-	<div id="content" class="offStage"></div>
-</div>
+	</body>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-<script src="js/phone.js"></script>
-<script src="js/d3.min.js"></script>
-<script src="js/time.js"></script>
-</body>
 </html>
