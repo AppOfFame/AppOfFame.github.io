@@ -84,7 +84,7 @@
   						<span>Directory</span>
   					</div>
 
-            <div class="col-3 symbol">
+            <div class="col-3 symbol" id="symb1">
               <svg version="1.0" width="76.8000000pt" height="43.2000000pt" viewBox="0 0 768.000000 432.000000"
 								preserveAspectRatio="xMidYMid meet">
 								<g transform="translate(-230.000000,432.000000) scale(0.100000,-0.100000)"
@@ -114,10 +114,10 @@
 
 						</div>
             <div class="col-9 symbname" id="tab2">
-  						<span>Grades</span>
+  						<span>My Apps</span>
   					</div>
 
-            <div class="col-3 symbol">
+            <div class="col-3 symbol" id="symb2">
               <svg version="1.0" width="76.8000000pt" height="43.2000000pt" viewBox="0 0 768.000000 432.000000"
               preserveAspectRatio="xMidYMid meet">
                 <g transform="translate(-230.000000,432.000000) scale(0.100000,-0.100000)"
@@ -154,67 +154,35 @@
 
 
 			<div class="scrolled">
-				<div id="tabdisp1" style="display: none;">
+				<div id="tabdisp1" style="display: block;">
 
+					<div class="row col-11 sec-title">
+						<span class="black">Directory</span>
+					</div>
+					<div class="row col-11 sec-exp">
+						<span>
+							Bla bli blote you can click <span class="toclick" id="togrades">here</span> to see the developers!!!
+						</span>
+					</div>
+					<div class="row col-11 sec-exp">
+						<span>
+							D'accord Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</span>
+					</div>
+				</div><!--End Tab1 -->
 
-				</div>
-
-        <div id="tabdisp2" style="display: block;">
-          <div class="row sec-title">
-            <span class="black">My Grades</span>
+        <div id="tabdisp2" style="display: none;">
+          <div class="row col-11 sec-title">
+            <span class="black">My Apps</span>
           </div>
-          <div class="row semester">
-            <span class="extraBold">Master semester 2</span>
+					<div class="row col-11 sec-exp">
+						<span style="font-size: 20px;">
+							Developers ranked by the number of apps they have in the top 500 apps, keeping only those with at least 2 apps in the top 500.
+						</span>
           </div>
-            <p class="row divided">
-              <span>Data visualization</span>
-              <span class="divider"></span>
-              <span class="grade bold">6</span>
-            </p>
-            <p class="row divided">
-              <span>Deep learning</span>
-              <span class="divider"></span>
-              <span class="grade bold">4.25</span>
-            </p>
-            <p class="row divided">
-              <span>Lab in data science</span>
-              <span class="divider"></span>
-              <span class="grade bold">5.5</span>
-            </p>
-
-            <div class="row semester">
-              <span class="extraBold">Master semester 1</span>
-            </div>
-              <p class="row divided">
-                <span>Applied data analysis</span>
-                <span class="divider"></span>
-                <span class="grade bold">5</span>
-              </p>
-              <p class="row divided">
-                <span>SHS</span>
-                <span class="divider"></span>
-                <span class="grade bold">5.25</span>
-              </p>
-
-              <div class="row semester">
-                <span class="extraBold">Bachelor semester 1</span>
-              </div>
-                <p class="row divided">
-                  <span>Analyse I</span>
-                  <span class="divider"></span>
-                  <span class="grade bold">5.5</span>
-                </p>
-                <p class="row divided">
-                  <span>Physique I</span>
-                  <span class="divider"></span>
-                  <span class="grade bold">3.75</span>
-                </p>
-                <p class="row divided">
-                  <span>Algèbre linéaire</span>
-                  <span class="divider"></span>
-                  <span class="grade bold">4.25</span>
-                </p>
-				</div>
+					<div id="appendgrades">
+					</div>
+				</div><!--End Tab2 -->
 
 			</div><!--End Scrolled -->
 	  </div><!--End Container -->
@@ -228,6 +196,7 @@
 		<script src="../js/phone.js"></script>
 		<script src="../js/app_epfl.js"></script>
 		<script src="../js/time.js"></script>
+		<script src="../js/d3.min.js"></script>
 
 	</body>
 
