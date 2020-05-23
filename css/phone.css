@@ -6,8 +6,8 @@ html, body {
   /*background-color: blue;*/
   display: flex;
   /*align-items: center;*/
-  min-width:100px;
-  min-height:200px;
+  min-width:200px;
+  min-height:400px;
   text-align: center;
 
 }

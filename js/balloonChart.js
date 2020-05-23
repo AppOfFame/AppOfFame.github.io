@@ -52,9 +52,10 @@ class Chart {
 			updateRadar(d);
 
 			d3.select('#devText')
-				.classed('hidden', false)
-				.text(d.developer)
-				.attr('x', centerX-d3.select('#devText').node().getComputedTextLength()/2);
+			.classed('hidden', false)
+			.text(d.developer.split(' ').slice(0,2).join(' '))
+			.attr('x', centerX-d3.select('#devText').node().getComputedTextLength()/2);
+
 
 			d3.select('.devBalloon.displayed').classed('displayed', false);
 			d3.select('.devPath.displayed').classed('displayed', false);
@@ -121,12 +122,10 @@ class Chart {
 
 		chart.append('text')
 		.attr('x', centerX )
-		.attr('y', centerY -1.5*smallCenterR)
+		.attr('y', centerY -1.45*smallCenterR)
 		.attr('id', 'devText')
 		.text("None")
 		.attr('class', 'hidden');
-
-
 
 
 
@@ -186,62 +185,69 @@ d3.csv('../data/devradar.csv').then(function(data) {
 });
 
 
+
+
+
+
+
+
+
 //radarChart : http://bl.ocks.org/nbremer/21746a9668ffdf6d8242
 function updateRadar(d)
 {
-var margin = {top: 100, right: 100, bottom: 100, left: 100},
-width = Math.min(700, window.innerWidth - 10) - margin.left - margin.right,
-height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 20);
+	var margin = {top: 100, right: 100, bottom: 100, left: 100},
+	width = Math.min(700, window.innerWidth - 10) - margin.left - margin.right,
+	height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 20);
 
-//////////////////////////////////////////////////////////////
-////////////////////////// Data //////////////////////////////
-//////////////////////////////////////////////////////////////
-
-
-let dataRadar = [
-	[//iPhone
-	  {axis:"Installs",value:d.Installs},
-		{axis:"Rating",value:d.Avg_Rating},
-		{axis:"Global rank",value:d.inv_Global_rank},
-		{axis:"Rank",value:d.inv_Rank},
-		{axis:"Contains ads",value:d.containsAds}
-	]
-];
-//////////////////////////////////////////////////////////////
-//////////////////// Draw the Chart //////////////////////////
-//////////////////////////////////////////////////////////////
-
-let color = d3.scaleBand()
-.range(["#EDC951","#CC333F","#00A0B0"]);
-
-let radarChartOptions = {
-	w: chartWidth,
-	h: chartHeight,
-	margin: margin,
-	maxValue: 0.5,
-	levels: 5,
-	roundStrokes: true,
-	color: color
-};
-//Call function to draw the Radar chart
-RadarChart(".radarChart", dataRadar, radarChartOptions);
-
-d3.select('.radarSVG')
-
-.attr('width', 2*centerR)
-.attr('y', 0);
+	//////////////////////////////////////////////////////////////
+	////////////////////////// Data //////////////////////////////
+	//////////////////////////////////////////////////////////////
 
 
-d3.select('.radar')
-.on('mouseleave', function() {
-	d3.select('#devText').classed('hidden', true);
-	d3.select('.devBalloon.displayed').classed('displayed', false);
-	d3.select('.devPath.displayed').classed('displayed', false);
+	let dataRadar = [
+		[//iPhone
+			{axis:"Installs",value:d.Installs},
+			{axis:"Rating",value:d.Avg_Rating},
+			{axis:"Global rank",value:d.inv_Global_rank},
+			{axis:"Rank",value:d.inv_Rank},
+			{axis:"Contains ads",value:d.containsAds}
+		]
+	];
+	//////////////////////////////////////////////////////////////
+	//////////////////// Draw the Chart //////////////////////////
+	//////////////////////////////////////////////////////////////
 
-	d3.select('#infoBorder').classed('displayed', false);
-	d3.select('#border').attr('visibility', 'visible');
-	d3.select('#container').style('z-index', '2');
-	d3.select('.radarChart').classed('hidden', true);
+	let color = d3.scaleBand()
+	.range(["#EDC951","#CC333F","#00A0B0"]);
 
-});
+	let radarChartOptions = {
+		w: chartWidth,
+		h: chartHeight,
+		margin: margin,
+		maxValue: 0.5,
+		levels: 5,
+		roundStrokes: true,
+		color: color
+	};
+	//Call function to draw the Radar chart
+	RadarChart(".radarChart", dataRadar, radarChartOptions);
+
+	d3.select('.radarSVG')
+
+	.attr('width', 2*centerR)
+	.attr('y', 0);
+
+
+	d3.select('.radar')
+	.on('mouseleave', function() {
+		d3.select('#devText').classed('hidden', true);
+		d3.select('.devBalloon.displayed').classed('displayed', false);
+		d3.select('.devPath.displayed').classed('displayed', false);
+
+		d3.select('#infoBorder').classed('displayed', false);
+		d3.select('#border').attr('visibility', 'visible');
+		d3.select('#container').style('z-index', '2');
+		d3.select('.radarChart').classed('hidden', true);
+
+	});
 }

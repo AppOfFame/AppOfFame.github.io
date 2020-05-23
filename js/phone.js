@@ -74,13 +74,13 @@ class Phone {
 		topBar.style.width = this.width-29+"px";
 		topBar.style.marginLeft = this.offsetX+1.5*this.padding+"px";
 		topBar.style.marginTop = this.offsetY+1.5*this.padding+"px";
-		this.rescaleContent();
+		this.rescaleContent(this);
 
 		this.update(this);
 	}
 
 
-	rescaleContent()
+	rescaleContent(phone)
 	{
 		let contentDiv = document.getElementById("content");
 		contentDiv.style.width = this.width-2*this.padding+"px";
@@ -89,6 +89,15 @@ class Phone {
 		contentDiv.style.marginLeft = this.offsetX+this.padding+"px";
 		contentDiv.style.marginTop = this.offsetY+this.padding+"px";
 		let frame = d3.selectAll(".frame").attr("height", this.height-2*this.bSize-2*this.bPadding);
+
+		let svg = d3.select('#'+this.container);
+
+		svg.selectAll("image").each(function() {
+			d3.select(this)
+			.attr("width", phone.size)
+			.attr("height", phone.size);
+		});
+
 	}
 
 
