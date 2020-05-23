@@ -1,0 +1,115 @@
+#developerChart{
+  position: relative;
+}
+
+#container{
+  position: absolute;
+  z-index:2;
+}
+#chart{
+  width: 100%;
+  height:100%;
+
+}
+
+#border
+{
+  fill: none;
+  stroke: firebrick;
+}
+
+#infoBorder
+{
+  fill: white;
+  fill-opacity:0;
+  stroke: red;
+  visibility: hidden;
+}
+
+#infoBorder.displayed
+{
+  visibility: visible;
+}
+
+.devPath
+{
+  stroke:red;
+  visibility: hidden;
+}
+
+.devPath.displayed
+{
+  visibility: visible;
+}
+
+
+.devBalloon{
+  position:relative;
+  fill: firebrick;
+  opacity: 0;
+}
+
+.devBalloon.displayed{
+  fill: red;
+}
+
+.devText
+{
+  text-anchor: middle;
+  alignment-baseline: middle;
+  opacity: 0;
+  stroke-width: 2px;
+  pointer-events: none;
+
+  transform: rotate(var(--angle)deg);
+  -webkit-transform: rotate(var(--angle));
+  -moz-transform: rotate(var(--angle));
+  -ms-transform: rotate(var(--angle));
+  -o-transform: rotate(var(--angle));
+}
+
+
+#devText
+{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 17px;
+  font-weight: 300;
+  fill: #242424;
+  font-weight:bold;
+  text-align: center;
+}
+
+
+.radar{
+  z-index:4;
+}
+
+
+
+
+/*RadarChart (http://bl.ocks.org/nbremer/21746a9668ffdf6d8242)*/
+.radarChart {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  fill: #242424;
+  text-align: center;
+  text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+  cursor: default;
+  position: absolute;
+  z-index:1;
+}
+
+.hidden{
+  visibility:hidden;
+}
+
+
+.legend {
+  font-family: 'Raleway', sans-serif;
+  fill: #333333;
+}
+
+.tooltip {
+  fill: #333333;
+}
