@@ -60,10 +60,10 @@ function initPhone()
 			this.bSize = 0.04*this.height;
 			this.bPadding = 0.01*this.height;
 
-			let topBar = document.getElementById("topBar");
+			//let topBar = document.getElementById("topBar");
 			//topBar.style.width = this.width-29+"px";
 			//topBar.style.marginLeft = this.offsetX+1.5*this.padding+"px";
-			topBar.style.marginTop = this.offsetY+1.5*this.padding+"px";
+			//topBar.style.marginTop = this.offsetY+1.5*this.padding+"px";
 			this.rescaleContent(this);
 
 			this.update(this);
