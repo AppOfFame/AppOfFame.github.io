@@ -2,7 +2,7 @@
   <style>
   /*Adapted from : https://observablehq.com/@d3/bar-chart-race-explained*/
   text{
-    font-size: 16px;
+    font-size: 14px;
     font-family: Open Sans, sans-serif;
   }
   text.title{
@@ -50,6 +50,8 @@
 </style>
 <script src="https://d3js.org/d3.v5.min.js"></script>
 <script>
+
+
 // Adapted from : https://observablehq.com/@d3/bar-chart-race-explained
 var div_width = document.getElementById("svgChartContainer").parentElement.clientWidth;
 var div_height = document.getElementById("svgChartContainer").parentElement.clientHeight;
@@ -95,6 +97,8 @@ d3.csv('../data/installs_race.csv').then(function(data) {
     d.value = isNaN(d.value) ? 0 : d.value,
     d.year = +d.year,
     d.colour = d3.hsl(Math.random()*360,0.75,0.75)
+    d.name = d.name.split(' ').slice(0,2).join(' ').replace('and ','')
+                   .replace('–','').replace('-','').replace(':','')
   });
 
   console.log(data);
