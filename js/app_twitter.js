@@ -1,4 +1,23 @@
 $(document).ready(function() {
+
+  // Load hashtags
+  d3.csv("../data/word_size.csv").then(function(data) {
+    data.forEach(function(d) {
+      $("#appendhashtags").append(
+        '<div class="row hashtag">' +
+          '<div class="col-4">' +
+            '<div class="hashtag-name"><span class="extraBold">#' + d.word + '</span></div>' +
+            '<div class="hashtag-tweets">' + d.size + ' Tweets</div>' +
+          '</div>' +
+          '<div class="col-8" id="' + d.word + '">' +
+            'test ' + d.word +
+          '</div>' +
+        '</div>'
+      );
+    });
+  });
+
+
   // Reacts hover
   // Hover comment
   $(".react-com")
@@ -119,7 +138,7 @@ $(document).ready(function() {
   // Bell click
   $('body').on('click','.tab-bell',function(){
     $(window).scrollTop(0);
-    
+
     $(".tab-home").css({"color":"#657786"});
     $("#home").css({"color":"#657786"});
     $(".tab-bell").css({"color":"#1DA1F2"});

@@ -120,6 +120,10 @@ body {
 }
 .tweet {
   border-bottom: 1px solid #E1E8ED;
+  margin-top: 20px;
+}
+.tweet ~ .tweet{
+  margin-top: 33px;
 }
 .tweet .name{
 }

@@ -21,6 +21,7 @@
 		<link rel="stylesheet" href="../css/phone.css">
 		<link rel="stylesheet" href="../css/app_twitter.css">
 		<link href="../assets/css/all.css" rel="stylesheet">
+
 	</head>
 	<body>
 
@@ -109,34 +110,57 @@
 							</div>
 						</div>
 					</div><!--End Tweet -->
+
+					<div class="row tweet">
+						<div class="col-2">
+							<div class="avatar">
+								<img src="https://is2-ssl.mzstatic.com/image/thumb/Purple114/v4/97/cf/e2/97cfe22b-2b6e-00b0-7056-cdb697a3cb05/source/256x256bb.jpg" alt="Avatar">
+							</div>
+						</div>
+
+						<div class="col-7 tweet-info">
+							<div class="row">
+								<div class="name">
+									<span class="extraBold">Javastreet</span>
+									<i class="fas fa-check-circle"></i>
+									<span class="username">@javastreet
+										<span class="dot">•</span>
+										<span>7h</span>
+									</span>
+								</div>
+							</div>
+							<div class="row content">
+								<div id="wordchart"></div>
+							</div>
+							<div class="row reacts">
+								<div class="col-3 react-com" id="com2">
+									<i class="far fa-comment" id="rcom2"></i>
+									<span id="ncom1"> 2684</span>
+								</div>
+								<div class="col-3 react-ret" id="ret2">
+									<i class="fas fa-retweet" id="rret2"></i>
+									<span id="nret1"> 4203</span>
+								</div>
+								<div class="col-3 react-like" id="like2">
+									<i class="far fa-heart" id="rlike2"></i>
+									<span id="nlike1"> 6810</span>
+								</div>
+							</div>
+						</div>
+					</div><!--End Tweet -->
+
+
 				</div><!--End Tab1 -->
 
 				<div id="tabdisp2" style="display: none;">
 					<div class="row col-7 trend"><span class="black">Trends for you</span></div>
-					<div class="row hashtag">
-						<div class="col-7">
-							<div class="hashtag-name"><span class="extraBold">#déconfinement</span></div>
-							<div class="hashtag-tweets">83.2K Tweets</div>
-						</div>
-					</div>
-					<div class="row hashtag">
-						<div class="col-7">
-							<div class="hashtag-name"><span class="extraBold">China</span></div>
-							<div class="hashtag-tweets">790K Tweets</div>
-						</div>
-					</div>
-					<div class="row hashtag">
-						<div class="col-7">
-							<div class="hashtag-name"><span class="extraBold">jungkook</span></div>
-							<div class="hashtag-tweets">1.18M Tweets</div>
-						</div>
-					</div>
+					<div id="appendhashtags"></div>
 				</div>
 			</div><!--End Scrolled -->
 
 			<div style="color: white;">not displayed</div>
 			<div style="color: white;">make space</div>
-			
+
 	  </div><!--End Container -->
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
@@ -148,6 +172,9 @@
 		<script src="../js/phone.js"></script>
 		<script src="../js/app_twitter.js"></script>
 		<script src="../js/time.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js"></script>
+		<script src="../js/d3.min.js"></script>
+		<script src="../js/wordchart.js"></script>
 
 	</body>
 
