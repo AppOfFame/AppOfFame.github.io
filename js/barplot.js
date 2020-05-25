@@ -75,7 +75,6 @@ async function loadImages(imageUrlArray) {
 
             const img = new Image();
             img.crossOrigin = 'Anonymous';
-            console.log(imageUrl)
             img.src = imageUrl;
             imageArray.push(img);
             if (img.complete) {
