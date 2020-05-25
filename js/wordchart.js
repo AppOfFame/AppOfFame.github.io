@@ -151,9 +151,9 @@ var myWords = [{'word': 'app', 'size': 102430},
  {'word': 'look', 'size': 3897}]
 
 // set the dimensions and margins of the graph
-var margin = {top: 10, right: 10, bottom: 10, left: 10},
-    width = 600 - margin.left - margin.right,
-    height = 600 - margin.top - margin.bottom;
+var margin = {top: 10, right: 0, bottom: 0, left: 0},
+    width = 700 - margin.left - margin.right,
+    height = 400 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 var svg = d3.select("#wordchart").append("svg")
@@ -168,10 +168,10 @@ var svg = d3.select("#wordchart").append("svg")
 var layout = d3.layout.cloud()
   .size([width, height])
   .words(myWords.map(function(d) { return {text: d.word, size:d.size}; }))
-  .padding(7)        //space between words
+  .padding(6)        //space between words
   .rotate(function() { return 4; })
    .spiral("archimedean")
-  .fontSize(function(d) { return d.size/600; })      // font size of words
+  .fontSize(function(d) { return d.size/700; })      // font size of words
   .on("end", draw);
 layout.start();
 

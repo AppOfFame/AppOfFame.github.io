@@ -26,7 +26,10 @@ $(document).ready(function() {
   })
   .mouseout(function() {
     $(this).css({"color":"#657786"});
-    if (!$('#ret1').hasClass('clicked')) {
+    if (!$('#com1').hasClass('clicked')) {
+      $(this).css({"color":"#657786"});
+    }
+    if (!$('#com2').hasClass('clicked')) {
       $(this).css({"color":"#657786"});
     }
   });
@@ -37,7 +40,7 @@ $(document).ready(function() {
     $(this).css({"color":"mediumseagreen"});
   })
   .mouseout(function() {
-    if (!$('#ret1').hasClass('clicked')) {
+    if (!$(this).hasClass('clicked')) {
       $(this).css({"color":"#657786"});
     }
   });
@@ -48,13 +51,49 @@ $(document).ready(function() {
     $(this).css({"color":"crimson"});
   })
   .mouseout(function() {
-    if (!$('#like1').hasClass('clicked')) {
+    if (!$(this).hasClass('clicked')) {
       $(this).css({"color":"#657786"});
     }
   });
 
 
   // Reacts click
+  // Click retweet
+  $('body').on('click','#ret1',function(){
+    if ($('#ret1').hasClass('clicked')) {
+      // Remove retweet
+      $(this).removeClass('clicked');
+      $(this).css({"color":"#657786"});
+      $("#nret1").text(" 1071");
+    }
+    else{
+      // Retweet
+      $(this).addClass('clicked');
+      $(this).css({"color":"mediumseagreen"});
+      $("#rret1").addClass('animated heartBeat').one('animationend', function(){
+        $(this).removeClass('animated heartBeat');
+      });
+      $("#nret1").text(" 1072");
+    }
+  });
+  $('body').on('click','#ret2',function(){
+    if ($('#ret2').hasClass('clicked')) {
+      // Remove retweet
+      $(this).removeClass('clicked');
+      $(this).css({"color":"#657786"});
+      $("#nret2").text(" 4203");
+    }
+    else{
+      // Retweet
+      $(this).addClass('clicked');
+      $(this).css({"color":"mediumseagreen"});
+      $("#rret2").addClass('animated heartBeat').one('animationend', function(){
+        $(this).removeClass('animated heartBeat');
+      });
+      $("#nret2").text(" 4204");
+    }
+  });
+
   // Click like
   $('body').on('click','#like1',function(){
     if ($('#like1').hasClass('clicked')) {
@@ -75,23 +114,23 @@ $(document).ready(function() {
       $("#nlike1").text(" 5237");
     }
   });
-
-  // Click retweet
-  $('body').on('click','#ret1',function(){
-    if ($('#ret1').hasClass('clicked')) {
-      // Remove retweet
+  $('body').on('click','#like2',function(){
+    if ($('#like2').hasClass('clicked')) {
+      // Remove like
       $(this).removeClass('clicked');
       $(this).css({"color":"#657786"});
-      $("#nret1").text(" 1071");
+      $("#rlike2").attr("class", 'far fa-heart');
+      $("#nlike2").text(" 6810");
     }
     else{
-      // Retweet
+      // Like
       $(this).addClass('clicked');
-      $(this).css({"color":"mediumseagreen"});
-      $("#rret1").addClass('animated heartBeat').one('animationend', function(){
+      $(this).css({"color":"crimson"});
+      $("#rlike2").attr("class", 'fas fa-heart');
+      $("#rlike2").addClass('animated heartBeat').one('animationend', function(){
         $(this).removeClass('animated heartBeat');
       });
-      $("#nret1").text(" 1072");
+      $("#nlike2").text(" 6811");
     }
   });
 
