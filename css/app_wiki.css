@@ -103,6 +103,9 @@ body {
 .content{
   margin-top: 50px;
 }
+#superparallel{
+  margin-top: 20px;
+}
 #superparallel text{
   font-size: 10px;
 }
