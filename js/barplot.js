@@ -74,26 +74,25 @@ async function loadImages(imageUrlArray) {
         promiseArray.push(new Promise(resolve => {
 
             const img = new Image();
-            let googleProxyURL = 'https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&refresh=2592000&url=';
             img.crossOrigin = 'Anonymous';
             console.log(imageUrl)
             img.src = imageUrl;
             imageArray.push(img);
             if (img.complete) {
               // do stuff with the image if necessary
-              color[imageUrlArray.indexOf(decodeURIComponent(img.src.replace(googleProxyURL,'')))] = rgbToHex(colorThief.getColor(img)).toString(16)
+              color[imageUrlArray.indexOf(img.src)] = rgbToHex(colorThief.getColor(img)).toString(16)
               // resolve the promise, indicating that the image has been loaded
               resolve();
             } else {
 
               img.addEventListener('load',function(){
                 // do stuff with the image if necessary
-              color[imageUrlArray.indexOf(decodeURIComponent(img.src.replace(googleProxyURL,'')))] = rgbToHex(colorThief.getColor(img)).toString(16)
+              color[imageUrlArray.indexOf(img.src)] = rgbToHex(colorThief.getColor(img)).toString(16)
                 // resolve the promise, indicating that the image has been loaded
                 resolve();
               })
               img.addEventListener('error', function() {
-                color[imageUrlArray.indexOf(decodeURIComponent(img.src.replace(googleProxyURL,'')))] = '#000000'
+                color[imageUrlArray.indexOf(img.src)] = '#000000'
                 // resolve the promise, indicating that the image has been loaded
                 resolve();
               })
