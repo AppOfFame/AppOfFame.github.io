@@ -91,6 +91,12 @@
 	            Ceci n'est pas un post facebook Ceci n'est pas un post facebook
 	            Ceci n'est pas un post facebook Ceci n'est pas un post facebook Ceci n'est pas un post facebook
 	            Ceci n'est pas un post facebook Ceci n'est pas un post facebook Ceci n'est pas un post facebook
+			  <form>
+				  <label for="alpha">Please select a value for alpha: </label>
+				  <input type="range" min=0 max=1 step=0.1 id="alpha" value=0.5>
+				  <output name="alpha_selected" id="alpha_selected">Equal weight for Installs and Ratings</output>
+			  </form>
+			  <div id="barplot"></div>
 	          </div>
 	          <div class="row col-12 reacts">
 	            <div class="col-4 react">
@@ -180,13 +186,15 @@
 
 			</div><!--End Scrolled -->
 	  </div><!--End Container -->
+		<script src="https://d3js.org/d3.v4.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
+		<script src="../js/barplot.js"></script>
 		<script src="../js/phone.js"></script>
 		<script src="../js/app_fb.js"></script>
 		<script src="../js/time.js"></script>
