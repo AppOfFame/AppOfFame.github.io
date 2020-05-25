@@ -76,7 +76,8 @@ async function loadImages(imageUrlArray) {
             const img = new Image();
             let googleProxyURL = 'https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&refresh=2592000&url=';
             img.crossOrigin = 'Anonymous';
-            img.src = googleProxyURL + encodeURIComponent(imageUrl);
+            console.log(imageURL)
+            img.src = imageUrl;
             imageArray.push(img);
             if (img.complete) {
               // do stuff with the image if necessary
