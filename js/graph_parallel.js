@@ -33,10 +33,15 @@ var dimensions = [
     scale: d3.scale.linear().range([height, 0]),
       type: "number"
   },
-  {
+  /*{
     name: "#Installs",
     scale: d3.scale.linear().range([height, 0]),
       type: "number"
+  },*/
+  {
+    name: "#Installs",
+    scale: d3.scale.ordinal().rangePoints([0, height]),
+    type: "string"
   },
   {
     name: "Average rating",
@@ -70,9 +75,14 @@ d3.csv("../data/conclusion_data.csv", function(error, data) {
   //Create the dimensions depending on attribute "type" (number|string)
   //The x-scale calculates the position by attribute dimensions[x].name
   dimensions.forEach(function(dimension) {
-    dimension.scale.domain(dimension.type === "number"
-      ? d3.extent(data, function(d) { return +d[dimension.name]; })
-      : data.map(function(d) { return d[dimension.name]; }).sort());
+    if (dimension.name === '#Installs'){
+      dimension.scale.domain(['5000000000.0','1000000000.0','500000000.0','100000000.0','50000000.0','10000000.0']);
+    }
+    else {
+      dimension.scale.domain(dimension.type === "number"
+        ? d3.extent(data, function(d) { return +d[dimension.name]; })
+        : data.map(function(d) { return d[dimension.name]; }).sort());
+    }
   });
 
   // Add grey background lines for context.
