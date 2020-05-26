@@ -60,83 +60,6 @@ var color = ['#db5f57',
  '#db5770',
  '#db575f']
 
-// ADS SMALL
-var svgAdsSmall = d3.select("#bubbleAdsSmall").append("svg")
-    .attr("width", diamdiam)
-    .attr("height", diamdiam)
-    .attr("class", "bubble");
-
-d3.json("../data/bubbleAds.txt", function(error, root){
-  var nodes = d3.hierarchy(root)
-           .sort( function(a, b) {
-                    var threshold = 0;
-                    if ((a.data.size> threshold) && (b.data.size > threshold)) {
-                        return -(a.data.size - b.data.size);
-                    } else {
-                        return -1;
-                    }
-    }).sum(function(d) { return d.size; });
-          var node = svgAdsSmall.selectAll(".node")
-                .data(bubble(nodes).descendants()
-                .filter(function(d) { return !d.children; }))
-                .enter().append("g")
-                .attr("class", "node")
-                .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
-
-          node.append("circle")
-              .attr("r", function(d) { return d.r; })
-              .style("fill",  function(d, i) {return color[i]; });
-
-  node.append("text")
-      .text(
-        function(d) { return d.data.name + ": " + (d.value*100).toFixed(1)+ "%"; }
-      )
-      .attr("font-size", function(d){return d.r/5.5;})
-      .attr("dy", ".3em")
-      .attr("fill", "white")
-      .style("text-anchor", "middle")
-     // .text(function(d) { return d.className.substring(0, d.r / 3); });
-});
-
-
-// ADS BIG
-var svgAdsBig = d3.select("#bubbleAdsBig").append("svg")
-    .attr("width", bigdiam)
-    .attr("height", bigdiam)
-    .attr("class", "bubble");
-
-d3.json("../data/bubbleAds.txt", function(error, root){
-  var nodes = d3.hierarchy(root)
-           .sort( function(a, b) {
-                    var threshold = 0;
-                    if ((a.data.size> threshold) && (b.data.size > threshold)) {
-                        return -(a.data.size - b.data.size);
-                    } else {
-                        return -1;
-                    }
-    }).sum(function(d) { return d.size; });
-          var node = svgAdsBig.selectAll(".node")
-                .data(bubbleBig(nodes).descendants()
-                .filter(function(d) { return !d.children; }))
-                .enter().append("g")
-                .attr("class", "node")
-                .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
-
-          node.append("circle")
-              .attr("r", function(d) { return d.r; })
-              .style("fill",  function(d, i) {return color[i]; });
-
-  node.append("text")
-      .text(
-        function(d) { return d.data.name + ": " + (d.value*100).toFixed(1)+ "%"; }
-      )
-      .attr("font-size", function(d){return d.r/5.5;})
-      .attr("dy", ".3em")
-      .attr("fill", "white")
-      .style("text-anchor", "middle")
-     // .text(function(d) { return d.className.substring(0, d.r / 3); });
-});
-
 
 // PAID SMALL
 var svgPaidSmall = d3.select("#bubblePaidSmall").append("svg")
@@ -215,6 +138,83 @@ d3.json("../data/bubblePaid.txt", function(error, root){
      // .text(function(d) { return d.className.substring(0, d.r / 3); });
 });
 
+
+// ADS SMALL
+var svgAdsSmall = d3.select("#bubbleAdsSmall").append("svg")
+    .attr("width", diamdiam)
+    .attr("height", diamdiam)
+    .attr("class", "bubble");
+
+d3.json("../data/bubbleAds.txt", function(error, root){
+  var nodes = d3.hierarchy(root)
+           .sort( function(a, b) {
+                    var threshold = 0;
+                    if ((a.data.size> threshold) && (b.data.size > threshold)) {
+                        return -(a.data.size - b.data.size);
+                    } else {
+                        return -1;
+                    }
+    }).sum(function(d) { return d.size; });
+          var node = svgAdsSmall.selectAll(".node")
+                .data(bubble(nodes).descendants()
+                .filter(function(d) { return !d.children; }))
+                .enter().append("g")
+                .attr("class", "node")
+                .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+
+          node.append("circle")
+              .attr("r", function(d) { return d.r; })
+              .style("fill",  function(d, i) {return color[i]; });
+
+  node.append("text")
+      .text(
+        function(d) { return d.data.name + ": " + (d.value*100).toFixed(1)+ "%"; }
+      )
+      .attr("font-size", function(d){return d.r/5.5;})
+      .attr("dy", ".3em")
+      .attr("fill", "white")
+      .style("text-anchor", "middle")
+     // .text(function(d) { return d.className.substring(0, d.r / 3); });
+});
+
+
+// ADS BIG
+var svgAdsBig = d3.select("#bubbleAdsBig").append("svg")
+    .attr("width", bigdiam)
+    .attr("height", bigdiam)
+    .attr("class", "bubble");
+
+d3.json("../data/bubbleAds.txt", function(error, root){
+  var nodes = d3.hierarchy(root)
+           .sort( function(a, b) {
+                    var threshold = 0;
+                    if ((a.data.size> threshold) && (b.data.size > threshold)) {
+                        return -(a.data.size - b.data.size);
+                    } else {
+                        return -1;
+                    }
+    }).sum(function(d) { return d.size; });
+          var node = svgAdsBig.selectAll(".node")
+                .data(bubbleBig(nodes).descendants()
+                .filter(function(d) { return !d.children; }))
+                .enter().append("g")
+                .attr("class", "node")
+                .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+
+          node.append("circle")
+              .attr("r", function(d) { return d.r; })
+              .style("fill",  function(d, i) {return color[i]; });
+
+  node.append("text")
+      .text(
+        function(d) { return d.data.name + ": " + (d.value*100).toFixed(1)+ "%"; }
+      )
+      .attr("font-size", function(d){return d.r/5.5;})
+      .attr("dy", ".3em")
+      .attr("fill", "white")
+      .style("text-anchor", "middle")
+     // .text(function(d) { return d.className.substring(0, d.r / 3); });
+});
 
 
 // Returns a flattened hierarchy containing all leaf nodes under the root.
