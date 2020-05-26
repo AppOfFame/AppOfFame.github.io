@@ -31,7 +31,7 @@ $(document).ready(function() {
     // Pattern lock
     var lock = new PatternLock(".patternlock");
     lock.checkForPattern('12369',function(){
-      $(".lock-message").text("Welcome to Apps of Fame!").css({"color":"#93bf95"});
+      $(".lock-message").text("Welcome to App of Fame!").css({"color":"#93bf95"});
       $(".patt-holder").addClass("patt-success");
       setTimeout(() => {
 
