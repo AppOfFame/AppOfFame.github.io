@@ -119,7 +119,7 @@ function answerMessage(text){
 		}
 	}
 
-
+	
 	if (question === 'ads'){
 		if ((text != 'A') && (text != 'B') && (text != 'C')){
 			inner = 'Please answer correctly with A, B or C' +
@@ -256,6 +256,7 @@ function zoomAds(){
 		element.innerHTML = inner;
 	}
 }
+
 
 
 // Display graph Paid
