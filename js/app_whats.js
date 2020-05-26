@@ -36,8 +36,17 @@ function newMessage(e) {
 	e.preventDefault();
 }
 
+// Answer to composed message
 function answerMessage(text){
 	text = text.toUpperCase();
+
+	if (question === 'idle'){
+		inner = 'Please let me finish.' +
+			'<span class="metadata">' +
+				'<span class="time">' + moment().format('h:mm A') + '</span>' +
+			'</span>';
+		displayAnswer(inner);
+	}
 
 	if (question === 'paid'){
 		if ((text != 'A') && (text != 'B') && (text != 'C')){
@@ -64,7 +73,10 @@ function answerMessage(text){
 			displayAnswer(inner);
 		}
 
+		// Good answer --> next part
 		else {
+			question = "idle";
+
 		  inner = "Yes Weather Apps!" +
 				'<span class="metadata">' +
 					'<span class="time">' + moment().format('h:mm A') + '</span>' +
@@ -80,13 +92,102 @@ function answerMessage(text){
 			}, 1000);
 
 			setTimeout( function() {
-				//document.getElementById("bubble").style.display = "block";
-				displayGraph1();
+				displayAds();
 			}, 2000);
+
+
+			inner3 = "J'explique un poil." +
+				'<span class="metadata">' +
+					'<span class="time">' + moment().format('h:mm A') + '</span>' +
+				'</span>';
+			setTimeout( function() {
+				displayAnswer(inner3);
+			}, 3000);
+
+			inner4 = "Passons à la q suivante." +
+				'<span>What category has more paid apps:' +
+				'<br>- A: Game Word' +
+				'<br>- B: Game Puzzle' +
+				'<br>- C: Game Arcade</span>' +
+				'<span class="metadata">' +
+					'<span class="time">' + moment().format('h:mm A') + '</span>' +
+				'</span>';
+			setTimeout( function() {
+				displayAnswer(inner4);
+				question = "ads";
+			}, 3500);
+		}
+	}
+
+
+	if (question === 'ads'){
+		if ((text != 'A') && (text != 'B') && (text != 'C')){
+			inner = 'Please answer correctly with A, B or C' +
+				'<span class="metadata">' +
+					'<span class="time">' + moment().format('h:mm A') + '</span>' +
+				'</span>';
+			displayAnswer(inner);
+		}
+
+		else if (text == 'C') {
+			inner = "Mauvaise rep it's not c..." +
+				'<span class="metadata">' +
+					'<span class="time">' + moment().format('h:mm A') + '</span>' +
+				'</span>';
+			displayAnswer(inner);
+		}
+
+		else if (text == 'B') {
+			inner = "^pusszles is the wrong answer!" +
+				'<span class="metadata">' +
+					'<span class="time">' + moment().format('h:mm A') + '</span>' +
+				'</span>';
+			displayAnswer(inner);
+		}
+
+		// Good answer --> next part
+		else {
+			question = "idle";
+
+		  inner = "Yessai." +
+				'<span class="metadata">' +
+					'<span class="time">' + moment().format('h:mm A') + '</span>' +
+				'</span>';
+			displayAnswer(inner);
+
+			inner2 = "Look at this graph." +
+				'<span class="metadata">' +
+					'<span class="time">' + moment().format('h:mm A') + '</span>' +
+				'</span>';
+			setTimeout( function() {
+				displayAnswer(inner2);
+			}, 1000);
+
+			setTimeout( function() {
+				displayPaid();
+			}, 2000);
+
+
+			inner3 = "J'explique encore." +
+				'<span class="metadata">' +
+					'<span class="time">' + moment().format('h:mm A') + '</span>' +
+				'</span>';
+			setTimeout( function() {
+				displayAnswer(inner3);
+			}, 3000);
+
+			inner4 = "Voilivoilou bisou."
+					'<span class="time">' + moment().format('h:mm A') + '</span>' +
+				'</span>';
+			setTimeout( function() {
+				displayAnswer(inner4);
+				question = "end";
+			}, 3500);
 		}
 	}
 }
 
+// Create element with the answer
 function displayAnswer(inner){
 	setTimeout(function() {
 		var element = document.createElement('div');
@@ -98,14 +199,16 @@ function displayAnswer(inner){
 	}, 500);
 }
 
-function displayGraph1(){
+// Display graph Ads
+function displayAds(){
 	setTimeout(function() {
 		var element = document.createElement('div');
+		element.setAttribute("id", "contentAds");
 		element.classList.add('message', 'received');
-		element.onclick = zoomGraph;
+		element.onclick = zoomAds;
 		element.style.cursor = "pointer";
 
-		var graph = document.getElementById("bubble");
+		var graph = document.getElementById("bubbleAdsSmall");
 		graph.style.display = "block";
 		inner = "Voilà." +
 			graph.outerHTML +
@@ -120,14 +223,101 @@ function displayGraph1(){
 	}, 500);
 }
 
-function zoomGraph(){
-	console.log("clicked mais jsp quoi faire");
-	var graph = document.querySelector("#bubble svg");
-	graph.style.width = "1000px";
-	graph.style.height = "1000px";
+// Click on graph Ads
+function zoomAds(){
+	var element = document.getElementById("contentAds");
 
+	if (element.classList.contains("zoomed")){
+		element.classList.remove('zoomed');
+
+		var graph = document.getElementById("bubbleAdsSmall");
+		graph.style.display = "block";
+		inner = "Voila." +
+			graph.outerHTML +
+			'<span class="metadata">' +
+				'<span class="time">' + moment().format('h:mm A') + '</span>' +
+			'</span>';
+		graph.style.display = "none";
+
+		element.innerHTML = inner;
+	}
+	else{
+		element.classList.add('zoomed');
+
+		var graph = document.getElementById("bubbleAdsBig");
+		graph.style.display = "block";
+		inner = "Voilou." +
+			graph.outerHTML +
+			'<span class="metadata">' +
+				'<span class="time">' + moment().format('h:mm A') + '</span>' +
+			'</span>';
+		graph.style.display = "none";
+
+		element.innerHTML = inner;
+	}
 }
 
+
+// Display graph Paid
+function displayPaid(){
+	setTimeout(function() {
+		var element = document.createElement('div');
+		element.setAttribute("id", "contentPaid");
+		element.classList.add('message', 'received');
+		element.onclick = zoomPaid;
+		element.style.cursor = "pointer";
+
+		var graph = document.getElementById("bubblePaidSmall");
+		graph.style.display = "block";
+		inner = "Voilà." +
+			graph.outerHTML +
+			'<span class="metadata">' +
+				'<span class="time">' + moment().format('h:mm A') + '</span>' +
+			'</span>';
+		graph.style.display = "none";
+
+		element.innerHTML = inner;
+		conversation.appendChild(element);
+		conversation.scrollTop = conversation.scrollHeight;
+	}, 500);
+}
+
+// Click on graph Paid
+function zoomPaid(){
+	var element = document.getElementById("contentPaid");
+
+	if (element.classList.contains("zoomed")){
+		element.classList.remove('zoomed');
+
+		var graph = document.getElementById("bubblePaidSmall");
+		graph.style.display = "block";
+		inner = "Voila." +
+			graph.outerHTML +
+			'<span class="metadata">' +
+				'<span class="time">' + moment().format('h:mm A') + '</span>' +
+			'</span>';
+		graph.style.display = "none";
+
+		element.innerHTML = inner;
+	}
+	else{
+		element.classList.add('zoomed');
+
+		var graph = document.getElementById("bubblePaidBig");
+		graph.style.display = "block";
+		inner = "Voilou." +
+			graph.outerHTML +
+			'<span class="metadata">' +
+				'<span class="time">' + moment().format('h:mm A') + '</span>' +
+			'</span>';
+		graph.style.display = "none";
+
+		element.innerHTML = inner;
+	}
+}
+
+
+// Type a message
 function buildMessage(text) {
 	var element = document.createElement('div');
 
