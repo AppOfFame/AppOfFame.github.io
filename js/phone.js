@@ -39,7 +39,7 @@ function initPhone()
 			this.contHeight = document.getElementById(this.container).clientHeight;
 			this.nbCol=Math.round(this.ratio[1]*Math.sqrt(data.length/(this.ratio[0]*this.ratio[1])));
 			let sizeFromWidth = this.contWidth/((3*this.nbCol+1)/2);
-			let sizeFromHeight = this.contHeight/((3*Math.ceil(data.length/this.nbCol)+3)/2);
+			let sizeFromHeight = this.contHeight/((3*Math.ceil(data.length/this.nbCol)+3.04)/2);
 			if(sizeFromWidth<sizeFromHeight)
 			{
 				this.size = sizeFromWidth;
