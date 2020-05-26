@@ -88,6 +88,9 @@ function initPhone()
 				.attr("height", phone.size);
 			});
 
+			let datum = document.getElementById("datum");
+			datum.style.marginTop = this.offsetY+ 0.12*this.height+"px";
+
 		}
 
 
@@ -223,6 +226,9 @@ function initPhone()
 		let frame = d3.selectAll(".frame").attr("height", phone.height-2*phone.bSize-2*phone.bPadding);
 		topBar.classList.add("invisible");
 
+		let datum = document.getElementById("datum");
+		datum.classList.add("invisible");
+
 
 		//contentDiv.innerHTML='<object type="text/html" data="app.html"></object>'
 
@@ -297,6 +303,8 @@ contentDiv.innerHTML = '';
 contentDiv.classList.remove("onStage");
 contentDiv.classList.add("offStage");
 topBar.classList.remove("invisible");
+let datum = document.getElementById("datum");
+datum.classList.remove("invisible");
 phone.page=null;
 
 phone.flipToPhone();

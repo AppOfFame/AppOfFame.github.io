@@ -42,7 +42,7 @@ body {
 }
 .scrolled{
   position: relative;
-  margin-top: 5vh;
+  margin-top: 20vh;
 }
 .topinfo{
   margin-left: auto;
@@ -63,6 +63,17 @@ body {
   margin: 0 0 0 8px;
   font-weight: 600;
 }
+
+
+#datum {
+  float:left;
+  position: fixed;
+  z-index: 10;
+  text-align: center;
+  width:inherit;
+}
+
+
 
 .datum{
   margin: auto;

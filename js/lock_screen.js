@@ -22,6 +22,10 @@ $(document).ready(function() {
   lockDiv.style.width = phoneInfos.width+"px";
   lockDiv.style.height = phoneInfos.height+"px";
 
+  let datum = document.getElementById("datum");
+  datum.style.marginTop = 0.12*phoneInfos.height+"px";
+
+
 
 
     // Pattern lock
