@@ -3,26 +3,21 @@ var data2 = {"name": "Top500", "shortName": "Top500", "children": [{"name": "Com
 //https://bl.ocks.org/JacquesJahnichen/42afd0cde7cbf72ecb81
 //https://bl.ocks.org/ganeshv/6a8e9ada3ab7f2d88022
 //https://gist.github.com/tkafka/6d00c44d5ae52182f548a18e8db44811
-var margin = {top: 24, right: 0, bottom: 0, left: 0},
-width = 1200, //640
-height = 530,
+var margin = {top: 24, right: 20, bottom: 0, left: 20},
+width = 800, //640
+height = 400,
 formatNumber = d3.format(",d"),
 transitioning;
 
-var x = d3.scaleLinear()
-.domain([0, width])
-.range([0, width]);
+var x_treemap = d3.scaleLinear().domain([0, width - margin.right])
+																.range([0, width - margin.right]);
 
-var y = d3.scaleLinear()
-.domain([0, height - margin.top - margin.bottom])
-.range([0, height - margin.top - margin.bottom]);
+var y_treemap = d3.scaleLinear().domain([0, height - margin.top - margin.bottom])
+																.range([0, height - margin.top - margin.bottom]);
 
-var color = d3.scaleOrdinal()
-.range(d3.schemeCategory20)
-//var color = d3.scaleOrdinal(d3.schemeCategory20.map(fader));
+var color = d3.scaleOrdinal().range(["#cb0dff", "#efc709", "#0075fd", "#a6002d", "#00ab08", "#0e00a9", "#a76b00", "#00be97", "#5dd900", "#ce007e", "#0050b8", "#00fce4", "#6100ac", "#00de4c", "#ee4d00", "#9eb600", "#3e9d00", "#a700d4", "#00a0c6", "#009166", "#29c900", "#6eb100", "#e60a00", "#941200", "#0005e7", "#9600ad", "#0ed2bd", "#007d9b", "#d8a500", "#4e00e2", "#ca0042", "#ef00bb", "#b64c00", "#00a745", "#b5da00", "#006ad2", "#002ccb", "#8500dc", "#cf7b00"])
 
 var treemap;
-var svg, grandparent;
 for (d in data2.children){
 	for(j in data2.children[d].children){
 		data2.children[d].children[j].shortName = data2.children[d].children[j].shortName.split(' ').slice(0,2).join(' ').replace('and ','')
@@ -32,43 +27,39 @@ for (d in data2.children){
 updateDrillDown();
 
 function updateDrillDown() {
-	if (svg) {
-		svg.selectAll("*").remove();
-	} else {
-//		 var treemap = d3.layout.treemap()
-//	      .children(function(d, depth) { return depth ? null : d._children; })
-//	      .sort(function(a, b) { return a.value - b.value; })
-//	      .ratio(height / width * 0.5 * (1 + Math.sqrt(5)))
-//	      .round(false);
 
-	  svg = d3.select("#domainDrillDown").append("svg")
-      .attr("width", width - margin.left - margin.right)
-      .attr("height", height - margin.bottom - margin.top)
-      .style("margin-left", -margin.left + "px")
-      .style("margin.right", -margin.right + "px")
-	    .append("g")
-      .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
-      .style("shape-rendering", "crispEdges");
+	svg_treemap = d3.select("#domainDrillDown")
+										 .classed("svg-container", true)
+										 .append("svg")
+										 .attr("width",width)
+										 .attr("height", height)
+										  .attr("preserveAspectRatio", "xMinYMin meet")
+										   .attr("viewBox", "0 0 800 400")
+										   .classed("svg-content-responsive", true)
+										   .append("g")
+										    .attr("transform",
+										          "translate(" + margin.left + "," + margin.top + ")")
+									      .style("shape-rendering", "crispEdges");
 
-	  grandparent = svg.append("g")
-      .attr("class", "grandparent");
+  grandparent_treemap = svg_treemap.append("g")
+    .attr("class", "grandparent_treemap");
 
-	  grandparent.append("rect")
-      .attr("y", -margin.top)
-      .attr("width", width)
-      .attr("height", margin.top);
+  grandparent_treemap.append("rect")
+    .attr("y", -margin.top)
+    .attr("width", width - margin.right)
+    .attr("height", margin.top);
 
-	  grandparent.append("text")
-      .attr("x", 6)
-      .attr("y", 6 - margin.top)
-      .attr("dy", ".75em");
+  grandparent_treemap.append("text")
+    .attr("x", 6)
+    .attr("y", 6 - margin.top)
+    .attr("dy", ".75em");
 
-	 treemap = d3.treemap()
+	treemap = d3.treemap()
     .tile(d3.treemapResquarify.ratio(height / width * 0.5 * (1 + Math.sqrt(5))))
     .size([width, height])
     .round(false)
     .paddingInner(1);
-	}
+
 
   var root = d3.hierarchy(data2)
      .eachBefore(function(d) {d.id = (d.parent ? d.parent.id + "." : "") + d.data.shortName; })
@@ -112,10 +103,6 @@ function layout(d) {
 //    treemap.nodes({_children: d._children});
 //	  treemap(d);
     d._children.forEach(function(c) {
-      //c.x0 = d.x0 + c.x0 * (d.x1 - d.x0);
-      //c.y0 = d.y0 + c.y0 * (d.y1 - d.y0);
-      //c.x1 *= d.x1;
-      //c.y1 *= d.y1;
       c.x0 = d.x0 + c.x0 * d.x1;
       c.y0 = d.y0 + c.y0 * d.y1;
       c.x1 *= (d.x1 - d.x0);
@@ -128,13 +115,13 @@ function layout(d) {
 
 function display(d) {
 
-  grandparent
+  grandparent_treemap
     .datum(d.parent)
-    .on("click", transition)
+    .on("click", transitioner)
     .select("text")
     .text(name(d)).style("fill", "white");
 
-  var g1 = svg.insert("g", ".grandparent")
+  var g1 = svg_treemap.insert("g", ".grandparent_treemap")
     .datum(d)
     .attr("class", "depth");
 
@@ -144,7 +131,7 @@ function display(d) {
 
   g.filter(function(d) { return d._children; })
     .classed("children", true)
-    .on("click", transition);
+    .on("click", transitioner);
 
   var children = g.selectAll(".child")
     .data(function(d) { return d._children || [d]; })
@@ -156,26 +143,32 @@ function display(d) {
 
 		g.append("rect")
 		 .attr("class", "parent")
-		 .call(rect)
-		 .append("title")
-		 .text("prout");
+		 .call(rect);
 		 g.append("foreignObject")
       .call(rect)
       .attr("class", "foreignobj")
       .append("xhtml:div")
       .attr("dy", ".75em")
       .html(function (d) {
+				console.log("aajj", d)
+				var x_domain_dummy = d3.scaleLinear().domain([d.parent.x0 , d.parent.x1])
+																				.range([0, width - margin.right - margin.left]);
+				if(d.depth == 1){
           return '' +
-              '<p class="title" style="font-size:' + (d.x1-d.x0)/10 +'px"> ' + d.data.shortName + '</p>' +
-              '<p class="title" style="font-size:' + (d.x1-d.x0)/10 +'px">' + d.value.toFixed(2) + '</p>'
+              '<p class="title" style="font-size:' + (d.x1-d.x0)/12 +'px"> ' + d.data.shortName + " "+ d.value.toFixed(2) + '</p>'
           ;
+				}else{
+					return '' +
+              '<p class="title" style="font-size:' + (x_domain_dummy(d.x1)-x_domain_dummy(d.x0))/12 +'px"> ' + d.data.shortName + " "+ d.value.toFixed(2)+ '</p>'
+          ;
+				}
       })
       .attr("class", "textdiv");
 
 	g.selectAll("rect")
 	  .style("fill", function(d) {return color(d.data.name); });
 
-	function transition(d) {
+	function transitioner(d) {
 
     if (transitioning || !d) return;
     transitioning = true;
@@ -183,17 +176,14 @@ function display(d) {
       t1 = g1.transition().duration(750),
       t2 = g2.transition().duration(750);
 
-      // Update the domain only after entering new elements.
-      //x.domain([d.x0, d.x0 + d.x1]);
-      //y.domain([d.y0, d.y0 + d.y1]);
-      x.domain([d.x0, d.x0 + (d.x1 - d.x0)]);
-      y.domain([d.y0, d.y0 + (d.y1 - d.y0)]);
+      x_treemap.domain([d.x0, d.x1 ]);
+      y_treemap.domain([d.y0, d.y1]);
 
       // Enable anti-aliasing during the transition.
-      svg.style("shape-rendering", null);
+      svg_treemap.style("shape-rendering", null);
 
       // Draw child nodes on top of parent nodes.
-      svg.selectAll(".depth").sort(function(a, b) {
+      svg_treemap.selectAll(".depth").sort(function(a, b) {
       	return a.depth - b.depth; });
 
       // Fade-in entering text.
@@ -216,7 +206,7 @@ function display(d) {
       /* added */
       // Remove the old node when the transition is finished.
       t1.remove().on("end", function() {
-      svg.style("shape-rendering", "crispEdges");
+      svg_treemap.style("shape-rendering", "crispEdges");
       transitioning = false;
     });
   }
@@ -224,38 +214,38 @@ function display(d) {
 }
 function text(text) {
 text.attr("x", function (d) {
-    return x(d.x) + 6;
+    return x_treemap(d.x) + 6;
 })
     .attr("y", function (d) {
-        return y(d.y) + 6;
+        return y1(d.y) + 6;
     });
 }
 
 function rect(rect) {
-  rect.attr("x", function(d) {console.log(d); return x(d.x0); })
-    .attr("y", function(d) { return y(d.y0); })
+  rect.attr("x", function(d) {return x_treemap(d.x0); })
+    .attr("y", function(d) { return y_treemap(d.y0); })
     .attr("width", function(d) {
-      var w = x(d.x1) - x(d.x0);
+      var w = x_treemap(d.x1) - x_treemap(d.x0);
  	    return w;
 	})
     .attr("height", function(d) {
-      var h = y(d.y1) - y(d.y0);
+      var h = y_treemap(d.y1) - y_treemap(d.y0);
  	    return h;
  	});
 }
 function foreign(foreign) { /* added */
 	foreign
 	    .attr("x", function (d) {
-	        return x(d.x0);
+	        return x_treemap(d.x0);
 	    })
 	    .attr("y", function (d) {
-	        return y(d.y0);
+	        return y_treemap(d.y0);
 	    })
 	    .attr("width", function (d) {
-	        return x(d.x1) - x(d.x0);
+	        return x_treemap(d.x1) - x_treemap(d.x0);
 	    })
 	    .attr("height", function (d) {
-	        return y(d.y1) - y(d.y0);
+	        return y_treemap(d.y1) - y_treemap(d.y0);
 	    });
 }
 function name(d) {
