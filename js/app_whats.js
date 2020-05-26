@@ -92,7 +92,7 @@ function answerMessage(text){
 			}, 1000);
 
 			setTimeout( function() {
-				displayPaid();
+				displayAds();
 			}, 2000);
 
 
