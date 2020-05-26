@@ -1,7 +1,7 @@
 // set the margins of the graph
-var margin = {top: 50, right: 30, bottom: 70, left: 60},
+var margin = {top: 50, right: 30, bottom: 20, left: 60},
 width = 690 - margin.left - margin.right,
-height= 600 - margin.top - margin.bottom;
+height= 500 - margin.top - margin.bottom;
 const colorThief = new ColorThief();
 
 // append the svg_barplot object to the body of the page
@@ -9,9 +9,9 @@ var svg_barplot = d3.select("#barplot")
                     .classed("svg-container", true)
                     .append("svg")
                     .attr("width", 690)
-                    .attr("height", 600)
+                    .attr("height", 500)
                     .attr("preserveAspectRatio", "xMinYMin meet")
-                    .attr("viewBox", "0 0 690 600")
+                    .attr("viewBox", "0 0 690 500")
                     .classed("svg-content-responsive", true)
                     .append("g")
                     .attr("transform","translate(" + margin.left + "," + margin.top + ")");
@@ -39,13 +39,13 @@ var showTooltip = function(d) {
     .style("opacity", 1)
     .html("Name: " + d["Name"]+'<br/>'+"Score: "  + d[alpha.toString()].slice(0,4)+"%")
     .style("left", ((d3.event.pageX)+10) + "px")
-    .style("top", ((d3.event.pageY)) + "px")
+    .style("top", ((d3.event.pageY)-200) + "px")
 
 }
 var moveTooltip = function(d) {
   tooltip
   .style("left", ((d3.event.pageX)+10) + "px")
-  .style("top", ((d3.event.pageY)) + "px")
+  .style("top", ((d3.event.pageY)-200) + "px")
 }
 var hideTooltip = function(d) {
   tooltip
