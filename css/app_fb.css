@@ -183,3 +183,66 @@ body {
   height: 10px;
   width: inherit;
 }
+########TREEMAP############
+.title {
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+text {
+  pointer-events: none;
+}
+
+.grandparent text {
+  font-weight: bold;
+}
+
+rect {
+  fill: none;
+  stroke: #fff;
+}
+
+rect.parent,
+.grandparent rect {
+  stroke-width: 2px;
+}
+
+rect.parent {
+    pointer-events: none;
+}
+
+.grandparent rect {
+  fill: #3b5998;
+}
+
+.grandparent:hover rect {
+  fill: #3b5998;
+}
+
+.children rect.parent,
+.grandparent rect {
+  cursor: pointer;
+}
+
+.children rect.parent {
+  fill: #bbb;
+  fill-opacity: 0.9;
+}
+
+.children:hover rect.child {
+  fill: #bbb;
+}
+.textdiv {
+    font-family: "Open Sans",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    padding: 7px;
+    cursor: pointer;
+    overflow:none;
+}
+.textdiv .title {
+    font-weight: bold;
+    margin-top: 8px;;
+}
+
