@@ -41,7 +41,7 @@ function answerMessage(text){
 	text = text.toUpperCase();
 
 	if (question === 'idle'){
-		inner = 'Please let me finish.' +
+		inner = 'Please let me finish my explanations.' +
 			'<span class="metadata">' +
 				'<span class="time">' + moment().format('h:mm A') + '</span>' +
 			'</span>';
@@ -50,7 +50,7 @@ function answerMessage(text){
 
 	if (question === 'paid'){
 		if ((text != 'A') && (text != 'B') && (text != 'C')){
-			inner = 'Please answer correctly with A, B or C' +
+			inner = "You didn't answer as I told you... Just send A, B or C." +
 				'<span class="metadata">' +
 					'<span class="time">' + moment().format('h:mm A') + '</span>' +
 				'</span>';
@@ -58,7 +58,7 @@ function answerMessage(text){
 		}
 
 		else if (text == 'A') {
-			inner = "Mauvaise rep it's not A..." +
+			inner = "No that's not it." +
 				'<span class="metadata">' +
 					'<span class="time">' + moment().format('h:mm A') + '</span>' +
 				'</span>';
@@ -66,7 +66,7 @@ function answerMessage(text){
 		}
 
 		else if (text == 'B') {
-			inner = "Business is the wrong answer!" +
+			inner = "It's not business apps." +
 				'<span class="metadata">' +
 					'<span class="time">' + moment().format('h:mm A') + '</span>' +
 				'</span>';
@@ -77,35 +77,33 @@ function answerMessage(text){
 		else {
 			question = "idle";
 
-		  inner = "Yes Weather Apps!" +
+		  inner = "Yes it's Weather apps! Wait I'll send you the graph." +
 				'<span class="metadata">' +
 					'<span class="time">' + moment().format('h:mm A') + '</span>' +
 				'</span>';
 			displayAnswer(inner);
 
-			inner2 = "Wait I'll send you the graph." +
-				'<span class="metadata">' +
-					'<span class="time">' + moment().format('h:mm A') + '</span>' +
-				'</span>';
 			setTimeout( function() {
-				displayAnswer(inner2);
-			}, 1000);
-
-			setTimeout( function() {
-				displayAds();
+				displayPaid();
 			}, 2000);
 
-
-			inner3 = "J'explique un poil." +
+			inner3 = "What I first noticed is how low the percentages are. Even the category " +
+				"with the highest proportion of non-free apps is at 3%! This is probably due to the fact that " +
+				"people are more likely to download free apps than to even pay 1 Swiss franc! " +
+				"Remember that a free app has nearly zero user acquisition barrier since there is not even " +
+				"the need to provide payment information up front." +
+				"<br>I also think that Weather apps have a higher percentage of paid apps because " +
+				"the latter are based on private sources in order to provide a higher accuracy. " +
+				"This has probably some cost that is compensated with the app's price." +
 				'<span class="metadata">' +
 					'<span class="time">' + moment().format('h:mm A') + '</span>' +
 				'</span>';
 			setTimeout( function() {
 				displayAnswer(inner3);
-			}, 3000);
+			}, 3500);
 
-			inner4 = "Passons à la q suivante." +
-				'<span>What category has more paid apps:' +
+			inner4 = "<span>Let's now get to the next question. " +
+				'What category has the most apps containing ads:' +
 				'<br>- A: Game Word' +
 				'<br>- B: Game Puzzle' +
 				'<br>- C: Game Arcade</span>' +
@@ -115,14 +113,14 @@ function answerMessage(text){
 			setTimeout( function() {
 				displayAnswer(inner4);
 				question = "ads";
-			}, 4000);
+			}, 5000);
 		}
 	}
 
-	
+
 	if (question === 'ads'){
 		if ((text != 'A') && (text != 'B') && (text != 'C')){
-			inner = 'Please answer correctly with A, B or C' +
+			inner = "Nothing has changed, you still have to answer with A, B or C." +
 				'<span class="metadata">' +
 					'<span class="time">' + moment().format('h:mm A') + '</span>' +
 				'</span>';
@@ -130,7 +128,7 @@ function answerMessage(text){
 		}
 
 		else if (text == 'C') {
-			inner = "Mauvaise rep it's not c..." +
+			inner = "Did you really think I would be answer C again?" +
 				'<span class="metadata">' +
 					'<span class="time">' + moment().format('h:mm A') + '</span>' +
 				'</span>';
@@ -138,7 +136,7 @@ function answerMessage(text){
 		}
 
 		else if (text == 'B') {
-			inner = "^pusszles is the wrong answer!" +
+			inner = "Nope, hard question right?" +
 				'<span class="metadata">' +
 					'<span class="time">' + moment().format('h:mm A') + '</span>' +
 				'</span>';
@@ -149,40 +147,39 @@ function answerMessage(text){
 		else {
 			question = "idle";
 
-		  inner = "Yessai." +
+		  inner = "I knew you'd find the answer! But if you look at the graph you'll see that it wasn't actually that simple." +
 				'<span class="metadata">' +
 					'<span class="time">' + moment().format('h:mm A') + '</span>' +
 				'</span>';
 			displayAnswer(inner);
-
-			inner2 = "Look at this graph." +
-				'<span class="metadata">' +
-					'<span class="time">' + moment().format('h:mm A') + '</span>' +
-				'</span>';
-			setTimeout( function() {
-				displayAnswer(inner2);
-			}, 1000);
 
 			setTimeout( function() {
 				displayAds();
 			}, 2000);
 
 
-			inner3 = "J'explique encore." +
+			inner3 = "Now the percantages are much higher! Almost all the Game categories are above 90% " +
+			  'and this can actually be linked to the fact that these apps are mostly free. ' +
+				'Indeed, this represents the business model of what is called "freemium apps". ' +
+				'They are free in order to attract many users, but also contain ads that help the developer make money. ' +
+				'Moreover, they usually contain in-app purchases that can for example remove all ads. ' +
+				"This is especially the case for Gaming apps where players sometimes can't resist from getting a power-up that would help them in the game."
 				'<span class="metadata">' +
 					'<span class="time">' + moment().format('h:mm A') + '</span>' +
 				'</span>';
 			setTimeout( function() {
 				displayAnswer(inner3);
-			}, 3000);
+			}, 3500);
 
-			inner4 = "Voilivoilou bisou."
-					'<span class="time">' + moment().format('h:mm A') + '</span>' +
+			inner4 = "Anyway, I'm glad I shared this with you. This helped me understand that " +
+				'free apps with ads seem to be the model of success of many apps nowadays. Thanks for your help, and see you soon!' +
+				"<br>Oh and don't forget to check the EPFL Campus app, the grade for the exam is out!"
+				'<span class="time">' + moment().format('h:mm A') + '</span>' +
 				'</span>';
 			setTimeout( function() {
 				displayAnswer(inner4);
 				question = "end";
-			}, 4000);
+			}, 5500);
 		}
 	}
 }
@@ -199,65 +196,6 @@ function displayAnswer(inner){
 	}, 500);
 }
 
-// Display graph Ads
-function displayAds(){
-	setTimeout(function() {
-		var element = document.createElement('div');
-		element.setAttribute("id", "contentAds");
-		element.classList.add('message', 'received');
-		element.onclick = zoomAds;
-		element.style.cursor = "pointer";
-
-		var graph = document.getElementById("bubbleAdsSmall");
-		graph.style.display = "block";
-		inner = "Voilà." +
-			graph.outerHTML +
-			'<span class="metadata">' +
-				'<span class="time">' + moment().format('h:mm A') + '</span>' +
-			'</span>';
-		graph.style.display = "none";
-
-		element.innerHTML = inner;
-		conversation.appendChild(element);
-		conversation.scrollTop = conversation.scrollHeight;
-	}, 500);
-}
-
-// Click on graph Ads
-function zoomAds(){
-	var element = document.getElementById("contentAds");
-
-	if (element.classList.contains("zoomed")){
-		element.classList.remove('zoomed');
-
-		var graph = document.getElementById("bubbleAdsSmall");
-		graph.style.display = "block";
-		inner = "Voila." +
-			graph.outerHTML +
-			'<span class="metadata">' +
-				'<span class="time">' + moment().format('h:mm A') + '</span>' +
-			'</span>';
-		graph.style.display = "none";
-
-		element.innerHTML = inner;
-	}
-	else{
-		element.classList.add('zoomed');
-
-		var graph = document.getElementById("bubbleAdsBig");
-		graph.style.display = "block";
-		inner = "Voilou." +
-			graph.outerHTML +
-			'<span class="metadata">' +
-				'<span class="time">' + moment().format('h:mm A') + '</span>' +
-			'</span>';
-		graph.style.display = "none";
-
-		element.innerHTML = inner;
-	}
-}
-
-
 
 // Display graph Paid
 function displayPaid(){
@@ -270,7 +208,7 @@ function displayPaid(){
 
 		var graph = document.getElementById("bubblePaidSmall");
 		graph.style.display = "block";
-		inner = "Voilà." +
+		inner = "Click on the graph to make it bigger!" +
 			graph.outerHTML +
 			'<span class="metadata">' +
 				'<span class="time">' + moment().format('h:mm A') + '</span>' +
@@ -292,7 +230,7 @@ function zoomPaid(){
 
 		var graph = document.getElementById("bubblePaidSmall");
 		graph.style.display = "block";
-		inner = "Voila." +
+		inner = "Click on the graph to make it bigger!" +
 			graph.outerHTML +
 			'<span class="metadata">' +
 				'<span class="time">' + moment().format('h:mm A') + '</span>' +
@@ -306,7 +244,66 @@ function zoomPaid(){
 
 		var graph = document.getElementById("bubblePaidBig");
 		graph.style.display = "block";
-		inner = "Voilou." +
+		inner = "You can click again to zoom out." +
+			graph.outerHTML +
+			'<span class="metadata">' +
+				'<span class="time">' + moment().format('h:mm A') + '</span>' +
+			'</span>';
+		graph.style.display = "none";
+
+		element.innerHTML = inner;
+	}
+}
+
+
+// Display graph Ads
+function displayAds(){
+	setTimeout(function() {
+		var element = document.createElement('div');
+		element.setAttribute("id", "contentAds");
+		element.classList.add('message', 'received');
+		element.onclick = zoomAds;
+		element.style.cursor = "pointer";
+
+		var graph = document.getElementById("bubbleAdsSmall");
+		graph.style.display = "block";
+		inner = "Click on the graph to make it bigger!" +
+			graph.outerHTML +
+			'<span class="metadata">' +
+				'<span class="time">' + moment().format('h:mm A') + '</span>' +
+			'</span>';
+		graph.style.display = "none";
+
+		element.innerHTML = inner;
+		conversation.appendChild(element);
+		conversation.scrollTop = conversation.scrollHeight;
+	}, 500);
+}
+
+// Click on graph Ads
+function zoomAds(){
+	var element = document.getElementById("contentAds");
+
+	if (element.classList.contains("zoomed")){
+		element.classList.remove('zoomed');
+
+		var graph = document.getElementById("bubbleAdsSmall");
+		graph.style.display = "block";
+		inner = "Click on the graph to make it bigger!" +
+			graph.outerHTML +
+			'<span class="metadata">' +
+				'<span class="time">' + moment().format('h:mm A') + '</span>' +
+			'</span>';
+		graph.style.display = "none";
+
+		element.innerHTML = inner;
+	}
+	else{
+		element.classList.add('zoomed');
+
+		var graph = document.getElementById("bubbleAdsBig");
+		graph.style.display = "block";
+		inner = "You can click again to zoom out." +
 			graph.outerHTML +
 			'<span class="metadata">' +
 				'<span class="time">' + moment().format('h:mm A') + '</span>' +
