@@ -232,6 +232,7 @@ text.attr("x", function (d) {
 }
 
 function rect(rect) {
+  console.log(d)
   rect.attr("x", function(d) { return x(d.x0); })
     .attr("y", function(d) { return y(d.y0); })
     .attr("width", function(d) {
