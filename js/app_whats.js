@@ -92,7 +92,7 @@ function answerMessage(text){
 			}, 1000);
 
 			setTimeout( function() {
-				displayAds();
+				displayPaid();
 			}, 2000);
 
 
@@ -115,7 +115,7 @@ function answerMessage(text){
 			setTimeout( function() {
 				displayAnswer(inner4);
 				question = "ads";
-			}, 3500);
+			}, 4000);
 		}
 	}
 
@@ -164,7 +164,7 @@ function answerMessage(text){
 			}, 1000);
 
 			setTimeout( function() {
-				displayPaid();
+				displayAds();
 			}, 2000);
 
 
@@ -182,7 +182,7 @@ function answerMessage(text){
 			setTimeout( function() {
 				displayAnswer(inner4);
 				question = "end";
-			}, 3500);
+			}, 4000);
 		}
 	}
 }
