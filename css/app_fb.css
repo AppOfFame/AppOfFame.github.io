@@ -199,10 +199,6 @@ text {
   font-weight: bold;
 }
 
-rect {
-  fill: none;
-  stroke: #fff;
-}
 
 rect.parent,
 .grandparent rect {
