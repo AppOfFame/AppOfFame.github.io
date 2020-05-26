@@ -67,16 +67,16 @@ $(document).ready(function() {
         lock.reset();
       });
 
-      $(this).addClass('animated slideOutLeft').one('animationend', function(){
-        $(this).removeClass('animated slideOutLeft');
+      $(this).addClass('animated fadeOutDown').one('animationend', function(){
+        $(this).removeClass('animated fadeOutDown');
 
         $("#datum").addClass('animated fadeOut').one('animationend', function(){
           $(this).removeClass('animated fadeOut');
           $(this).css({'display': 'none'});
 
           $("#intro").css({'display': 'block'});
-          $("#intro").addClass('animated bounceInRight').one('animationend', function(){
-            $(this).removeClass('animated bounceInRight');
+          $("#intro").addClass('animated slideInDown').one('animationend', function(){
+            $(this).removeClass('animated slideInDown');
           });
         });
         $(this).css({'display': 'none'});
@@ -84,8 +84,8 @@ $(document).ready(function() {
     });
 
     $('body').on('click','#intro',function(){
-      $(this).addClass('animated bounceOutRight').one('animationend', function(){
-        $(this).removeClass('animated bounceOutRight');
+      $(this).addClass('animated fadeOutDown').one('animationend', function(){
+        $(this).removeClass('animated fadeOutDown');
 
         $("#datum").css({'display': 'block'});
         $("#datum").addClass('animated fadeIn').one('animationend', function(){
@@ -93,8 +93,8 @@ $(document).ready(function() {
 
           $(".alert").find(".notification").text("View the notification again.");
           $(".alert").css({'display': 'block'});
-          $(".alert").addClass('animated slideInLeft').one('animationend', function(){
-            $(this).removeClass('animated slideInLeft');
+          $(".alert").addClass('animated slideInDown').one('animationend', function(){
+            $(this).removeClass('animated slideInDown');
           });
 
           $("#lockcode").css({'display': 'block'});
