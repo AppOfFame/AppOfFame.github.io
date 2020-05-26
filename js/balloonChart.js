@@ -63,7 +63,7 @@ class Chart {
 			d3.select(this).selectAll('g > circle').classed('displayed', true);
 			d3.select(this).selectAll('g > path').classed('displayed', true);
 
-			d3.select('#border').attr('visibility', 'hidden');
+			d3.select('#chain').attr('visibility', 'hidden');
 			d3.select('#infoBorder').classed('displayed', true);
 			d3.select('.radarChart').classed('hidden', false);
 
@@ -102,7 +102,7 @@ class Chart {
 		.attr('cx', centerX)
 		.attr('cy', centerY)
 		.attr('r', centerR)
-		.attr('id', 'border');
+		.attr('id', 'chain');
 
 		chart.append('circle')
 		.attr('cx', centerX)
@@ -245,7 +245,7 @@ function updateRadar(d)
 		d3.select('.devPath.displayed').classed('displayed', false);
 
 		d3.select('#infoBorder').classed('displayed', false);
-		d3.select('#border').attr('visibility', 'visible');
+		d3.select('#chain').attr('visibility', 'visible');
 		d3.select('#container').style('z-index', '2');
 		d3.select('.radarChart').classed('hidden', true);
 
