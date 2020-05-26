@@ -39,13 +39,13 @@ var showTooltip = function(d) {
     .style("opacity", 1)
     .html("Name: " + d["Name"]+'<br/>'+"Score: "  + d[alpha.toString()].slice(0,4)+"%")
     .style("left", ((d3.event.pageX)+10) + "px")
-    .style("top", ((d3.event.pageY)-1000) + "px")
+    .style("top", ((d3.event.pageY)) + "px")
 
 }
 var moveTooltip = function(d) {
   tooltip
   .style("left", ((d3.event.pageX)+10) + "px")
-  .style("top", ((d3.event.pageY)-1000) + "px")
+  .style("top", ((d3.event.pageY)) + "px")
 }
 var hideTooltip = function(d) {
   tooltip
