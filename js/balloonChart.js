@@ -1,5 +1,4 @@
 
-//Each element will correspond to an app cell in the phone
 const r=4;
 const chartWidth=500;
 const chartHeight=500;
@@ -11,8 +10,6 @@ const centerY = chartHeight/2;
 let container = document.getElementById("container");
 container.style.width = chartWidth+"px";
 container.style.height = chartWidth+"px";
-
-//Will be from JSON
 
 
 class Chart {
@@ -153,7 +150,6 @@ d3.csv('../data/devradar.csv').then(function(data) {
 		d.Installs = +d.Installs,
 		d.Avg_Rating = +d.Avg_Rating,
 		d.inv_Global_rank = +d.inv_Global_rank,
-		d.inv_Rank = +d.inv_Rank,
 		d.containsAds = +d.containsAds
 	});
 	console.log(data);
@@ -187,12 +183,8 @@ d3.csv('../data/devradar.csv').then(function(data) {
 
 
 
-
-
-
-
-
-//radarChart : http://bl.ocks.org/nbremer/21746a9668ffdf6d8242
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+//RADAR CHART : http://bl.ocks.org/nbremer/21746a9668ffdf6d8242
 function updateRadar(d)
 {
 	var margin = {top: 100, right: 100, bottom: 100, left: 100},
@@ -208,9 +200,9 @@ function updateRadar(d)
 		[//iPhone
 			{axis:"Installs",value:d.Installs},
 			{axis:"Rating",value:d.Avg_Rating},
+			{axis:"Ad-free", value:d.containsAds},
 			{axis:"Global rank",value:d.inv_Global_rank},
-			{axis:"Rank",value:d.inv_Rank},
-			{axis:"Contains ads",value:d.containsAds}
+			{axis:"Comments replies", value:d.Comment_reply}
 		]
 	];
 	//////////////////////////////////////////////////////////////
