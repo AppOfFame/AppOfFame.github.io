@@ -183,25 +183,19 @@ body {
   height: 10px;
   width: inherit;
 }
-########TREEMAP############
-.title {
-    font-weight: bold;
-    font-size: 24px;
-    text-align: center;
-    margin-top: 6px;
-    margin-bottom: 6px;
-}
-text {
-  pointer-events: none;
+########TREEMAP and bar plot############
+
+#domainDrillDown {
+  background: #fff;
+  font-family: 'Muli', sans-serif
 }
 
-.grandparent text {
+.grandparent_treemap text {
   font-weight: bold;
 }
 
-
 rect.parent,
-.grandparent rect {
+.grandparent_treemap rect {
   stroke-width: 2px;
 }
 
@@ -209,16 +203,16 @@ rect.parent {
     pointer-events: none;
 }
 
-.grandparent rect {
+.grandparent_treemap rect {
   fill: #3b5998;
 }
 
-.grandparent:hover rect {
+.grandparent_treemap:hover rect {
   fill: #3b5998;
 }
 
 .children rect.parent,
-.grandparent rect {
+.grandparent_treemap rect {
   cursor: pointer;
 }
 
@@ -231,14 +225,28 @@ rect.parent {
   fill: #bbb;
 }
 .textdiv {
-    font-family: "Open Sans",Helvetica,Arial,sans-serif;
-    font-size: 14px;
-    padding: 7px;
-    cursor: pointer;
-    overflow:none;
+	    font-family: "Open Sans",Helvetica,Arial,sans-serif;
+	    font-size: 14px;
+	    padding: 7px;
+	    cursor: pointer;
+	    overflow:none;
 }
 .textdiv .title {
     font-weight: bold;
     margin-top: 8px;;
+}
+.svg-container {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%; /* aspect ratio */
+  vertical-align: top;
+  overflow: hidden;
+}
+.svg-content-responsive {
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  left: 0;
 }
 
