@@ -184,7 +184,7 @@ function draw(words) {
       .selectAll("text")
         .data(words)
       .enter().append("text")
-        .style("font-size", function(d) { console.log(d.size);
+        .style("font-size", function(d) {
           return d.size; })
         .style("fill", "#38A1F3")
         .attr("text-anchor", "middle")

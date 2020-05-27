@@ -53,9 +53,9 @@
 						<i class="fas fa-house-user"></i>
 						<div class="tabs-name" id="home">Feed</div>
 					</div>
-					<div class="col tab-search">
-						<i class="fas fa-search"></i>
-						<div class="tabs-name" id="search">Search</div>
+					<div class="col tab-explore">
+						<i class="fas fa-hashtag"></i>
+						<div class="tabs-name" id="exp">Explore</div>
 					</div>
 					<div class="col tab-bell">
 						<i class="fas fa-bell"></i>
@@ -88,10 +88,19 @@
 									</span>
 								</div>
 							</div>
-							<div class="row content">Check this out !!!! Best twitter ever mon gars Check this out !!!!
-								 Best twitter ever mon gars Check this out !!!! Best twitter ever mon gars Check this out !!!!
-								  Best twitter ever mon gars Check this out !!!! Best twitter ever mon gars Check this out !!!!
-									Best twitter ever mon gars </div>
+							<div class="row content">
+								I collected all comments made by users on the 500 most famous apps, and here are
+								the results I found after filtering the stop words (most common words in the English language).
+								First, there are many positive words such as 'great', 'fun' or 'love', which shows that users tend to
+								express their satisfaction for these famous apps. This might have convinced people to download an app
+								when they were hesitant to do it, which contributes to the success of that app.
+								Another important category of comments is the suggestions that users make to the developers.
+								Comments containing 'fix', 'update' or 'please' show that the interaction user-developer seems important,
+								and maybe when the developer takes these suggestions into account, the fame of the app increases since users
+								are more satisfied.
+								Finally, it seems that Gaming apps receive a lot of comments since the word 'game' is the second most famous
+								one after 'app'.
+							</div>
 							<div class="row reacts">
 								<div class="col-3 react-com" id="com1">
 									<i class="far fa-comment" id="rcom1"></i>
@@ -128,6 +137,9 @@
 								</div>
 							</div>
 							<div class="row content">
+								<span>The 150 most appearing words in the filtered comments of the 500 most famous apps.
+								Look at the <span class="toclick" id="totrends"> trends</span> today,
+								it shows the distributions of each word usage per category of apps!</span>
 								<div id="wordchart"></div>
 							</div>
 							<div class="row reacts">
@@ -152,6 +164,13 @@
 
 				<div id="tabdisp2" style="display: none;">
 					<div class="row col-7 trend"><span class="black">Trends for you</span></div>
+					<div class="row col-11 sec-exp">
+						<span style="font-size: 20px;">
+							The 50 most appearing words in the filtered comments of the 500 most famous apps,
+							and their usage distribution by app category. If the latter represents less than
+							1%, it is counted as the 'Other'.
+						</span>
+          </div>
 					<div id="appendhashtags"></div>
 				</div>
 			</div><!--End Scrolled -->

@@ -164,6 +164,9 @@ body {
   font-size: 22px;
   margin-bottom: 10px;
 }
+.sec-exp{
+  margin-bottom: 20px;
+}
 .hashtag{
   /*margin-top: 15px;
   margin-bottom: 15px;*/
@@ -193,4 +196,13 @@ body {
   transform: translateX(-50%);
   bottom: -15px;
   left: 50%;
+}
+
+.toclick{
+  cursor: pointer;
+  color: #1DA1F2;
+}
+
+#wordchart{
+  margin-top: 20px;
 }
