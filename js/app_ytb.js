@@ -147,8 +147,8 @@ $(document).ready(function() {
     $("#tabdisp2").css({"display":"none"});
     $("#tabdisp3").css({"display":"none"});
   });
-  // Search click (for post)
-  $('body').on('click','#post1',function(){
+  // Search click
+  $('body').on('click','.tab-subs',function(){
     $(window).scrollTop(0);
 
     $(".tab-trend").css({"color":"#657786"});
