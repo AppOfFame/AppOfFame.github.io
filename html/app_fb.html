@@ -88,16 +88,18 @@
 						</div>
 
 	          <div class="row col-11 content">
-	            Ceci n'est pas un post facebook Ceci n'est pas un post facebook
-	            Ceci n'est pas un post facebook Ceci n'est pas un post facebook Ceci n'est pas un post facebook
-	            Ceci n'est pas un post facebook Ceci n'est pas un post facebook Ceci n'est pas un post facebook
-			  <form>
-				  <label for="alpha">Please select a value for alpha: </label>
-				  <input type="range" min=0 max=1 step=0.1 id="alpha" value=0.5>
-				  <output name="alpha_selected" id="alpha_selected">Equal weight for Installs and Ratings</output>
-			  </form>
-			  <div id="barplot"></div>
-	          </div>
+	            Rating apps is not easy!
+							<br>
+							You have to decide which parameter will be included: Here the number of installs, the number of review and the average rating.
+							OK this make sense but how do you create a score out of 3 parameters that are somehow related and with the number of installs not a real value but step.
+
+							  <form>
+								  <label for="alpha">Please select a value for alpha: </label>
+								  <input type="range" min=0 max=1 step=0.1 id="alpha" value=0.5>
+								  <output name="alpha_selected" id="alpha_selected">Equal weight for Installs and Ratings</output>
+							  </form>
+						  	<div id="barplot"></div>
+						</div>
 	          <div class="row col-12 reacts">
 	            <div class="col-4 react">
 	              <i class="fas fa-laugh-squint"></i>
@@ -151,10 +153,20 @@
 						</div>
 
 	          <div class="row col-11 content">
-							Je poste dans un groupe
-			  <div id="chart"></div>
-			  <div id="domainDrillDown"></div>
-			
+							Now that we have a good score let's have a look of the best ranked section.
+							<br>
+							Indeed, in the Google Play Store, apps are assigned to a category: Games, Communication, Tools...
+							<br>
+							But which one will make your app more successful? Let's find out with this wonderfull interactive Treemap.
+							Each category is ranked by the sum of the score (from 0 to 1) of their app in the Top 500
+							Then you can click on the category to see which app cheers up this category.
+
+						  <div id="domainDrillDown"></div>
+							As you can clearly see here, the best categories are Tools, Photography and Communication.
+							<br>
+							However it is important to notice that the Game category is split depending on the type of the game. We tried to regroup them and they add up to almost 45%
+							<br>
+
 	          </div>
 	          <div class="row col-12 reacts">
 	            <div class="col-3 react">
