@@ -147,8 +147,12 @@ body {
 .divider {
   flex-grow: 1;
   border-bottom: 1px solid #AAB8C2;
-  margin: 5px
+  margin: 5px;
 }
 .grade {
   color: blue;
+}
+
+#textUnderGraph{
+  margin-top: 550px;
 }
