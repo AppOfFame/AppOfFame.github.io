@@ -30,6 +30,7 @@ function initPhone()
 			this.idDiscover = 9;
 			this.topBarHeight=30;
 			this.nightMode=false;
+			this.page=null;
 			this.rescale();
 		}
 
@@ -76,11 +77,14 @@ function initPhone()
 
 			let svg = d3.select('#'+this.container);
 
-			svg.selectAll("image").each(function() {
-				d3.select(this)
-				.attr("width", phone.size)
-				.attr("height", phone.size);
-			});
+			if(this.page === null)
+			{
+				svg.selectAll("image").each(function() {
+					d3.select(this)
+					.attr("width", phone.size)
+					.attr("height", phone.size);
+				});
+			}
 
 			let datum = document.getElementById("datum");
 			datum.style.marginTop = this.offsetY+ 0.12*this.height+"px";
@@ -271,7 +275,7 @@ function initPhone()
 			.node().classList.toggle("nightMode");
 
 
-	});
+		});
 
 		// §ngle button
 		const lineGenerator = d3.line()

@@ -67,10 +67,6 @@ class Chart {
 		});
 
 
-
-
-		/*d3.select(this).selectAll('g > path').classed('displayed', false);});*/
-
 		elementsEnter.append('circle')
 		.each((d,i) => this.assignAngles(d.Counts,i))
 		.attr('cx', (d,i) => centerX + centerR*Math.cos(this.angles[i]))
@@ -81,7 +77,6 @@ class Chart {
 		.style('opacity', 1)
 		.delay((d,i) => 30*i)
 		.duration(2000);
-
 
 		/*elements.append('text')
 		.attr('x', (d,i) => centerX )
@@ -110,7 +105,6 @@ class Chart {
 		.on('mouseenter', function() {
 			/*d3.select('.devBalloon.displayed').classed('displayed', false);
 			d3.select('.devPath.displayed').classed('displayed', false);
-
 			d3.select('#infoBorder').classed('displayed', false);
 			d3.select('#border').attr('visibility', 'visible');
 			d3.select('#container').style('z-index', '2');*/
@@ -124,8 +118,6 @@ class Chart {
 		.text("None")
 		.attr('class', 'hidden');
 
-
-
 		const lineGenerator = d3.line()
 		.x(d => d.x)
 		.y(d => d.y);
@@ -135,12 +127,8 @@ class Chart {
 		{'x':document.getElementsByClassName("devBalloon")[i].getAttribute("cx"),
 		'y':document.getElementsByClassName("devBalloon")[i].getAttribute("cy")} ]))
 		.attr("class", 'devPath');
-
-
 	}
 }
-
-
 
 
 d3.csv('../data/devradar.csv').then(function(data) {
@@ -152,22 +140,9 @@ d3.csv('../data/devradar.csv').then(function(data) {
 		d.inv_Global_rank = +d.inv_Global_rank,
 		d.containsAds = +d.containsAds
 	});
-	console.log(data);
 
 	data = data.slice(0, 50);
 
-
-	/*data = [
-	{name:'App1', counts:'12'},
-	{name:'App2', counts:'9'},
-	{name:'App3', counts:'8'},
-	{name:'App2', counts:'5'},
-	{name:'App3', counts:'4'},
-	{name:'App1', counts:'4'},
-	{name:'App2', counts:'3'},
-	{name:'App3', counts:'2'},
-	{name:'App2', counts:'1'},
-	{name:'App3', counts:'1'}];*/
 
 	const nbAppsTotal = data
 	.map((d) => d.Counts)
