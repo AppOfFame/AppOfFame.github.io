@@ -222,3 +222,8 @@ body {
    cursor: pointer;
    animation-duration: 0.6s;
 }
+
+#post1
+{
+  cursor: pointer;
+}

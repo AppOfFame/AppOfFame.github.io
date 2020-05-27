@@ -147,8 +147,8 @@ $(document).ready(function() {
     $("#tabdisp2").css({"display":"none"});
     $("#tabdisp3").css({"display":"none"});
   });
-  // Search click
-  $('body').on('click','.tab-subs, #post1',function(){
+  // Search click (for post)
+  $('body').on('click','#post1',function(){
     $(window).scrollTop(0);
 
     $(".tab-trend").css({"color":"#657786"});
@@ -169,6 +169,31 @@ $(document).ready(function() {
       $(this).removeClass('animated rubberBand');
     });
   });
+
+
+  $('body').on('click','#post1',function(){
+    $(window).scrollTop(0);
+
+    $(".tab-trend").css({"color":"#657786"});
+    $("#trend").css({"color":"#657786"});
+    $(".tab-subs").css({"color":"red"});
+    $("#subs").css({"color":"red"});
+    $(".tab-lib").css({"color":"#657786"});
+    $("#lib").css({"color":"#657786"});
+
+    $("#tabdisp1").css({"display":"none"});
+    $("#tabdisp2").css({"display":"block"});
+    $("#tabdisp2-1").css({"display":"block"});
+    $("#tabdisp2-2").css({"display":"none"});
+    $("#videoplayed").remove();
+    $("#tabdisp3").css({"display":"none"});
+
+    $(".subscriptions .avatar").addClass('animated rubberBand').one('animationend', function(){
+      $(this).removeClass('animated rubberBand');
+    });
+  });
+
+
   // Bell click
   $('body').on('click','.tab-lib',function(){
     $(window).scrollTop(0);

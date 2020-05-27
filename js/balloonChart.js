@@ -147,7 +147,6 @@ d3.csv('../data/devradar.csv').then(function(data) {
 	const nbAppsTotal = data
 	.map((d) => d.Counts)
 	.reduce((prev, cur) => +prev + +cur, 0);
-	console.log(nbAppsTotal);
 	const piece = 2*Math.PI/nbAppsTotal;
 
 
