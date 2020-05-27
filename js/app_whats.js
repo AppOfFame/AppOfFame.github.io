@@ -262,7 +262,7 @@ function zoomPaid(){
 function displayAds(){
 	setTimeout(function() {
 		var element = document.createElement('div');
-		element.setAttribute("id", "contentAds");
+		element.setAttribute("id", "contentAdss");
 		element.classList.add('message', 'received');
 		element.onclick = zoomAds;
 		element.style.cursor = "pointer";
@@ -284,7 +284,7 @@ function displayAds(){
 
 // Click on graph Ads
 function zoomAds(){
-	var element = document.getElementById("contentAds");
+	var element = document.getElementById("contentAdss");
 
 	if (element.classList.contains("zoomed")){
 		element.classList.remove('zoomed');
