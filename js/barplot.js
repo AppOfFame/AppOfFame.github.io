@@ -1,5 +1,5 @@
 // set the margins of the graph
-var margin = {top: 50, right: 30, bottom: 20, left: 60},
+var margin = {top: 50, right: 30, bottom: 10, left: 100},
 width = 600 - margin.left - margin.right,
 height= 300 - margin.top - margin.bottom;
 const colorThief = new ColorThief();
@@ -7,9 +7,11 @@ const colorThief = new ColorThief();
 // append the svg_barplot object to the body of the page
 var svg_barplot = d3.select("#barplot")
                     .classed("svg-container", true)
+                    .style("width", "700px")
+                    .style("height", "350px")
                     .append("svg")
                     .attr("preserveAspectRatio", "xMinYMin meet")
-                    .attr("viewBox", "0 0 600 300")
+                    .attr("viewBox", "0 0 700 350")
                     .classed("svg-content-responsive", true)
                     .append("g")
                     .attr("transform","translate(" + margin.left + "," + margin.top + ")");
@@ -30,22 +32,20 @@ var xAxis_barplot = svg_barplot.append("g").attr("transform", "translate(0," + h
 var y_barplot = d3.scaleLinear().range([ height, 0]);
 var yAxis_barplot = svg_barplot.append("g").attr("class", "myYaxis")
 var showTooltip = function(d) {
-  svgDim_barplot = svg_barplot.node().getBoundingClientRect();
-  console.log(svgDim_barplot)
   tooltip
     .transition()
     .duration(200)
   tooltip
     .style("opacity", 1)
     .html("Name: " + d["Name"]+'<br/>'+"Score: "  + d[alpha.toString()].slice(0,4)+"%")
-    .style("left", ((d3.event.pageX)) + "px")
-    .style("top", ((d3.event.pageY)-svgDim_barplot.height/2) + "px")
+    .style("left", ((d3.event.pageX )) + "px")
+    .style("top", (d3.event.pageY - height- margin.top -margin.bottom - 80) + "px")
 
 }
 var moveTooltip = function(d) {
   tooltip
-  .style("left", ((d3.event.pageX))+ "px")
-  .style("top", ((d3.event.pageY)-svgDim_barplot.height/2) + "px")
+  .style("left", ((d3.event.pageX )) + "px")
+  .style("top", (d3.event.pageY - height- margin.top -margin.bottom - 80) + "px")
 }
 var hideTooltip = function(d) {
   tooltip

@@ -1,10 +1,10 @@
 var margin = {top: 50, right: 50, bottom: 50, left: 50},
-width = 750 - margin.left - margin.right,
+width = 1000 - margin.left - margin.right,
 height = 500 - margin.top - margin.bottom;
 
 var dimensions = [
   {
-    name: "Name",
+    name: "App",
     scale: d3.scale.ordinal().rangePoints([0, height]),
     type: "string"
   },
@@ -50,7 +50,7 @@ var dimensions = [
   },
   {
     name: "Rank",
-    scale: d3.scale.linear().range([height, 0]),
+    scale: d3.scale.linear().range([0, height]),
       type: "number"
   }
 ];
@@ -69,16 +69,22 @@ var svg = d3.select("#superparallel").append("svg")
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
+var antoine_data
 d3.csv("../data/conclusion_data.csv", function(error, data) {
-
+antoine_data= data
   //Create the dimensions depending on attribute "type" (number|string)
   //The x-scale calculates the position by attribute dimensions[x].name
   dimensions.forEach(function(dimension) {
     if (dimension.name === '#Installs'){
       dimension.scale.domain(['5000000000.0','1000000000.0','500000000.0','100000000.0','50000000.0','10000000.0']);
     }
+    else if (dimension.name === 'Name') {
+      dimension.scale.domain(dimension.type === "number"
+        ? d3.extent(data, function(d) { return +d[dimension.name]; })
+        : data.map(function(d) { return d[dimension.name]; }).sort());
+    }
     else {
+
       dimension.scale.domain(dimension.type === "number"
         ? d3.extent(data, function(d) { return +d[dimension.name]; })
         : data.map(function(d) { return d[dimension.name]; }).sort());
@@ -135,6 +141,7 @@ d3.csv("../data/conclusion_data.csv", function(error, data) {
         })
       );
 
+
   // Add an axis and title.
   g.append("g")
       .attr("class", "axis")
@@ -151,7 +158,8 @@ d3.csv("../data/conclusion_data.csv", function(error, data) {
         .text(function(d) {
           return d.name;
         });
-
+        console.log(d3.select(".dimension .axis"))
+        d3.select(".dimension .axis").selectAll("g").style("display", "none");
   // Add and store a brush for each axis.
   g.append("g")
       .attr("class", "brush")
@@ -185,10 +193,37 @@ function path(d) {
 function brushstart() {
   d3.event.sourceEvent.stopPropagation();
 }
-
+function search(selection,str) {
+  pattern = new RegExp(str,"i")
+  console.log(pattern)
+  return _(selection).filter(function(d) { return pattern.exec(d.name); });
+}
+// d3.select("#search").on("keyup", brush_bis);
+// function brush_bis() {
+//   console.log("call")
+//   // free text search
+//     var selected = [];
+//     antoine_data
+//     .filter(function(d) {
+//       return !contains(excluded_groups, d.group);
+//     })
+//     .map(function(d) {
+//       return actives.every(function(p, dimension) {
+//         return extents[dimension][0] <= d[p] && d[p] <= extents[dimension][1];
+//       }) ? selected.push(d) : null;
+//     });
+//
+//     var query = d3.select("#search")[0][0].value;
+//     if (query.length > 0) {
+//       selected = search(selected, query);
+//     }
+//     console.log(selected)
+//
+// }
 // Handles a brush event, toggling the display of foreground lines.
 function brush() {
-  var actives = dimensions.filter(function(p) { return !p.scale.brush.empty(); }),
+
+  var actives = dimensions.filter(function(p) {console.log(p); return !p.scale.brush.empty(); }),
     extents = actives.map(function(p) { return p.scale.brush.extent(); });
 
   foreground.style("display", function(d) {

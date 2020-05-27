@@ -30,6 +30,8 @@ function updateDrillDown() {
 
 	svg_treemap = d3.select("#domainDrillDown")
 										 .classed("svg-container", true)
+										 .style("width", "800px")
+                     .style("height", "420px")
 										 .append("svg")
 										  .attr("preserveAspectRatio", "xMinYMin meet")
 										   .attr("viewBox", "0 0 800 400")
@@ -148,7 +150,6 @@ function display(d) {
       .append("xhtml:div")
       .attr("dy", ".75em")
       .html(function (d) {
-				console.log("aajj", d)
 				var x_domain_dummy = d3.scaleLinear().domain([d.parent.x0 , d.parent.x1])
 																				.range([0, width - margin.right - margin.left]);
 				if(d.depth == 1){
@@ -156,8 +157,9 @@ function display(d) {
               '<p class="title" style="font-size:' + (d.x1-d.x0)/12 +'px"> ' + d.data.shortName + " "+ d.value.toFixed(2) + '</p>'
           ;
 				}else{
+					console.log(d)
 					return '' +
-              '<p class="title" style="font-size:' + (x_domain_dummy(d.x1)-x_domain_dummy(d.x0))/12 +'px"> ' + d.data.shortName + " "+ d.value.toFixed(2)+ '</p>'
+              '<p class="title" style="font-size:' + (d.value)*15 +'px"> ' + d.data.shortName + " "+ d.value.toFixed(2)+ '</p>'
           ;
 				}
       })
