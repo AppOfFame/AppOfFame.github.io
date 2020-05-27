@@ -183,6 +183,9 @@ function initPhone()
 					let datum = document.getElementById("datum");
 					datum.classList.add("invisible");
 
+					d3.selectAll('.temporary')
+					.style('opacity', '0');
+
 					phone.rescaleContent();
 				}
 			});
@@ -245,6 +248,8 @@ function initPhone()
 			topBar.classList.remove("invisible");
 			let datum = document.getElementById("datum");
 			datum.classList.remove("invisible");
+			d3.selectAll('.temporary')
+			.style('opacity', '1');
 			phone.page=null;
 
 			phone.flipToPhone();
