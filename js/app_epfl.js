@@ -81,4 +81,17 @@ $(document).ready(function() {
     $("#tabdisp3").css({"display":"none"});
   });
 
+  $('body').on('click','#tograph',function(){
+    $(window).scrollTop(0);
+
+    $("#tab1").css({"color":"black"});
+    $("#tab2").css({"color":"black"});
+    $("#tab3").css({"color":"red"});
+
+    $("#tabdisp1").css({"display":"none"});
+    $("#tabdisp2").css({"display":"none"});
+    $("#tabdisp3").css({"display":"block"});
+  });
+
+
 });

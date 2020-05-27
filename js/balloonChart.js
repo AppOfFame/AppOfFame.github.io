@@ -1,5 +1,5 @@
 
-const r=4;
+const r=3;
 const chartWidth=500;
 const chartHeight=500;
 const centerR = 0.4*Math.min(chartWidth, chartHeight)
@@ -154,7 +154,7 @@ d3.csv('../data/devradar.csv').then(function(data) {
 	});
 	console.log(data);
 
-	data = data.slice(1, 50);
+	data = data.slice(0, 50);
 
 
 	/*data = [
