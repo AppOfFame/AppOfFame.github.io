@@ -128,7 +128,7 @@ function answerMessage(text){
 		}
 
 		else if (text == 'C') {
-			inner = "Did you really think I would be answer C again?" +
+			inner = "Did you really think it would be answer C again?" +
 				'<span class="metadata">' +
 					'<span class="time">' + moment().format('h:mm A') + '</span>' +
 				'</span>';
@@ -163,7 +163,7 @@ function answerMessage(text){
 				'Indeed, this represents the business model of what is called "freemium apps". ' +
 				'They are free in order to attract many users, but also contain ads that help the developer make money. ' +
 				'Moreover, they usually contain in-app purchases that can for example remove all ads. ' +
-				"This is especially the case for Gaming apps where players sometimes can't resist from getting a power-up that would help them in the game."
+				"This is especially the case for Gaming apps where sometimes players can't resist from getting a power-up that would help them in the game."
 				'<span class="metadata">' +
 					'<span class="time">' + moment().format('h:mm A') + '</span>' +
 				'</span>';
@@ -227,6 +227,7 @@ function zoomPaid(){
 
 	if (element.classList.contains("zoomed")){
 		element.classList.remove('zoomed');
+		element.style.maxWidth = "85%";
 
 		var graph = document.getElementById("bubblePaidSmall");
 		graph.style.display = "block";
@@ -241,6 +242,7 @@ function zoomPaid(){
 	}
 	else{
 		element.classList.add('zoomed');
+		element.style.maxWidth = "100%";
 
 		var graph = document.getElementById("bubblePaidBig");
 		graph.style.display = "block";
@@ -286,6 +288,7 @@ function zoomAds(){
 
 	if (element.classList.contains("zoomed")){
 		element.classList.remove('zoomed');
+		element.style.maxWidth = "85%";
 
 		var graph = document.getElementById("bubbleAdsSmall");
 		graph.style.display = "block";
@@ -300,6 +303,7 @@ function zoomAds(){
 	}
 	else{
 		element.classList.add('zoomed');
+		element.style.maxWidth = "100%";
 
 		var graph = document.getElementById("bubbleAdsBig");
 		graph.style.display = "block";

@@ -1,5 +1,5 @@
 var diamdiam = 300,
-    bigdiam = 900,
+    bigdiam = 800,
     format = d3.format(",d"),
     color = d3.scaleOrdinal(d3.schemeCategory20c);
 
