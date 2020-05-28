@@ -92,13 +92,17 @@
 							<br>
 							You have to decide which parameter will be included: Here the number of installs, the number of review and the average rating.
 							OK this make sense but how do you create a score out of 3 parameters that are somehow related and with the number of installs not a real value but step.
-
+							We've decided to set score = (alpha * (log(Installs)-log(min(Installs)))/(log(max(Installs))-log(min(Installs))) + (1-alpha)*(log(Ratings)-log(min(Ratings)))/(log(max(Ratings))-log(min(Ratings))))*AverageRating
+							Look at it by your self and feel like a real data scientist by changing the value of alpha on the slider.
+							You will see the top 20 apps and their score. If you want to know more about the app just move your mouse on the bar.
 							  <form>
 								  <label for="alpha">Please select a value for alpha: </label>
 								  <input type="range" min=0 max=1 step=0.1 id="alpha" value=0.5>
 								  <output name="alpha_selected" id="alpha_selected">Equal weight for Installs and Ratings</output>
 							  </form>
 						  	<div id="barplot"></div>
+								This look nice but what does it mean? A little hint the best way would be to have a powerlaw. Thus we pick alpha = 0.5.
+								As we can see, Whatsapp seems to be the great winner in the best app competition but does this mean one should create an app similar to this one to be successful? Let's find out here AHMED
 						</div>
 	          <div class="row col-12 reacts">
 	            <div class="col-4 react">
@@ -164,7 +168,7 @@
 						  <div id="domainDrillDown"></div>
 							As you can clearly see here, the best categories are Tools, Photography and Communication.
 							<br>
-							However it is important to notice that the Game category is split depending on the type of the game. We tried to regroup them and they add up to almost 45%
+							However it is important to notice that the Game category is split depending on the type of the game. We tried to regroup them and they add up to almost 45% which mean that making a game could also be a good idea
 							<br>
 
 	          </div>
@@ -202,6 +206,7 @@
 			</div><!--End Scrolled -->
 	  </div><!--End Container -->
 		<script src="https://d3js.org/d3.v4.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
