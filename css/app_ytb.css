@@ -122,7 +122,14 @@ body {
 .post {
   border-bottom: 1px solid #E1E8ED;
 }
+.post ~ .post{
+  margin-top: 20px;
+}
 .post .name{
+}
+.toclick{
+  cursor: pointer;
+  color: red;
 }
 .fa-caret-right{
   color: #657786;

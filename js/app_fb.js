@@ -87,7 +87,7 @@ $(document).ready(function() {
     $("#tabdisp2").css({"display":"none"});
     $("#tabdisp3").css({"display":"none"});
   });
-  // Search click
+  // Groups click
   $('body').on('click','.tab-groups',function(){
     $(window).scrollTop(0);
 
@@ -105,7 +105,7 @@ $(document).ready(function() {
   // Bell click
   $('body').on('click','.tab-bell',function(){
     $(window).scrollTop(0);
-    
+
     $(".tab-home").css({"color":"#657786"});
     $("#home").css({"color":"#657786"});
     $(".tab-bell").css({"color":"#4267B2"});
@@ -116,5 +116,21 @@ $(document).ready(function() {
     $("#tabdisp1").css({"display":"none"});
     $("#tabdisp2").css({"display":"none"});
     $("#tabdisp3").css({"display":"block"});
+  });
+
+  // To groups click
+  $('body').on('click','#togroups',function(){
+    $(window).scrollTop(0);
+
+    $(".tab-home").css({"color":"#657786"});
+    $("#home").css({"color":"#657786"});
+    $(".tab-bell").css({"color":"#657786"});
+    $("#bell").css({"color":"#657786"});
+    $(".tab-groups").css({"color":"#4267B2"});
+    $("#grp").css({"color":"#4267B2"});
+
+    $("#tabdisp1").css({"display":"none"});
+    $("#tabdisp2").css({"display":"block"});
+    $("#tabdisp3").css({"display":"none"});
   });
 });

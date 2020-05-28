@@ -249,3 +249,13 @@ rect.parent {
   top: 10px;
   left: 0;
 }
+
+
+.toclick{
+  cursor: pointer;
+  color: #4267B2;
+}
+#domainDrillDown{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

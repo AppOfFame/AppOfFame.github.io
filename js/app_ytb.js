@@ -39,6 +39,48 @@ $(document).ready(function() {
     }
   });
 
+
+  // Click post 2 like
+  $('body').on('click','#rlike2',function(){
+    if(!$(this).hasClass('clicked')){
+      $(this).css({"color":"blue"});
+      $("#nlike2").css({"color":"blue"});
+      $(this).addClass('animated rubberBand').one('animationend', function(){
+        $(this).removeClass('animated rubberBand');
+      });
+      $(this).addClass('clicked');
+      if($("#rdislike2").hasClass('clicked')){
+        $("#rdislike2").css({"color":"#657786"});
+        $("#rdislike2").removeClass('clicked');
+      }
+    }
+    else{
+      $(this).css({"color":"#657786"});
+      $(this).removeClass('clicked');
+    }
+  });
+
+  // Click post 2 dislike
+  $('body').on('click','#rdislike2',function(){
+    if(!$(this).hasClass('clicked')){
+      $(this).css({"color":"red"});
+      $("#nlike2").css({"color":"#657786"});
+      $(this).addClass('animated rubberBand').one('animationend', function(){
+        $(this).removeClass('animated rubberBand');
+      });
+      $(this).addClass('clicked');
+      if($("#rlike2").hasClass('clicked')){
+        $("#rlike2").css({"color":"#657786"});
+        $("#rlike2").removeClass('clicked');
+      }
+    }
+    else{
+      $(this).css({"color":"#657786"});
+      $(this).removeClass('clicked');
+    }
+  });
+
+
   // Click video
   $('body').on('click','.thumbnail',function(){
     $(window).scrollTop(0);
@@ -171,7 +213,7 @@ $(document).ready(function() {
   });
 
 
-  $('body').on('click','#post1',function(){
+  $('body').on('click','#tovideo',function(){
     $(window).scrollTop(0);
 
     $(".tab-trend").css({"color":"#657786"});
