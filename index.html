@@ -1,60 +1,60 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="content-type" content="text/html; charset=utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<title>Javastreet</title>
-		<meta name="description" content="Welcome to Data Visualization">
+	<title>App Of Fame</title>
+	<meta name="description" content="Welcome to Data Visualization">
 
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-		<link href="https://fonts.googleapis.com/css?family=Muli:200,300,400,600,700,800,900" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Muli:200,300,400,600,700,800,900" rel="stylesheet">
 
-		<link rel="stylesheet" href="css/phone.css">
-		<link rel="stylesheet" href="css/lock_screen.css">
-		<link href="assets/css/all.css" rel="stylesheet">
-	</head>
-	<body>
+	<link rel="stylesheet" href="css/phone.css">
+	<link rel="stylesheet" href="css/lock_screen.css">
+	<link href="assets/css/all.css" rel="stylesheet">
+</head>
+<body>
 
 
-		<div id="phone" class="lockFormat">
-			<div class="topinfo" id="topBar">
-				<div class="battery">
-					<i class="zmdi zmdi-battery"></i>
-				</div>
-				<div class="network">
-					<i class="zmdi zmdi-network"></i>
-				</div>
-				<div class="wifi">
-					<i class="zmdi zmdi-wifi-alt-2"></i>
-				</div>
-				<div class="star">
-					<i class="zmdi zmdi-star"></i>
-				</div>
+	<div id="phone" class="lockFormat">
+		<div class="topinfo" id="topBar">
+			<div class="battery">
+				<i class="zmdi zmdi-battery"></i>
 			</div>
-
-			<div class="" id="datum">
-				<div class="col-11 text-center datum">
-					<div class="time regular" id="datum_time"></div>
-					<div class="date bold" id=datum_date></div>
-				</div>
+			<div class="network">
+				<i class="zmdi zmdi-network"></i>
 			</div>
+			<div class="wifi">
+				<i class="zmdi zmdi-wifi-alt-2"></i>
+			</div>
+			<div class="star">
+				<i class="zmdi zmdi-star"></i>
+			</div>
+		</div>
+
+		<div class="" id="datum">
+			<div class="col-11 text-center datum">
+				<div class="time regular" id="datum_time"></div>
+				<div class="date bold" id=datum_date></div>
+			</div>
+		</div>
 
 
-			<svg id="monTel" class="invisible">
-				<filter id="grayscale">
-					<feColorMatrix type="saturate" values="0"/>
-				</filter>
-			</svg>
-			<svg id="buttons" class="invisible"></svg>
-			<div id="content" class="offStage invisible"></div>
+		<svg id="monTel" class="invisible">
+			<filter id="grayscale">
+				<feColorMatrix type="saturate" values="0"/>
+			</filter>
+		</svg>
+		<svg id="buttons" class="invisible"></svg>
+		<div id="content" class="offStage invisible"></div>
 
-			<svg id="borderLock">
+		<svg id="borderLock">
 			<div id="contentLock" class="offStageLock">
 				<div id="load">
 					<div class="container-fluid wrapper">
@@ -65,46 +65,54 @@
 								<div class="col-12 alert">
 									<p class="notification">You have 1 new notification.</p>
 									<p class="bold">Tap here to view it.</p>
-			          </div>
+								</div>
 							</div>
 
 							<div class="row" style="display: none;" id="intro">
 								<div class="col-12 introduction">
-									<p>Welcome, this phone will be your guide throughout our data story about Android applications that you're about to enter.
-										 Each chapter of our analysis will be represented in this phone by its dedicated app. Once you've visited it, you can go on to the next chapter and finally reach the conclusion.</p>
-									<p>P.S. The password is the right-angle corner at the top-right.</p>
-									<p class="bold">Tap again to hide.</p>
-								</div>
-							</div>
+									<p>Welcome, this phone will be your guide throughout our data story that aims to find what makes an Android application successful.
+										Are there different paths to go to the top, what are their differences ? </br></br>
+										We will answer this by looking more in details at different
+										aspects of the development and the deployment in the Google Play Store, namely : Rankings, Business plan, Developers, Downloads and Comments.</br></br>
 
-							<div class="row" id="lockcode">
-								<div class="col-12 text-center">
-									<div id="message">
-										<span class="lock-message">Draw a pattern to unlock.</span>
+										Each chapter of our analysis will be represented in this phone by its dedicated app, in which you will find different insights and graphs. Once you've visited it,
+										you can go on to the next chapter and finally reach the conclusion.</br></br>
+
+										<em>Javastreet</em></br></br>
+
+										P.S. The password to enter is the right-angle corner at the top-right.</p>
+										<p class="bold">Tap again to hide.</p>
 									</div>
-									<div class="patternlock"></div>
 								</div>
-							</div>
 
-						</div><!--End Scrolled -->
-				  </div><!--End Container -->
+								<div class="row" id="lockcode">
+									<div class="col-12 text-center">
+										<div id="message">
+											<span class="lock-message">Draw a pattern to unlock.</span>
+										</div>
+										<div class="patternlock"></div>
+									</div>
+								</div>
+
+							</div><!--End Scrolled -->
+						</div><!--End Container -->
+
+					</div>
+				</div>
+
+
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+				<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+				<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+				<script src="js/d3.min.js"></script>
+				<script src="js/phone.js"></script>
+				<script src="js/lock_screen.js"></script>
+				<script src="js/time_lock.js"></script>
 
 			</div>
-		</div>
+		</body>
 
-
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-
-			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-			<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-			<script src="js/d3.min.js"></script>
-			<script src="js/phone.js"></script>
-			<script src="js/lock_screen.js"></script>
-			<script src="js/time_lock.js"></script>
-
-		</div>
-	</body>
-
-</html>
+		</html>
