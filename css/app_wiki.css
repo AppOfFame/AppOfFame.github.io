@@ -26,7 +26,9 @@ body {
 .extraBlack {
   font-weight: 900;
 }
-
+a{
+  color: blue;
+}
 .wrapper{
 	height: inherit;
 	width: inherit;
@@ -100,6 +102,7 @@ body {
   border-bottom: 1px solid #D3D3D3;
   position: absolute;
 }
+
 .content{
   margin-top: 50px;
 }
