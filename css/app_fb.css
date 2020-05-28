@@ -250,6 +250,9 @@ rect.parent {
   left: 0;
 }
 
+p.title{
+  color: #ffffff
+}
 
 .toclick{
   cursor: pointer;
