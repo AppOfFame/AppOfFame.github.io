@@ -8,7 +8,7 @@ function initPhone()
 {
 	data = [ {} ,{},{},{},{},{},{},{},{},
 		{name:'Rankings', icon:'facebook.png', file:'app_fb'},
-		{name:'Distributions', icon:'whatsapp.png', file:'app_whats'},
+		{name:'Business Plan', icon:'whatsapp.png', file:'app_whats'},
 		{name:'Developers', icon:'EPFL.png', file:'app_epfl'},
 		{name:'Downloads', icon:'youtube.png', file:'app_ytb'},
 		{name:'Comments', icon:'twitter.png', file:'app_twitter'},
@@ -201,6 +201,7 @@ function initPhone()
 			.enter()
 			.append('text')
 			.attr('class', 'appText temporary')
+			.style('fill','#E0E0E0')
 			.attr('x', (d,i) => this.offsetX + this.margin + (i%this.nbCol)*(this.size+this.margin))
 			.attr('y', (d,i) => this.offsetY + this.margin/2 + this.topBarHeight + Math.floor(i/this.nbCol)*(this.size+this.margin) +
 			this.size + this.margin/2)
