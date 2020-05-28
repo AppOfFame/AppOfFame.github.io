@@ -15,8 +15,12 @@ var x_treemap = d3.scaleLinear().domain([0, width - margin.right])
 var y_treemap = d3.scaleLinear().domain([0, height - margin.top - margin.bottom])
 																.range([0, height - margin.top - margin.bottom]);
 
-var color = d3.scaleOrdinal().range(["#cb0dff", "#efc709", "#0075fd", "#a6002d", "#00ab08", "#0e00a9", "#a76b00", "#00be97", "#5dd900", "#ce007e", "#0050b8", "#00fce4", "#6100ac", "#00de4c", "#ee4d00", "#9eb600", "#3e9d00", "#a700d4", "#00a0c6", "#009166", "#29c900", "#6eb100", "#e60a00", "#941200", "#0005e7", "#9600ad", "#0ed2bd", "#007d9b", "#d8a500", "#4e00e2", "#ca0042", "#ef00bb", "#b64c00", "#00a745", "#b5da00", "#006ad2", "#002ccb", "#8500dc", "#cf7b00"])
-
+var color = d3.scaleOrdinal().range([ "#34368D", "#B4A8BD", "#00A6AA", "#452C2C", "#636375", "#A3C8C9", "#FF913F", "#938A81",
+        "#575329", "#00FECF", "#B05B6F", "#8CD0FF", "#3B9700", "#04F757", "#C8A1A1", "#1E6E00",
+        "#7900D7", "#A77500", "#6367A9", "#A05837", "#6B002C", "#772600", "#D790FF", "#9B9700",
+        "#83AB58", "#001C1E", "#4287f5", "#004B28", "#C8D0F6", "#A3A489", "#806C66", "#222800",
+        "#BF5650", "#E83000", "#66796D", "#DA007C", "#FF1A59", "#8ADBB4", "#1E0200", "#5B4E51",
+        "#C895C5", "#320033", "#FF6832", "#66E1D3", "#CFCDAC", "#D0AC94", "#7ED379", "#012C58"])
 var treemap;
 for (d in data2.children){
 	for(j in data2.children[d].children){
