@@ -94,8 +94,10 @@
 							are: the number of installs, the number of review and the average rating.
 							Ok so this makes sense but how to create a score out of 3 parameters that are somehow related?
 							Also the number of installs is given by steps and not on a continuous scale so the gaps can sometimes be large.
-							<br>Let's set the score equal to (alpha * (log(I)-log(min(I))) / (log(max(I))-log(min(I))) + (1-alpha)*(log(R)
-							- log(min(R))) / (log(max(R))-log(min(R)))) * AR (with I=Installs, R=Ratings, AR=Average Rating).
+							<br>
+							Let's set the score equal to:
+							 $${alpha * (log(I)-log(min(I)) \over log(max(I))-log(min(I))} + (1-alpha)*{log(R)
+							- log(min(R)) \over log(max(R))-log(min(R))} * AR $$(with I=Installs, R=Ratings, AR=Average Rating).
 							<br>Look at it by yourself and feel like a real data scientist by changing the value of alpha on the slider.
 							You will see the top 20 apps and their score. If you want to know more about the app just hover your mouse on the bar.
 						  <form>
@@ -181,13 +183,13 @@
 
 	          </div>
 	          <div class="row col-11 reacts">
-	            <div class="col-3 react">
+	            <div class="col-4 react">
 	              <i class="fas fa-grin-tongue"></i>
 	              <i class="fas fa-surprise"></i>
 	              <i class="fas fa-grimace"></i>
 	              <span style="margin-left: -5px" id="nlike2">323</span>
 	            </div>
-	            <div class="col-9 text-right comments">
+	            <div class="col-8 text-right comments">
 	              <span>12 comments</span>
 	            </div>
 	          </div>
@@ -214,9 +216,11 @@
 			</div><!--End Scrolled -->
 	  </div><!--End Container -->
 		<script src="https://d3js.org/d3.v4.js"></script>
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
-
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script type="text/javascript" id="MathJax-script" async
+		src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+		</script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
